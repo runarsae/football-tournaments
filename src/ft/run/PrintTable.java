@@ -11,7 +11,7 @@ import ft.FootballTournaments;
 import ft.FtPackage;
 import ft.Table;
 
-public class Test {
+public class PrintTable {
 	
 	public static void main(String[] args) {
 		ResourceSet resSet = new ResourceSetImpl();
@@ -29,7 +29,7 @@ public class Test {
 		Table table = ((DoubleRoundRobin) ft.getRegions().get(0).getTournaments().get(0).getSeasons().get(0).getStages().get(0)).getTable();
 		
 		table.getStatistics().forEach(s -> {
-			System.out.println(s.getClub().getName() + " " + s.getPosition() + " " + s.getPlayed() + " " + s.getWon() + " " + s.getDrawn() + " " + s.getLost() + " " + s.getGoalsFor() + " " + s.getGoalsAgainst() + " " + s.getGoalDifference() + " " + s.getPoints());
+			System.out.println(s.getClub().getName() + " " + s.getPosition() + " " + s.getPlayed() + " " + s.getWon() + " " + s.getDrawn() + " " + s.getLost() + " " + s.getGoalsFor() + " " + s.getGoalsAgainst() + " " + s.getGoalDifference() + " " + s.getPoints() + " " + s.getForm());
 		});
 	}
 

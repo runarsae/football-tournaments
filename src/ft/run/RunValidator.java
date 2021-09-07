@@ -1,4 +1,4 @@
-package ft.validate;
+package ft.run;
 
 import org.eclipse.acceleo.query.delegates.AQLValidationDelegate;
 import org.eclipse.emf.common.util.Diagnostic;

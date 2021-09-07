@@ -294,16 +294,16 @@ public class FtFactoryImpl extends EFactoryImpl implements FtFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public LocalDate createELocalDateFromString(EDataType eDataType, String initialValue) {
-		return (LocalDate)super.createFromString(eDataType, initialValue);
+		return LocalDate.parse(initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String convertELocalDateToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
@@ -312,16 +312,16 @@ public class FtFactoryImpl extends EFactoryImpl implements FtFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public LocalDateTime createELocalDateTimeFromString(EDataType eDataType, String initialValue) {
-		return (LocalDateTime)super.createFromString(eDataType, initialValue);
+		return LocalDateTime.parse(initialValue);	
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String convertELocalDateTimeToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);

@@ -72,6 +72,8 @@ public class DoubleRoundRobinImpl extends StageImpl implements DoubleRoundRobin 
 			table.getStatistics().add(statistic);
 		}
 		
+		// TODO: Sort statistics on position
+		
 		return table;
 		
 	}

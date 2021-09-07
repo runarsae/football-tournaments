@@ -41,9 +41,9 @@
       <details key="clubsGenderMustBeEqualToTournamentGender" value="self.clubs.gender->forAll(g | g = self.tournament.gender)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+        eType="#//ELocalDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+        eType="#//ELocalDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="yearIdentifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tournament" lowerBound="1"
@@ -148,7 +148,7 @@
         eType="#//Club"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="awayClub" lowerBound="1"
         eType="#//Club"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="#//ELocalDateTime"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//Result"
         containment="true"/>
   </eClassifiers>

@@ -191,7 +191,7 @@ public class FtValidator extends EObjectValidator {
 	 */
 	public boolean validateSeason_startDateMustBeBeforeEndDate(Season season, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// Check if season start date is before end date 
-		if (!season.getStartDate().before(season.getEndDate())) {
+		if (!season.getStartDate().isBefore(season.getEndDate())) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -643,7 +643,7 @@ public class FtValidator extends EObjectValidator {
 		
 		Season season = match.getRound().getStage().getSeason();
 		
-		if (match.getDate().before(season.getStartDate()) || match.getDate().after(season.getEndDate())) {
+		if (match.getDate().toLocalDate().isBefore(season.getStartDate()) || match.getDate().toLocalDate().isAfter(season.getEndDate())) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic

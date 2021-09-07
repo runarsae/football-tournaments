@@ -2,8 +2,7 @@
  */
 package ft;
 
-import java.util.Date;
-
+import java.time.LocalDate;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -36,12 +35,12 @@ public interface Season extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Start Date</em>' attribute.
-	 * @see #setStartDate(Date)
+	 * @see #setStartDate(LocalDate)
 	 * @see ft.FtPackage#getSeason_StartDate()
-	 * @model required="true"
+	 * @model dataType="ft.ELocalDate" required="true"
 	 * @generated
 	 */
-	Date getStartDate();
+	LocalDate getStartDate();
 
 	/**
 	 * Sets the value of the '{@link ft.Season#getStartDate <em>Start Date</em>}' attribute.
@@ -51,19 +50,19 @@ public interface Season extends EObject {
 	 * @see #getStartDate()
 	 * @generated
 	 */
-	void setStartDate(Date value);
+	void setStartDate(LocalDate value);
 
 	/**
 	 * Returns the value of the '<em><b>End Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>End Date</em>' attribute.
-	 * @see #setEndDate(Date)
+	 * @see #setEndDate(LocalDate)
 	 * @see ft.FtPackage#getSeason_EndDate()
-	 * @model required="true"
+	 * @model dataType="ft.ELocalDate" required="true"
 	 * @generated
 	 */
-	Date getEndDate();
+	LocalDate getEndDate();
 
 	/**
 	 * Sets the value of the '{@link ft.Season#getEndDate <em>End Date</em>}' attribute.
@@ -73,7 +72,7 @@ public interface Season extends EObject {
 	 * @see #getEndDate()
 	 * @generated
 	 */
-	void setEndDate(Date value);
+	void setEndDate(LocalDate value);
 
 	/**
 	 * Returns the value of the '<em><b>Year Identifier</b></em>' attribute.

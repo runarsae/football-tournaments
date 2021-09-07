@@ -9,9 +9,8 @@ import ft.Stage;
 import ft.Tournament;
 
 import java.time.LocalDate;
-import java.time.ZoneId;
+
 import java.util.Collection;
-import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -56,7 +55,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date START_DATE_EDEFAULT = null;
+	protected static final LocalDate START_DATE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
@@ -66,7 +65,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * @generated
 	 * @ordered
 	 */
-	protected Date startDate = START_DATE_EDEFAULT;
+	protected LocalDate startDate = START_DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEndDate() <em>End Date</em>}' attribute.
@@ -76,7 +75,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date END_DATE_EDEFAULT = null;
+	protected static final LocalDate END_DATE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getEndDate() <em>End Date</em>}' attribute.
@@ -86,7 +85,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * @generated
 	 * @ordered
 	 */
-	protected Date endDate = END_DATE_EDEFAULT;
+	protected LocalDate endDate = END_DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getYearIdentifier() <em>Year Identifier</em>}' attribute.
@@ -142,7 +141,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Date getStartDate() {
+	public LocalDate getStartDate() {
 		return startDate;
 	}
 
@@ -151,8 +150,8 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStartDate(Date newStartDate) {
-		Date oldStartDate = startDate;
+	public void setStartDate(LocalDate newStartDate) {
+		LocalDate oldStartDate = startDate;
 		startDate = newStartDate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FtPackage.SEASON__START_DATE, oldStartDate, startDate));
@@ -163,7 +162,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Date getEndDate() {
+	public LocalDate getEndDate() {
 		return endDate;
 	}
 
@@ -172,8 +171,8 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEndDate(Date newEndDate) {
-		Date oldEndDate = endDate;
+	public void setEndDate(LocalDate newEndDate) {
+		LocalDate oldEndDate = endDate;
 		endDate = newEndDate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FtPackage.SEASON__END_DATE, oldEndDate, endDate));
@@ -187,11 +186,8 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	public String getYearIdentifier() {
 		// Use startDate and endDate to generate the years the season stretches over
 		// E.g. "2021" or "2021/2022"
-		LocalDate startDate = this.startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-		LocalDate endDate = this.startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-		
-		Integer startYear = startDate.getYear();
-		Integer endYear = endDate.getYear();
+		Integer startYear = this.startDate.getYear();
+		Integer endYear = this.endDate.getYear();
 		
 		if (startYear == endYear || (endYear - startYear > 1)) {
 			return startYear.toString();
@@ -352,10 +348,10 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FtPackage.SEASON__START_DATE:
-				setStartDate((Date)newValue);
+				setStartDate((LocalDate)newValue);
 				return;
 			case FtPackage.SEASON__END_DATE:
-				setEndDate((Date)newValue);
+				setEndDate((LocalDate)newValue);
 				return;
 			case FtPackage.SEASON__TOURNAMENT:
 				setTournament((Tournament)newValue);

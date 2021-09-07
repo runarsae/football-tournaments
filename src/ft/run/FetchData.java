@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.sql.Date;
-import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -32,14 +30,14 @@ import ft.Round;
 import ft.Season;
 import ft.Tournament;
 
-public class Data {
+public class FetchData {
 	
 	static String MODEL_FILE = "model/FootballTournaments.xmi";
 	
-	static String FILE = "datasets/toppserien_2021.csv";
+	static String FILE = "datasets/eliteserien_2021.csv";
 	static String REGION = "Norway";
-	static String TOURNAMENT = "Toppserien";
-	static GenderKind GENDER = GenderKind.WOMEN;
+	static String TOURNAMENT = "Eliteserien";
+	static GenderKind GENDER = GenderKind.MEN;
 	static LocalDate START_DATE = LocalDate.of(2021, 5, 9);
 	static LocalDate END_DATE = LocalDate.of(2021, 12, 12);
 
@@ -125,8 +123,8 @@ public class Data {
 		}
 		
 		Season season = factory.createSeason();
-		season.setStartDate(Date.valueOf(START_DATE));
-		season.setEndDate(Date.valueOf(END_DATE));
+		season.setStartDate(START_DATE);
+		season.setEndDate(END_DATE);
 		season.setTournament(tournament);
 
 		DoubleRoundRobin stage = factory.createDoubleRoundRobin();
@@ -215,7 +213,7 @@ public class Data {
 				match.setHomeClub(homeClub);
 				match.setAwayClub(awayClub);
 				match.setRound(currentRound);
-				match.setDate(Timestamp.valueOf(date));
+				match.setDate(date);
 
 				if (homeGoals != null && awayGoals != null) {
 					Result result = factory.createResult();

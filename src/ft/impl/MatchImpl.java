@@ -8,8 +8,7 @@ import ft.Match;
 import ft.Result;
 import ft.Round;
 
-import java.util.Date;
-
+import java.time.LocalDateTime;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -67,7 +66,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date DATE_EDEFAULT = null;
+	protected static final LocalDateTime DATE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
@@ -77,7 +76,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @generated
 	 * @ordered
 	 */
-	protected Date date = DATE_EDEFAULT;
+	protected LocalDateTime date = DATE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getResult() <em>Result</em>}' containment reference.
@@ -230,7 +229,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Date getDate() {
+	public LocalDateTime getDate() {
 		return date;
 	}
 
@@ -239,8 +238,8 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDate(Date newDate) {
-		Date oldDate = date;
+	public void setDate(LocalDateTime newDate) {
+		LocalDateTime oldDate = date;
 		date = newDate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FtPackage.MATCH__DATE, oldDate, date));
@@ -377,7 +376,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 				setAwayClub((Club)newValue);
 				return;
 			case FtPackage.MATCH__DATE:
-				setDate((Date)newValue);
+				setDate((LocalDateTime)newValue);
 				return;
 			case FtPackage.MATCH__RESULT:
 				setResult((Result)newValue);

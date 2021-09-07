@@ -11,10 +11,14 @@ import ft.Statistic;
 import ft.Table;
 import ft.WinnerKind;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.BasicEList.UnmodifiableEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -24,33 +28,33 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Statistic</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Statistic</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ft.impl.StatisticImpl#getClub <em>Club</em>}</li>
- *   <li>{@link ft.impl.StatisticImpl#getPosition <em>Position</em>}</li>
- *   <li>{@link ft.impl.StatisticImpl#getPlayed <em>Played</em>}</li>
- *   <li>{@link ft.impl.StatisticImpl#getWon <em>Won</em>}</li>
- *   <li>{@link ft.impl.StatisticImpl#getDrawn <em>Drawn</em>}</li>
- *   <li>{@link ft.impl.StatisticImpl#getLost <em>Lost</em>}</li>
- *   <li>{@link ft.impl.StatisticImpl#getGoalsFor <em>Goals For</em>}</li>
- *   <li>{@link ft.impl.StatisticImpl#getGoalsAgainst <em>Goals Against</em>}</li>
- *   <li>{@link ft.impl.StatisticImpl#getGoalDifference <em>Goal Difference</em>}</li>
- *   <li>{@link ft.impl.StatisticImpl#getPoints <em>Points</em>}</li>
- *   <li>{@link ft.impl.StatisticImpl#getForm <em>Form</em>}</li>
+ * <li>{@link ft.impl.StatisticImpl#getClub <em>Club</em>}</li>
+ * <li>{@link ft.impl.StatisticImpl#getPosition <em>Position</em>}</li>
+ * <li>{@link ft.impl.StatisticImpl#getPlayed <em>Played</em>}</li>
+ * <li>{@link ft.impl.StatisticImpl#getWon <em>Won</em>}</li>
+ * <li>{@link ft.impl.StatisticImpl#getDrawn <em>Drawn</em>}</li>
+ * <li>{@link ft.impl.StatisticImpl#getLost <em>Lost</em>}</li>
+ * <li>{@link ft.impl.StatisticImpl#getGoalsFor <em>Goals For</em>}</li>
+ * <li>{@link ft.impl.StatisticImpl#getGoalsAgainst <em>Goals Against</em>}</li>
+ * <li>{@link ft.impl.StatisticImpl#getGoalDifference <em>Goal
+ * Difference</em>}</li>
+ * <li>{@link ft.impl.StatisticImpl#getPoints <em>Points</em>}</li>
+ * <li>{@link ft.impl.StatisticImpl#getForm <em>Form</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class StatisticImpl extends MinimalEObjectImpl.Container implements Statistic {
 	/**
-	 * The cached value of the '{@link #getClub() <em>Club</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getClub() <em>Club</em>}' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getClub()
 	 * @generated
 	 * @ordered
@@ -58,9 +62,9 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	protected Club club;
 
 	/**
-	 * The default value of the '{@link #getPosition() <em>Position</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getPosition() <em>Position</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getPosition()
 	 * @generated
 	 * @ordered
@@ -69,8 +73,8 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 
 	/**
 	 * The default value of the '{@link #getPlayed() <em>Played</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getPlayed()
 	 * @generated
 	 * @ordered
@@ -78,9 +82,9 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	protected static final int PLAYED_EDEFAULT = 0;
 
 	/**
-	 * The default value of the '{@link #getWon() <em>Won</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getWon() <em>Won</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getWon()
 	 * @generated
 	 * @ordered
@@ -88,9 +92,9 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	protected static final int WON_EDEFAULT = 0;
 
 	/**
-	 * The default value of the '{@link #getDrawn() <em>Drawn</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getDrawn() <em>Drawn</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getDrawn()
 	 * @generated
 	 * @ordered
@@ -98,9 +102,9 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	protected static final int DRAWN_EDEFAULT = 0;
 
 	/**
-	 * The default value of the '{@link #getLost() <em>Lost</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getLost() <em>Lost</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getLost()
 	 * @generated
 	 * @ordered
@@ -108,9 +112,9 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	protected static final int LOST_EDEFAULT = 0;
 
 	/**
-	 * The default value of the '{@link #getGoalsFor() <em>Goals For</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getGoalsFor() <em>Goals For</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getGoalsFor()
 	 * @generated
 	 * @ordered
@@ -118,9 +122,9 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	protected static final int GOALS_FOR_EDEFAULT = 0;
 
 	/**
-	 * The default value of the '{@link #getGoalsAgainst() <em>Goals Against</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getGoalsAgainst() <em>Goals Against</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getGoalsAgainst()
 	 * @generated
 	 * @ordered
@@ -128,9 +132,9 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	protected static final int GOALS_AGAINST_EDEFAULT = 0;
 
 	/**
-	 * The default value of the '{@link #getGoalDifference() <em>Goal Difference</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getGoalDifference() <em>Goal
+	 * Difference</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getGoalDifference()
 	 * @generated
 	 * @ordered
@@ -139,8 +143,8 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 
 	/**
 	 * The default value of the '{@link #getPoints() <em>Points</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getPoints()
 	 * @generated
 	 * @ordered
@@ -148,8 +152,8 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	protected static final int POINTS_EDEFAULT = 0;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StatisticImpl() {
@@ -157,8 +161,8 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -167,25 +171,26 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Club getClub() {
 		if (club != null && club.eIsProxy()) {
-			InternalEObject oldClub = (InternalEObject)club;
-			club = (Club)eResolveProxy(oldClub);
+			InternalEObject oldClub = (InternalEObject) club;
+			club = (Club) eResolveProxy(oldClub);
 			if (club != oldClub) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FtPackage.STATISTIC__CLUB, oldClub, club));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FtPackage.STATISTIC__CLUB, oldClub,
+							club));
 			}
 		}
 		return club;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Club basicGetClub() {
@@ -193,8 +198,8 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setClub(Club newClub) {
@@ -205,17 +210,17 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
-	public int getPosition() {		
+	public int getPosition() {
 		AtomicInteger position = new AtomicInteger(1);
-		
+
 		int points = this.getPoints();
 		int goalDifference = this.getGoalDifference();
 		int goalsFor = this.getGoalsFor();
-		
+
 		for (Statistic statistic : ((Table) this.eContainer()).getStatistics()) {
 			int otherPoints = statistic.getPoints();
 
@@ -223,24 +228,25 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 				position.getAndIncrement();
 			} else if (points == otherPoints) {
 				int otherGoalDifference = statistic.getGoalDifference();
-				
+
 				if (goalDifference < otherGoalDifference) {
 					position.getAndIncrement();
 				} else if (goalDifference == otherGoalDifference) {
 					int otherGoalsFor = statistic.getGoalsFor();
-					
+
 					if (goalsFor < otherGoalsFor) {
 						position.getAndIncrement();
 					}
 				}
 			}
 		}
-		
+
 		return position.get();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public int getPlayed() {
@@ -394,110 +400,145 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	 * @generated NOT
 	 */
 	public EList<ResultKind> getForm() {
-		// TODO: implement this method to return the 'Form' attribute list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		return new BasicEList<ResultKind>(6);
+		List<Match> matches = new ArrayList<>();
+		
+		// Get all matches for this club for the stage
+		for (Round round : ((Table) this.eContainer()).getStage().getRounds()) {
+			for (Match match : round.getMatches()) {
+				if ((match.getHomeClub() == this.club || match.getAwayClub() == this.club) && match.getResult() != null) {
+					matches.add(match);
+				}
+			}
+		}
+		
+		// Sort matches according to date
+		Collections.sort(matches, new Comparator<Match>() {
+			  public int compare(Match x, Match y) {
+				    return x.getDate().isBefore(y.getDate()) ? -1 : x.getDate().isAfter(y.getDate()) ? 1 : 0;
+			  }
+		});
+		
+		// Get the last 6 matches (maximum)
+		if (matches.size() > 6) {
+			matches = matches.subList(matches.size() - 6, matches.size());
+		}
+		
+		// Generate a ResultKind for each match
+		ResultKind[] form = new ResultKind[matches.size()];
+		
+		for (int i = 0; i < matches.size(); i++) {
+			WinnerKind winner = matches.get(i).getResult().getWinner();
+			
+			if ((winner == WinnerKind.HOME && matches.get(i).getHomeClub() == this.club) || (winner == WinnerKind.AWAY && matches.get(i).getAwayClub() == this.club)) {
+				form[i] = ResultKind.WIN;
+			} else if (winner == WinnerKind.DRAW) {
+				form[i] = ResultKind.DRAW;
+			} else {
+				form[i] = ResultKind.LOSS;
+			}
+		}
+				
+		return new UnmodifiableEList<ResultKind>(matches.size(), form);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FtPackage.STATISTIC__CLUB:
-				if (resolve) return getClub();
-				return basicGetClub();
-			case FtPackage.STATISTIC__POSITION:
-				return getPosition();
-			case FtPackage.STATISTIC__PLAYED:
-				return getPlayed();
-			case FtPackage.STATISTIC__WON:
-				return getWon();
-			case FtPackage.STATISTIC__DRAWN:
-				return getDrawn();
-			case FtPackage.STATISTIC__LOST:
-				return getLost();
-			case FtPackage.STATISTIC__GOALS_FOR:
-				return getGoalsFor();
-			case FtPackage.STATISTIC__GOALS_AGAINST:
-				return getGoalsAgainst();
-			case FtPackage.STATISTIC__GOAL_DIFFERENCE:
-				return getGoalDifference();
-			case FtPackage.STATISTIC__POINTS:
-				return getPoints();
-			case FtPackage.STATISTIC__FORM:
-				return getForm();
+		case FtPackage.STATISTIC__CLUB:
+			if (resolve)
+				return getClub();
+			return basicGetClub();
+		case FtPackage.STATISTIC__POSITION:
+			return getPosition();
+		case FtPackage.STATISTIC__PLAYED:
+			return getPlayed();
+		case FtPackage.STATISTIC__WON:
+			return getWon();
+		case FtPackage.STATISTIC__DRAWN:
+			return getDrawn();
+		case FtPackage.STATISTIC__LOST:
+			return getLost();
+		case FtPackage.STATISTIC__GOALS_FOR:
+			return getGoalsFor();
+		case FtPackage.STATISTIC__GOALS_AGAINST:
+			return getGoalsAgainst();
+		case FtPackage.STATISTIC__GOAL_DIFFERENCE:
+			return getGoalDifference();
+		case FtPackage.STATISTIC__POINTS:
+			return getPoints();
+		case FtPackage.STATISTIC__FORM:
+			return getForm();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FtPackage.STATISTIC__CLUB:
-				setClub((Club)newValue);
-				return;
+		case FtPackage.STATISTIC__CLUB:
+			setClub((Club) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FtPackage.STATISTIC__CLUB:
-				setClub((Club)null);
-				return;
+		case FtPackage.STATISTIC__CLUB:
+			setClub((Club) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FtPackage.STATISTIC__CLUB:
-				return club != null;
-			case FtPackage.STATISTIC__POSITION:
-				return getPosition() != POSITION_EDEFAULT;
-			case FtPackage.STATISTIC__PLAYED:
-				return getPlayed() != PLAYED_EDEFAULT;
-			case FtPackage.STATISTIC__WON:
-				return getWon() != WON_EDEFAULT;
-			case FtPackage.STATISTIC__DRAWN:
-				return getDrawn() != DRAWN_EDEFAULT;
-			case FtPackage.STATISTIC__LOST:
-				return getLost() != LOST_EDEFAULT;
-			case FtPackage.STATISTIC__GOALS_FOR:
-				return getGoalsFor() != GOALS_FOR_EDEFAULT;
-			case FtPackage.STATISTIC__GOALS_AGAINST:
-				return getGoalsAgainst() != GOALS_AGAINST_EDEFAULT;
-			case FtPackage.STATISTIC__GOAL_DIFFERENCE:
-				return getGoalDifference() != GOAL_DIFFERENCE_EDEFAULT;
-			case FtPackage.STATISTIC__POINTS:
-				return getPoints() != POINTS_EDEFAULT;
-			case FtPackage.STATISTIC__FORM:
-				return !getForm().isEmpty();
+		case FtPackage.STATISTIC__CLUB:
+			return club != null;
+		case FtPackage.STATISTIC__POSITION:
+			return getPosition() != POSITION_EDEFAULT;
+		case FtPackage.STATISTIC__PLAYED:
+			return getPlayed() != PLAYED_EDEFAULT;
+		case FtPackage.STATISTIC__WON:
+			return getWon() != WON_EDEFAULT;
+		case FtPackage.STATISTIC__DRAWN:
+			return getDrawn() != DRAWN_EDEFAULT;
+		case FtPackage.STATISTIC__LOST:
+			return getLost() != LOST_EDEFAULT;
+		case FtPackage.STATISTIC__GOALS_FOR:
+			return getGoalsFor() != GOALS_FOR_EDEFAULT;
+		case FtPackage.STATISTIC__GOALS_AGAINST:
+			return getGoalsAgainst() != GOALS_AGAINST_EDEFAULT;
+		case FtPackage.STATISTIC__GOAL_DIFFERENCE:
+			return getGoalDifference() != GOAL_DIFFERENCE_EDEFAULT;
+		case FtPackage.STATISTIC__POINTS:
+			return getPoints() != POINTS_EDEFAULT;
+		case FtPackage.STATISTIC__FORM:
+			return !getForm().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //StatisticImpl
+} // StatisticImpl

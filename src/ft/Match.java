@@ -2,8 +2,7 @@
  */
 package ft;
 
-import java.util.Date;
-
+import java.time.LocalDateTime;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -101,12 +100,12 @@ public interface Match extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Date</em>' attribute.
-	 * @see #setDate(Date)
+	 * @see #setDate(LocalDateTime)
 	 * @see ft.FtPackage#getMatch_Date()
-	 * @model
+	 * @model dataType="ft.ELocalDateTime"
 	 * @generated
 	 */
-	Date getDate();
+	LocalDateTime getDate();
 
 	/**
 	 * Sets the value of the '{@link ft.Match#getDate <em>Date</em>}' attribute.
@@ -116,7 +115,7 @@ public interface Match extends EObject {
 	 * @see #getDate()
 	 * @generated
 	 */
-	void setDate(Date value);
+	void setDate(LocalDateTime value);
 
 	/**
 	 * Returns the value of the '<em><b>Result</b></em>' containment reference.
