@@ -34,12 +34,12 @@ public class FetchData {
 	
 	static String MODEL_FILE = "model/FootballTournaments.xmi";
 	
-	static String FILE = "datasets/eliteserien_2021.csv";
+	static String FILE = "datasets/toppserien_2021.csv";
 	static String REGION = "Norway";
-	static String TOURNAMENT = "Eliteserien";
-	static GenderKind GENDER = GenderKind.MEN;
-	static LocalDate START_DATE = LocalDate.of(2021, 5, 9);
-	static LocalDate END_DATE = LocalDate.of(2021, 12, 12);
+	static String TOURNAMENT = "Toppserien";
+	static GenderKind GENDER = GenderKind.WOMEN;
+	static LocalDate START_DATE = LocalDate.of(2021, 5, 22);
+	static LocalDate END_DATE = LocalDate.of(2021, 11, 13);
 
 	
 	public static FootballTournaments load() {
