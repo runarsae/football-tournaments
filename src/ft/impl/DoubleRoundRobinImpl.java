@@ -8,6 +8,11 @@ import ft.FtFactory;
 import ft.FtPackage;
 import ft.Statistic;
 import ft.Table;
+
+import java.util.Comparator;
+
+import org.eclipse.emf.common.util.ECollections;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -63,16 +68,24 @@ public class DoubleRoundRobinImpl extends StageImpl implements DoubleRoundRobin 
 		FtFactory factory = FtFactory.eINSTANCE;
 		
 		Table table = factory.createTable();
+		table.setStage(this);
+		
+		EList<Statistic> statistics = table.getStatistics();
 		
 		// Generate a statistic for each club in the stage
 		for (Club club : this.getClubs()) {
 			Statistic statistic = factory.createStatistic();
 			statistic.setClub(club);
-			table.setStage(this);
-			table.getStatistics().add(statistic);
+			statistics.add(statistic);
 		}
 		
-		// TODO: Sort statistics on position
+		// Sort statistics according to position
+		ECollections.sort(table.getStatistics(), new Comparator<Statistic>() {
+			  public int compare(Statistic x, Statistic y) {
+				    return x.getPosition() < y.getPosition() ? -1 : x.getPosition() > y.getPosition() ? 1 : 0;
+			  }
+		});
+						
 		
 		return table;
 		
