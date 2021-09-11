@@ -31,6 +31,24 @@ public interface FtFactory extends EFactory {
 	FootballTournaments createFootballTournaments();
 
 	/**
+	 * Returns a new object of class '<em>Association Host</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Association Host</em>'.
+	 * @generated
+	 */
+	AssociationHost createAssociationHost();
+
+	/**
+	 * Returns a new object of class '<em>Regional Host</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Regional Host</em>'.
+	 * @generated
+	 */
+	RegionalHost createRegionalHost();
+
+	/**
 	 * Returns a new object of class '<em>Region</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,6 +137,24 @@ public interface FtFactory extends EFactory {
 	 * @generated
 	 */
 	Result createResult();
+
+	/**
+	 * Returns a new object of class '<em>Extended Time Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Extended Time Result</em>'.
+	 * @generated
+	 */
+	ExtendedTimeResult createExtendedTimeResult();
+
+	/**
+	 * Returns a new object of class '<em>Penalty Shootout Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Penalty Shootout Result</em>'.
+	 * @generated
+	 */
+	PenaltyShootoutResult createPenaltyShootoutResult();
 
 	/**
 	 * Returns a new object of class '<em>Table</em>'.

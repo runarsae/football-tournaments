@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see ft.FtPackage#getMatch()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='homeClubAndAwayClubCannotBeTheSame homeClubMustBeInSeason awayClubMustBeInSeason homeClubMustBeInOnlyOneMatchPerRound awayClubMustBeInOnlyOneMatchPerRound dateMustBeWithinSeasonStartAndEnd'"
- *        annotation="http://www.eclipse.org/acceleo/query/1.0 homeClubAndAwayClubCannotBeTheSame='self.homeClub &lt;&gt; self.awayClub' homeClubMustBeInSeason='self.round.stage.season.clubs-&gt;includes(self.homeClub)' awayClubMustBeInSeason='self.round.stage.season.clubs-&gt;includes(self.awayClub)' homeClubMustBeInOnlyOneMatchPerRound='self.round.matches.homeClub-&gt;count(self.homeClub) = 1 and self.round.matches.awayClub-&gt;count(self.homeClub) = 0' awayClubMustBeInOnlyOneMatchPerRound='self.round.matches.homeClub-&gt;count(self.awayClub) = 0 and self.round.matches.awayClub-&gt;count(self.awayClub) = 1'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='homeClubAndAwayClubCannotBeTheSame homeClubMustBeInStage awayClubMustBeInStage homeClubMustBeInOnlyOneMatchPerRound awayClubMustBeInOnlyOneMatchPerRound dateMustBeWithinSeasonStartAndEnd'"
+ *        annotation="http://www.eclipse.org/acceleo/query/1.0 homeClubAndAwayClubCannotBeTheSame='self.homeClub &lt;&gt; self.awayClub' homeClubMustBeInStage='self.round.stage.clubs-&gt;includes(self.homeClub)' awayClubMustBeInStage='self.round.stage.clubs-&gt;includes(self.awayClub)' homeClubMustBeInOnlyOneMatchPerRound='self.round.matches.homeClub-&gt;count(self.homeClub) = 1 and self.round.matches.awayClub-&gt;count(self.homeClub) = 0' awayClubMustBeInOnlyOneMatchPerRound='self.round.matches.homeClub-&gt;count(self.awayClub) = 0 and self.round.matches.awayClub-&gt;count(self.awayClub) = 1'"
  * @generated
  */
 public interface Match extends EObject {
@@ -102,7 +102,7 @@ public interface Match extends EObject {
 	 * @return the value of the '<em>Date</em>' attribute.
 	 * @see #setDate(LocalDateTime)
 	 * @see ft.FtPackage#getMatch_Date()
-	 * @model dataType="ft.ELocalDateTime"
+	 * @model dataType="ft.ELocalDateTime" required="true"
 	 * @generated
 	 */
 	LocalDateTime getDate();
@@ -122,12 +122,12 @@ public interface Match extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Result</em>' containment reference.
-	 * @see #setResult(Result)
+	 * @see #setResult(AbstractResult)
 	 * @see ft.FtPackage#getMatch_Result()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Result getResult();
+	AbstractResult getResult();
 
 	/**
 	 * Sets the value of the '{@link ft.Match#getResult <em>Result</em>}' containment reference.
@@ -137,6 +137,6 @@ public interface Match extends EObject {
 	 * @see #getResult()
 	 * @generated
 	 */
-	void setResult(Result value);
+	void setResult(AbstractResult value);
 
 } // Match

@@ -66,13 +66,14 @@ public class DoubleRoundRobinImpl extends StageImpl implements DoubleRoundRobin 
 	public Table basicGetTable() {
 		FtFactory factory = FtFactory.eINSTANCE;
 		
+		// Create a new table instance
 		Table table = factory.createTable();
 		table.setStage(this);
 		
 		EList<Statistic> statistics = table.getStatistics();
 		
 		// Generate a statistic for each club in the season
-		for (Club club : this.getSeason().getClubs()) {
+		for (Club club : this.getClubs()) {
 			Statistic statistic = factory.createStatistic();
 			statistic.setClub(club);
 			statistics.add(statistic);

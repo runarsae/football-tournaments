@@ -22,9 +22,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -182,10 +181,6 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * @generated NOT
 	 */
 	public String getYearIdentifier() {
-		if (this.startDate == null) {
-			return "";
-		}
-		
 		// Use startDate and endDate to generate the years the season stretches over
 		// E.g. "2021" or "2021/2022"
 		Integer startYear = this.startDate.getYear();
@@ -246,7 +241,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 */
 	public EList<Club> getClubs() {
 		if (clubs == null) {
-			clubs = new EObjectWithInverseResolvingEList.ManyInverse<Club>(Club.class, this, FtPackage.SEASON__CLUBS, FtPackage.CLUB__SEASONS);
+			clubs = new EObjectResolvingEList<Club>(Club.class, this, FtPackage.SEASON__CLUBS);
 		}
 		return clubs;
 	}
@@ -307,8 +302,6 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTournament((Tournament)otherEnd, msgs);
-			case FtPackage.SEASON__CLUBS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClubs()).basicAdd(otherEnd, msgs);
 			case FtPackage.SEASON__STAGE:
 				if (stage != null)
 					msgs = ((InternalEObject)stage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FtPackage.SEASON__STAGE, null, msgs);
@@ -327,8 +320,6 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 		switch (featureID) {
 			case FtPackage.SEASON__TOURNAMENT:
 				return basicSetTournament(null, msgs);
-			case FtPackage.SEASON__CLUBS:
-				return ((InternalEList<?>)getClubs()).basicRemove(otherEnd, msgs);
 			case FtPackage.SEASON__STAGE:
 				return basicSetStage(null, msgs);
 		}

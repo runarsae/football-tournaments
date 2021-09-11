@@ -2,6 +2,7 @@
  */
 package ft.impl;
 
+import ft.Club;
 import ft.FtPackage;
 import ft.Round;
 import ft.Season;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link ft.impl.StageImpl#getSeason <em>Season</em>}</li>
  *   <li>{@link ft.impl.StageImpl#getRounds <em>Rounds</em>}</li>
+ *   <li>{@link ft.impl.StageImpl#getClubs <em>Clubs</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,6 +51,16 @@ public class StageImpl extends MinimalEObjectImpl.Container implements Stage {
 	 * @ordered
 	 */
 	protected EList<Round> rounds;
+
+	/**
+	 * The cached value of the '{@link #getClubs() <em>Clubs</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClubs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Club> clubs;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,6 +139,18 @@ public class StageImpl extends MinimalEObjectImpl.Container implements Stage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Club> getClubs() {
+		if (clubs == null) {
+			clubs = new EObjectResolvingEList<Club>(Club.class, this, FtPackage.STAGE__CLUBS);
+		}
+		return clubs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -182,6 +207,8 @@ public class StageImpl extends MinimalEObjectImpl.Container implements Stage {
 				return getSeason();
 			case FtPackage.STAGE__ROUNDS:
 				return getRounds();
+			case FtPackage.STAGE__CLUBS:
+				return getClubs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,6 +229,10 @@ public class StageImpl extends MinimalEObjectImpl.Container implements Stage {
 				getRounds().clear();
 				getRounds().addAll((Collection<? extends Round>)newValue);
 				return;
+			case FtPackage.STAGE__CLUBS:
+				getClubs().clear();
+				getClubs().addAll((Collection<? extends Club>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -220,6 +251,9 @@ public class StageImpl extends MinimalEObjectImpl.Container implements Stage {
 			case FtPackage.STAGE__ROUNDS:
 				getRounds().clear();
 				return;
+			case FtPackage.STAGE__CLUBS:
+				getClubs().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -236,6 +270,8 @@ public class StageImpl extends MinimalEObjectImpl.Container implements Stage {
 				return getSeason() != null;
 			case FtPackage.STAGE__ROUNDS:
 				return rounds != null && !rounds.isEmpty();
+			case FtPackage.STAGE__CLUBS:
+				return clubs != null && !clubs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

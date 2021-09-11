@@ -2,10 +2,10 @@
  */
 package ft.impl;
 
+import ft.AbstractResult;
 import ft.Club;
 import ft.FtPackage;
 import ft.Match;
-import ft.Result;
 import ft.Round;
 
 import java.time.LocalDateTime;
@@ -86,7 +86,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @generated
 	 * @ordered
 	 */
-	protected Result result;
+	protected AbstractResult result;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,7 +250,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Result getResult() {
+	public AbstractResult getResult() {
 		return result;
 	}
 
@@ -259,8 +259,8 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetResult(Result newResult, NotificationChain msgs) {
-		Result oldResult = result;
+	public NotificationChain basicSetResult(AbstractResult newResult, NotificationChain msgs) {
+		AbstractResult oldResult = result;
 		result = newResult;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FtPackage.MATCH__RESULT, oldResult, newResult);
@@ -274,7 +274,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResult(Result newResult) {
+	public void setResult(AbstractResult newResult) {
 		if (newResult != result) {
 			NotificationChain msgs = null;
 			if (result != null)
@@ -379,7 +379,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 				setDate((LocalDateTime)newValue);
 				return;
 			case FtPackage.MATCH__RESULT:
-				setResult((Result)newValue);
+				setResult((AbstractResult)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -406,7 +406,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 				setDate(DATE_EDEFAULT);
 				return;
 			case FtPackage.MATCH__RESULT:
-				setResult((Result)null);
+				setResult((AbstractResult)null);
 				return;
 		}
 		super.eUnset(featureID);

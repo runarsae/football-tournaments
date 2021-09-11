@@ -2,8 +2,6 @@
  */
 package ft;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ft.Club#getName <em>Name</em>}</li>
  *   <li>{@link ft.Club#getGender <em>Gender</em>}</li>
  *   <li>{@link ft.Club#getRegion <em>Region</em>}</li>
- *   <li>{@link ft.Club#getSeasons <em>Seasons</em>}</li>
  * </ul>
  *
  * @see ft.FtPackage#getClub()
@@ -96,19 +93,5 @@ public interface Club extends EObject {
 	 * @generated
 	 */
 	void setRegion(Region value);
-
-	/**
-	 * Returns the value of the '<em><b>Seasons</b></em>' reference list.
-	 * The list contents are of type {@link ft.Season}.
-	 * It is bidirectional and its opposite is '{@link ft.Season#getClubs <em>Clubs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Seasons</em>' reference list.
-	 * @see ft.FtPackage#getClub_Seasons()
-	 * @see ft.Season#getClubs
-	 * @model opposite="clubs"
-	 * @generated
-	 */
-	EList<Season> getSeasons();
 
 } // Club

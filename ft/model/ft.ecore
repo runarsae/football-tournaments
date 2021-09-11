@@ -5,15 +5,40 @@
     <details key="validationDelegates" value="http://www.eclipse.org/acceleo/query/1.0"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="FootballTournaments">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hosts" upperBound="-1"
+        eType="#//AbstractHost" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1"
         eType="#//Region" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractHost" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tournaments" upperBound="-1"
+        eType="#//Tournament" containment="true" eOpposite="#//Tournament/host"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssociationHost" eSuperTypes="#//AbstractHost">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RegionalHost" eSuperTypes="#//AbstractHost">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="clubsInTournamentSeasonsMustBeInRegion"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
+      <details key="clubsInTournamentSeasonsMustBeInRegion" value="self.tournaments.seasons.clubs->forAll(club | club.region = self.region)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="region" lowerBound="1"
+        eType="#//Region"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Region">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="clubsMustBeUnique"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
+      <details key="clubsMustBeUnique" value="self.clubs->isUnique(club | club.name + club.gender)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="clubs" upperBound="-1"
         eType="#//Club" containment="true" eOpposite="#//Club/region"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tournaments" upperBound="-1"
-        eType="#//Tournament" containment="true" eOpposite="#//Tournament/region"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Club">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -21,15 +46,13 @@
         eType="#//GenderKind"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="region" lowerBound="1"
         eType="#//Region" eOpposite="#//Region/clubs"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="seasons" upperBound="-1"
-        eType="#//Season" eOpposite="#//Season/clubs"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tournament">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="gender" lowerBound="1"
         eType="#//GenderKind"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="region" lowerBound="1"
-        eType="#//Region" eOpposite="#//Region/tournaments"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="host" lowerBound="1" eType="#//AbstractHost"
+        eOpposite="#//AbstractHost/tournaments"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="seasons" upperBound="-1"
         eType="#//Season" containment="true" eOpposite="#//Season/tournament"/>
   </eClassifiers>
@@ -40,53 +63,59 @@
     <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
       <details key="clubsGenderMustBeEqualToTournamentGender" value="self.clubs.gender->forAll(g | g = self.tournament.gender)"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" eType="#//ELocalDate"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" eType="#//ELocalDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" lowerBound="1"
+        eType="#//ELocalDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" lowerBound="1"
+        eType="#//ELocalDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="yearIdentifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tournament" lowerBound="1"
         eType="#//Tournament" eOpposite="#//Tournament/seasons"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="clubs" upperBound="-1"
-        eType="#//Club" eOpposite="#//Club/seasons"/>
+        eType="#//Club"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stage" lowerBound="1" eType="#//Stage"
         containment="true" eOpposite="#//Stage/season"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Stage">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="roundNumbersMustBeUnique"/>
+      <details key="constraints" value="roundNumbersMustBeUnique clubsInStageMustBeInSeason"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
       <details key="roundNumbersMustBeUnique" value="self.rounds->isUnique(r | r.roundNumber)"/>
+      <details key="clubsInStageMustBeInSeason" value="self.season.clubs->includesAll(self.clubs)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="season" lowerBound="1"
         eType="#//Season" eOpposite="#//Season/stage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rounds" upperBound="-1"
         eType="#//Round" containment="true" eOpposite="#//Round/stage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clubs" upperBound="-1"
+        eType="#//Club"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DoubleRoundRobin" eSuperTypes="#//Stage">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="numberOfRoundsIsCorrect roundNumbersMustBeInValidRange everyClubMustMeetEveryOtherClubHomeAndAway numberOfMatchesInEachRoundIsCorrect"/>
+      <details key="constraints" value="numberOfRoundsIsCorrect roundNumbersMustBeInValidRange everyClubMustMeetEveryOtherClubHomeAndAwayOnce numberOfMatchesInEachRoundIsCorrect noExtendedTimeOrPenaltyShootout"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
-      <details key="numberOfRoundsIsCorrect" value="self.rounds->size() = (self.season.clubs->size() - 1) * 2"/>
-      <details key="roundNumbersMustBeInValidRange" value="self.rounds.roundNumber->forAll(roundNumber | roundNumber >= 1 and roundNumber &lt;=  ((self.season.clubs->size() - 1) * 2))"/>
-      <details key="everyClubMustMeetEveryOtherClubHomeAndAway" value="self.season.clubs->collect(club1 | self.season.clubs->select(club2 | club1 &lt;> club2)->collect(club2  | self.rounds->collect(round | round.matches)->exists(match | match.homeClub = club1 and match.awayClub = club2)))->forAll(v | v)"/>
-      <details key="numberOfMatchesInEachRoundIsCorrect" value="self.rounds->forAll(round | round.matches->size() = (self.season.clubs->size() /2))"/>
+      <details key="numberOfRoundsIsCorrect" value=" self.rounds->size() &lt;= (self.clubs->size() - 1) * 2"/>
+      <details key="roundNumbersMustBeInValidRange" value="self.rounds.roundNumber->forAll(roundNumber | roundNumber >= 1 and roundNumber &lt;=  ((self.clubs->size() - 1) * 2))"/>
+      <details key="everyClubMustMeetEveryOtherClubHomeAndAwayOnce" value="self.clubs->collect(club1 | self.clubs->select(club2 | club1 &lt;> club2)->collect(club2  | self.rounds.matches->select(match | match.homeClub = club1 and match.awayClub = club2)->size()->collect(size | size = 0 or size = 1)))->forAll(v | v)"/>
+      <details key="numberOfMatchesInEachRoundIsCorrect" value="self.rounds->forAll(round | round.matches->size() = (self.clubs->size() /2))"/>
+      <details key="noExtendedTimeOrPenaltyShootout" value="self.rounds.matches.result->forAll(result | result.eClass().name = 'Result')"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="table" eType="#//Table"
         changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SingleElimination" eSuperTypes="#//Stage">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="numberOfRoundsIsCorrect roundNumbersMustBeInValidRange numberOfMatchesInEachRoundIsCorrect everyClubMustHaveWonInPreviousRound"/>
+      <details key="constraints" value="numberOfRoundsIsCorrect roundNumbersMustBeInValidRange numberOfMatchesInEachRoundIsCorrect everyClubMustHaveWonInPreviousRound matchesMustHaveAWinner"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Table">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="numberOfStatisticsMustEqualNumberOfClubsInSeason"/>
+      <details key="constraints" value="numberOfStatisticsMustEqualNumberOfClubsInStage"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
-      <details key="numberOfStatisticsMustEqualNumberOfClubsInSeason" value="self.statistics->size() = self.stage.season.clubs->size()"/>
+      <details key="numberOfStatisticsMustEqualNumberOfClubsInStage" value="self.statistics->size() = self.stage.clubs->size()"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statistics" upperBound="-1"
         eType="#//Statistic" transient="true" containment="true"/>
@@ -94,10 +123,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statistic">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="clubMustBeInSeason clubMustBeInOnlyOneStatisticPerTable"/>
+      <details key="constraints" value="clubMustBeInStage clubMustBeInOnlyOneStatisticPerTable"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
-      <details key="clubMustBeInSeason" value="self.eContainer().stage.season.clubs->includes(self.club)"/>
+      <details key="clubMustBeInStage" value="self.eContainer().stage.clubs->includes(self.club)"/>
       <details key="clubMustBeInOnlyOneStatisticPerTable" value="self.eContainer().statistics.club->count(self.club) = 1"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="club" lowerBound="1" eType="#//Club"
@@ -125,7 +154,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Round">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roundNumber" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        eType="#//RoundNumber"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="matches" upperBound="-1"
         eType="#//Match" containment="true" eOpposite="#//Match/round"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stage" lowerBound="1" eType="#//Stage"
@@ -133,12 +162,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Match">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="homeClubAndAwayClubCannotBeTheSame homeClubMustBeInSeason awayClubMustBeInSeason homeClubMustBeInOnlyOneMatchPerRound awayClubMustBeInOnlyOneMatchPerRound dateMustBeWithinSeasonStartAndEnd"/>
+      <details key="constraints" value="homeClubAndAwayClubCannotBeTheSame homeClubMustBeInStage awayClubMustBeInStage homeClubMustBeInOnlyOneMatchPerRound awayClubMustBeInOnlyOneMatchPerRound dateMustBeWithinSeasonStartAndEnd"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
       <details key="homeClubAndAwayClubCannotBeTheSame" value="self.homeClub &lt;> self.awayClub"/>
-      <details key="homeClubMustBeInSeason" value="self.round.stage.season.clubs->includes(self.homeClub)"/>
-      <details key="awayClubMustBeInSeason" value="self.round.stage.season.clubs->includes(self.awayClub)"/>
+      <details key="homeClubMustBeInStage" value="self.round.stage.clubs->includes(self.homeClub)"/>
+      <details key="awayClubMustBeInStage" value="self.round.stage.clubs->includes(self.awayClub)"/>
       <details key="homeClubMustBeInOnlyOneMatchPerRound" value="self.round.matches.homeClub->count(self.homeClub) = 1 and self.round.matches.awayClub->count(self.homeClub) = 0"/>
       <details key="awayClubMustBeInOnlyOneMatchPerRound" value="self.round.matches.homeClub->count(self.awayClub) = 0 and self.round.matches.awayClub->count(self.awayClub) = 1"/>
     </eAnnotations>
@@ -148,19 +177,35 @@
         eType="#//Club"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="awayClub" lowerBound="1"
         eType="#//Club"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="#//ELocalDateTime"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//Result"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" lowerBound="1" eType="#//ELocalDateTime"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//AbstractResult"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Result">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="homeGoalsFullTime" unique="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="0"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="awayGoalsFullTime" unique="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="0"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractResult" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="winner" eType="#//WinnerKind"
         changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="homeGoalsFinal" eType="#//Score"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="awayGoalsFinal" eType="#//Score"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Result" eSuperTypes="#//AbstractResult">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="homeGoalsFullTime" unique="false"
+        lowerBound="1" eType="#//Score"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="awayGoalsFullTime" unique="false"
+        lowerBound="1" eType="#//Score"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendedTimeResult" eSuperTypes="#//AbstractResult #//Result">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="homeGoalsExtendedTime"
+        lowerBound="1" eType="#//Score"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="awayGoalsExtendedTime"
+        lowerBound="1" eType="#//Score"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PenaltyShootoutResult" eSuperTypes="#//AbstractResult #//ExtendedTimeResult">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="homeGoalsPenaltyShootout"
+        lowerBound="1" eType="#//Score"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="awayGoalsPenaltyShootout"
+        lowerBound="1" eType="#//Score"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="GenderKind">
     <eLiterals name="MALE"/>
@@ -178,4 +223,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="ELocalDate" instanceClassName="java.time.LocalDate"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ELocalDateTime" instanceClassName="java.time.LocalDateTime"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Score" instanceClassName="java.lang.Integer">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="minInclusive" value="0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="RoundNumber" instanceClassName="java.lang.Integer">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="minInclusive" value="1"/>
+    </eAnnotations>
+  </eClassifiers>
 </ecore:EPackage>

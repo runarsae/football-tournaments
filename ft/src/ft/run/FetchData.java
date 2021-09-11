@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import ft.AbstractHost;
+import ft.AssociationHost;
 import ft.Club;
 import ft.FootballTournaments;
 import ft.FtFactory;
@@ -24,6 +26,7 @@ import ft.FtPackage;
 import ft.GenderKind;
 import ft.Match;
 import ft.Region;
+import ft.RegionalHost;
 import ft.Result;
 import ft.Round;
 import ft.Season;
@@ -37,13 +40,15 @@ public class FetchData {
 	
 	static String MODEL_FILE = "model/FootballTournaments.xmi";
 	
-	static String FILE = "datasets/nm_2018.csv";
+	static String FILE = "datasets/eliteserien_2021.csv";
+	static String HOST_TYPE = "REGIONAL";
+	static String ASSOCIATION_HOST_NAME = "";
 	static String REGION = "Norway";
-	static String TOURNAMENT = "NM menn";
-	static Stage stage = factory.createSingleElimination();
+	static String TOURNAMENT = "Eliteserien";
+	static Stage stage = factory.createDoubleRoundRobin();
 	static GenderKind GENDER = GenderKind.MALE;
-	static LocalDate START_DATE = LocalDate.of(2018, 1, 1);
-	static LocalDate END_DATE = LocalDate.of(2018, 12, 31);
+	static LocalDate START_DATE = LocalDate.of(2021, 5, 9);
+	static LocalDate END_DATE = LocalDate.of(2021, 12, 12);
 
 	
 	public static FootballTournaments load() {
@@ -95,33 +100,47 @@ public class FetchData {
 		
 		Optional<Region> r = footballTournaments.getRegions().stream().filter(x -> x.getName().equals(REGION)).findFirst();
 		
-		boolean addTournament = false;
-		
 		if (!r.isPresent()) {
 			region = factory.createRegion();
 			region.setName(REGION);
 			footballTournaments.getRegions().add(region);
-			addTournament = true;
 		}
-		
-		Tournament tournament = null;
 		
 		if (r.isPresent()) {
 			region = r.get();
-			Optional<Tournament> t = region.getTournaments().stream().filter(x -> x.getName().equals(TOURNAMENT)).findFirst();
-			
-			if (!t.isPresent()) {
-				addTournament = true;
-			} else {
-				tournament = t.get();
-			}
 		}
 		
-		if (addTournament) {
+		String regionName = region.getName();
+		
+		AbstractHost host = null;
+		Optional<AbstractHost> h = footballTournaments.getHosts().stream().filter(x -> HOST_TYPE == "REGIONAL" ? (x instanceof RegionalHost ? ((RegionalHost) x).getRegion().getName() == regionName : false) : ((AssociationHost) x).getName() == ASSOCIATION_HOST_NAME).findFirst();
+				
+		if (!h.isPresent()) {
+			host = factory.createRegionalHost();
+			if (HOST_TYPE == "REGIONAL") {
+				((RegionalHost) host).setRegion(region);
+			} else {
+				((AssociationHost) host).setName(ASSOCIATION_HOST_NAME);
+			}
+			footballTournaments.getHosts().add(host);
+		}
+		
+		if (h.isPresent()) {
+			host = h.get();
+		}
+		
+		Tournament tournament = null;
+		Optional<Tournament> t = host.getTournaments().stream().filter(x -> x.getName().equals(TOURNAMENT)).findFirst();
+		
+		if (t.isPresent()) {
+			tournament = t.get();
+		}
+		
+		if (!t.isPresent()) {
 			tournament = factory.createTournament();
 			tournament.setName(TOURNAMENT);
-			tournament.setRegion(region);
 			tournament.setGender(GENDER);
+			tournament.setHost(host);
 		}
 		
 		Season season = factory.createSeason();
@@ -181,7 +200,8 @@ public class FetchData {
 					Club c = factory.createClub();
 					c.setName(homeClubName);
 					c.setGender(GENDER);
-					c.getSeasons().add(season);
+					season.getClubs().add(c);
+					stage.getClubs().add(c);
 					c.setRegion(region);
 					homeClub = c;
 				} else {
@@ -190,13 +210,18 @@ public class FetchData {
 					if (!season.getClubs().contains(homeClub)) {
 						season.getClubs().add(homeClub);
 					}
+					
+					if (!stage.getClubs().contains(homeClub)) {
+						stage.getClubs().add(homeClub);
+					}
 				}
 
 				if (!awayClubOptional.isPresent()) {
 					Club c = factory.createClub();
 					c.setName(awayClubName);
 					c.setGender(GENDER);
-					c.getSeasons().add(season);
+					season.getClubs().add(c);
+					stage.getClubs().add(c);
 					c.setRegion(region);
 					awayClub = c;
 				} else {
@@ -205,9 +230,12 @@ public class FetchData {
 					if (!season.getClubs().contains(awayClub)) {
 						season.getClubs().add(awayClub);
 					}
+					
+					if (!stage.getClubs().contains(awayClub)) {
+						stage.getClubs().add(awayClub);
+					}
 				}
 				
-
 				Match match = factory.createMatch();
 				match.setHomeClub(homeClub);
 				match.setAwayClub(awayClub);

@@ -41,7 +41,7 @@ public interface FtPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "platform:/plugin/model/model/ft.ecore";
+	String eNS_URI = "platform:/plugin/ft/model/ft.ecore";
 
 	/**
 	 * The package namespace name.
@@ -70,13 +70,22 @@ public interface FtPackage extends EPackage {
 	int FOOTBALL_TOURNAMENTS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Hosts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOOTBALL_TOURNAMENTS__HOSTS = 0;
+
+	/**
 	 * The feature id for the '<em><b>Regions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FOOTBALL_TOURNAMENTS__REGIONS = 0;
+	int FOOTBALL_TOURNAMENTS__REGIONS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Football Tournaments</em>' class.
@@ -85,7 +94,7 @@ public interface FtPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FOOTBALL_TOURNAMENTS_FEATURE_COUNT = 1;
+	int FOOTBALL_TOURNAMENTS_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Football Tournaments</em>' class.
@@ -97,6 +106,135 @@ public interface FtPackage extends EPackage {
 	int FOOTBALL_TOURNAMENTS_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link ft.impl.AbstractHostImpl <em>Abstract Host</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ft.impl.AbstractHostImpl
+	 * @see ft.impl.FtPackageImpl#getAbstractHost()
+	 * @generated
+	 */
+	int ABSTRACT_HOST = 1;
+
+	/**
+	 * The feature id for the '<em><b>Tournaments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_HOST__TOURNAMENTS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Host</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_HOST_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Abstract Host</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_HOST_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link ft.impl.AssociationHostImpl <em>Association Host</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ft.impl.AssociationHostImpl
+	 * @see ft.impl.FtPackageImpl#getAssociationHost()
+	 * @generated
+	 */
+	int ASSOCIATION_HOST = 2;
+
+	/**
+	 * The feature id for the '<em><b>Tournaments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_HOST__TOURNAMENTS = ABSTRACT_HOST__TOURNAMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_HOST__NAME = ABSTRACT_HOST_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Association Host</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_HOST_FEATURE_COUNT = ABSTRACT_HOST_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Association Host</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_HOST_OPERATION_COUNT = ABSTRACT_HOST_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link ft.impl.RegionalHostImpl <em>Regional Host</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ft.impl.RegionalHostImpl
+	 * @see ft.impl.FtPackageImpl#getRegionalHost()
+	 * @generated
+	 */
+	int REGIONAL_HOST = 3;
+
+	/**
+	 * The feature id for the '<em><b>Tournaments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONAL_HOST__TOURNAMENTS = ABSTRACT_HOST__TOURNAMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Region</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONAL_HOST__REGION = ABSTRACT_HOST_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Regional Host</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONAL_HOST_FEATURE_COUNT = ABSTRACT_HOST_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Regional Host</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONAL_HOST_OPERATION_COUNT = ABSTRACT_HOST_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link ft.impl.RegionImpl <em>Region</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,7 +242,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getRegion()
 	 * @generated
 	 */
-	int REGION = 1;
+	int REGION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -125,22 +263,13 @@ public interface FtPackage extends EPackage {
 	int REGION__CLUBS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Tournaments</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__TOURNAMENTS = 2;
-
-	/**
 	 * The number of structural features of the '<em>Region</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_FEATURE_COUNT = 3;
+	int REGION_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Region</em>' class.
@@ -159,7 +288,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getTournament()
 	 * @generated
 	 */
-	int TOURNAMENT = 3;
+	int TOURNAMENT = 6;
 
 	/**
 	 * The meta object id for the '{@link ft.impl.ClubImpl <em>Club</em>}' class.
@@ -169,7 +298,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getClub()
 	 * @generated
 	 */
-	int CLUB = 2;
+	int CLUB = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -199,22 +328,13 @@ public interface FtPackage extends EPackage {
 	int CLUB__REGION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Seasons</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLUB__SEASONS = 3;
-
-	/**
 	 * The number of structural features of the '<em>Club</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLUB_FEATURE_COUNT = 4;
+	int CLUB_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Club</em>' class.
@@ -244,13 +364,13 @@ public interface FtPackage extends EPackage {
 	int TOURNAMENT__GENDER = 1;
 
 	/**
-	 * The feature id for the '<em><b>Region</b></em>' container reference.
+	 * The feature id for the '<em><b>Host</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOURNAMENT__REGION = 2;
+	int TOURNAMENT__HOST = 2;
 
 	/**
 	 * The feature id for the '<em><b>Seasons</b></em>' containment reference list.
@@ -287,7 +407,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getSeason()
 	 * @generated
 	 */
-	int SEASON = 4;
+	int SEASON = 7;
 
 	/**
 	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
@@ -369,7 +489,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getStage()
 	 * @generated
 	 */
-	int STAGE = 5;
+	int STAGE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Season</b></em>' container reference.
@@ -390,13 +510,22 @@ public interface FtPackage extends EPackage {
 	int STAGE__ROUNDS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Clubs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAGE__CLUBS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Stage</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STAGE_FEATURE_COUNT = 2;
+	int STAGE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Stage</em>' class.
@@ -415,7 +544,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getDoubleRoundRobin()
 	 * @generated
 	 */
-	int DOUBLE_ROUND_ROBIN = 6;
+	int DOUBLE_ROUND_ROBIN = 9;
 
 	/**
 	 * The feature id for the '<em><b>Season</b></em>' container reference.
@@ -434,6 +563,15 @@ public interface FtPackage extends EPackage {
 	 * @ordered
 	 */
 	int DOUBLE_ROUND_ROBIN__ROUNDS = STAGE__ROUNDS;
+
+	/**
+	 * The feature id for the '<em><b>Clubs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOUBLE_ROUND_ROBIN__CLUBS = STAGE__CLUBS;
 
 	/**
 	 * The feature id for the '<em><b>Table</b></em>' reference.
@@ -470,7 +608,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getSingleElimination()
 	 * @generated
 	 */
-	int SINGLE_ELIMINATION = 7;
+	int SINGLE_ELIMINATION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Season</b></em>' container reference.
@@ -489,6 +627,15 @@ public interface FtPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLE_ELIMINATION__ROUNDS = STAGE__ROUNDS;
+
+	/**
+	 * The feature id for the '<em><b>Clubs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_ELIMINATION__CLUBS = STAGE__CLUBS;
 
 	/**
 	 * The number of structural features of the '<em>Single Elimination</em>' class.
@@ -516,7 +663,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getRound()
 	 * @generated
 	 */
-	int ROUND = 10;
+	int ROUND = 13;
 
 	/**
 	 * The meta object id for the '{@link ft.impl.MatchImpl <em>Match</em>}' class.
@@ -526,7 +673,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getMatch()
 	 * @generated
 	 */
-	int MATCH = 11;
+	int MATCH = 14;
 
 	/**
 	 * The meta object id for the '{@link ft.impl.ResultImpl <em>Result</em>}' class.
@@ -536,7 +683,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getResult()
 	 * @generated
 	 */
-	int RESULT = 12;
+	int RESULT = 16;
 
 	/**
 	 * The meta object id for the '{@link ft.impl.TableImpl <em>Table</em>}' class.
@@ -546,7 +693,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getTable()
 	 * @generated
 	 */
-	int TABLE = 8;
+	int TABLE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Statistics</b></em>' containment reference list.
@@ -592,7 +739,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getStatistic()
 	 * @generated
 	 */
-	int STATISTIC = 9;
+	int STATISTIC = 12;
 
 	/**
 	 * The feature id for the '<em><b>Club</b></em>' reference.
@@ -820,22 +967,14 @@ public interface FtPackage extends EPackage {
 	int MATCH_OPERATION_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Home Goals Full Time</b></em>' attribute.
+	 * The meta object id for the '{@link ft.impl.AbstractResultImpl <em>Abstract Result</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see ft.impl.AbstractResultImpl
+	 * @see ft.impl.FtPackageImpl#getAbstractResult()
 	 * @generated
-	 * @ordered
 	 */
-	int RESULT__HOME_GOALS_FULL_TIME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Away Goals Full Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESULT__AWAY_GOALS_FULL_TIME = 1;
+	int ABSTRACT_RESULT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Winner</b></em>' attribute.
@@ -844,7 +983,88 @@ public interface FtPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESULT__WINNER = 2;
+	int ABSTRACT_RESULT__WINNER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Home Goals Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_RESULT__HOME_GOALS_FINAL = 1;
+
+	/**
+	 * The feature id for the '<em><b>Away Goals Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_RESULT__AWAY_GOALS_FINAL = 2;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Result</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_RESULT_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Abstract Result</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_RESULT_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Winner</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESULT__WINNER = ABSTRACT_RESULT__WINNER;
+
+	/**
+	 * The feature id for the '<em><b>Home Goals Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESULT__HOME_GOALS_FINAL = ABSTRACT_RESULT__HOME_GOALS_FINAL;
+
+	/**
+	 * The feature id for the '<em><b>Away Goals Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESULT__AWAY_GOALS_FINAL = ABSTRACT_RESULT__AWAY_GOALS_FINAL;
+
+	/**
+	 * The feature id for the '<em><b>Home Goals Full Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESULT__HOME_GOALS_FULL_TIME = ABSTRACT_RESULT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Away Goals Full Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESULT__AWAY_GOALS_FULL_TIME = ABSTRACT_RESULT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Result</em>' class.
@@ -853,7 +1073,7 @@ public interface FtPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESULT_FEATURE_COUNT = 3;
+	int RESULT_FEATURE_COUNT = ABSTRACT_RESULT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Result</em>' class.
@@ -862,7 +1082,207 @@ public interface FtPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESULT_OPERATION_COUNT = 0;
+	int RESULT_OPERATION_COUNT = ABSTRACT_RESULT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link ft.impl.ExtendedTimeResultImpl <em>Extended Time Result</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ft.impl.ExtendedTimeResultImpl
+	 * @see ft.impl.FtPackageImpl#getExtendedTimeResult()
+	 * @generated
+	 */
+	int EXTENDED_TIME_RESULT = 17;
+
+	/**
+	 * The feature id for the '<em><b>Winner</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TIME_RESULT__WINNER = ABSTRACT_RESULT__WINNER;
+
+	/**
+	 * The feature id for the '<em><b>Home Goals Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TIME_RESULT__HOME_GOALS_FINAL = ABSTRACT_RESULT__HOME_GOALS_FINAL;
+
+	/**
+	 * The feature id for the '<em><b>Away Goals Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TIME_RESULT__AWAY_GOALS_FINAL = ABSTRACT_RESULT__AWAY_GOALS_FINAL;
+
+	/**
+	 * The feature id for the '<em><b>Home Goals Full Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TIME_RESULT__HOME_GOALS_FULL_TIME = ABSTRACT_RESULT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Away Goals Full Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TIME_RESULT__AWAY_GOALS_FULL_TIME = ABSTRACT_RESULT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Home Goals Extended Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TIME_RESULT__HOME_GOALS_EXTENDED_TIME = ABSTRACT_RESULT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Away Goals Extended Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TIME_RESULT__AWAY_GOALS_EXTENDED_TIME = ABSTRACT_RESULT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Extended Time Result</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TIME_RESULT_FEATURE_COUNT = ABSTRACT_RESULT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Extended Time Result</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDED_TIME_RESULT_OPERATION_COUNT = ABSTRACT_RESULT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link ft.impl.PenaltyShootoutResultImpl <em>Penalty Shootout Result</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ft.impl.PenaltyShootoutResultImpl
+	 * @see ft.impl.FtPackageImpl#getPenaltyShootoutResult()
+	 * @generated
+	 */
+	int PENALTY_SHOOTOUT_RESULT = 18;
+
+	/**
+	 * The feature id for the '<em><b>Winner</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PENALTY_SHOOTOUT_RESULT__WINNER = ABSTRACT_RESULT__WINNER;
+
+	/**
+	 * The feature id for the '<em><b>Home Goals Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PENALTY_SHOOTOUT_RESULT__HOME_GOALS_FINAL = ABSTRACT_RESULT__HOME_GOALS_FINAL;
+
+	/**
+	 * The feature id for the '<em><b>Away Goals Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PENALTY_SHOOTOUT_RESULT__AWAY_GOALS_FINAL = ABSTRACT_RESULT__AWAY_GOALS_FINAL;
+
+	/**
+	 * The feature id for the '<em><b>Home Goals Full Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PENALTY_SHOOTOUT_RESULT__HOME_GOALS_FULL_TIME = ABSTRACT_RESULT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Away Goals Full Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PENALTY_SHOOTOUT_RESULT__AWAY_GOALS_FULL_TIME = ABSTRACT_RESULT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Home Goals Extended Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PENALTY_SHOOTOUT_RESULT__HOME_GOALS_EXTENDED_TIME = ABSTRACT_RESULT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Away Goals Extended Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PENALTY_SHOOTOUT_RESULT__AWAY_GOALS_EXTENDED_TIME = ABSTRACT_RESULT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Home Goals Penalty Shootout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PENALTY_SHOOTOUT_RESULT__HOME_GOALS_PENALTY_SHOOTOUT = ABSTRACT_RESULT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Away Goals Penalty Shootout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PENALTY_SHOOTOUT_RESULT__AWAY_GOALS_PENALTY_SHOOTOUT = ABSTRACT_RESULT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Penalty Shootout Result</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PENALTY_SHOOTOUT_RESULT_FEATURE_COUNT = ABSTRACT_RESULT_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of operations of the '<em>Penalty Shootout Result</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PENALTY_SHOOTOUT_RESULT_OPERATION_COUNT = ABSTRACT_RESULT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ft.ResultKind <em>Result Kind</em>}' enum.
@@ -872,7 +1292,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getResultKind()
 	 * @generated
 	 */
-	int RESULT_KIND = 14;
+	int RESULT_KIND = 20;
 
 	/**
 	 * The meta object id for the '{@link ft.WinnerKind <em>Winner Kind</em>}' enum.
@@ -882,7 +1302,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getWinnerKind()
 	 * @generated
 	 */
-	int WINNER_KIND = 15;
+	int WINNER_KIND = 21;
 
 	/**
 	 * The meta object id for the '{@link ft.GenderKind <em>Gender Kind</em>}' enum.
@@ -892,7 +1312,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getGenderKind()
 	 * @generated
 	 */
-	int GENDER_KIND = 13;
+	int GENDER_KIND = 19;
 
 	/**
 	 * The meta object id for the '<em>ELocal Date</em>' data type.
@@ -902,7 +1322,7 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getELocalDate()
 	 * @generated
 	 */
-	int ELOCAL_DATE = 16;
+	int ELOCAL_DATE = 22;
 
 	/**
 	 * The meta object id for the '<em>ELocal Date Time</em>' data type.
@@ -912,7 +1332,29 @@ public interface FtPackage extends EPackage {
 	 * @see ft.impl.FtPackageImpl#getELocalDateTime()
 	 * @generated
 	 */
-	int ELOCAL_DATE_TIME = 17;
+	int ELOCAL_DATE_TIME = 23;
+
+
+	/**
+	 * The meta object id for the '<em>Score</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.Integer
+	 * @see ft.impl.FtPackageImpl#getScore()
+	 * @generated
+	 */
+	int SCORE = 24;
+
+
+	/**
+	 * The meta object id for the '<em>Round Number</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.Integer
+	 * @see ft.impl.FtPackageImpl#getRoundNumber()
+	 * @generated
+	 */
+	int ROUND_NUMBER = 25;
 
 
 	/**
@@ -926,6 +1368,17 @@ public interface FtPackage extends EPackage {
 	EClass getFootballTournaments();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link ft.FootballTournaments#getHosts <em>Hosts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Hosts</em>'.
+	 * @see ft.FootballTournaments#getHosts()
+	 * @see #getFootballTournaments()
+	 * @generated
+	 */
+	EReference getFootballTournaments_Hosts();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link ft.FootballTournaments#getRegions <em>Regions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -935,6 +1388,69 @@ public interface FtPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFootballTournaments_Regions();
+
+	/**
+	 * Returns the meta object for class '{@link ft.AbstractHost <em>Abstract Host</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Host</em>'.
+	 * @see ft.AbstractHost
+	 * @generated
+	 */
+	EClass getAbstractHost();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ft.AbstractHost#getTournaments <em>Tournaments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Tournaments</em>'.
+	 * @see ft.AbstractHost#getTournaments()
+	 * @see #getAbstractHost()
+	 * @generated
+	 */
+	EReference getAbstractHost_Tournaments();
+
+	/**
+	 * Returns the meta object for class '{@link ft.AssociationHost <em>Association Host</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Association Host</em>'.
+	 * @see ft.AssociationHost
+	 * @generated
+	 */
+	EClass getAssociationHost();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ft.AssociationHost#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see ft.AssociationHost#getName()
+	 * @see #getAssociationHost()
+	 * @generated
+	 */
+	EAttribute getAssociationHost_Name();
+
+	/**
+	 * Returns the meta object for class '{@link ft.RegionalHost <em>Regional Host</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Regional Host</em>'.
+	 * @see ft.RegionalHost
+	 * @generated
+	 */
+	EClass getRegionalHost();
+
+	/**
+	 * Returns the meta object for the reference '{@link ft.RegionalHost#getRegion <em>Region</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Region</em>'.
+	 * @see ft.RegionalHost#getRegion()
+	 * @see #getRegionalHost()
+	 * @generated
+	 */
+	EReference getRegionalHost_Region();
 
 	/**
 	 * Returns the meta object for class '{@link ft.Region <em>Region</em>}'.
@@ -969,17 +1485,6 @@ public interface FtPackage extends EPackage {
 	EReference getRegion_Clubs();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ft.Region#getTournaments <em>Tournaments</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Tournaments</em>'.
-	 * @see ft.Region#getTournaments()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EReference getRegion_Tournaments();
-
-	/**
 	 * Returns the meta object for class '{@link ft.Tournament <em>Tournament</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1012,15 +1517,15 @@ public interface FtPackage extends EPackage {
 	EAttribute getTournament_Gender();
 
 	/**
-	 * Returns the meta object for the container reference '{@link ft.Tournament#getRegion <em>Region</em>}'.
+	 * Returns the meta object for the container reference '{@link ft.Tournament#getHost <em>Host</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Region</em>'.
-	 * @see ft.Tournament#getRegion()
+	 * @return the meta object for the container reference '<em>Host</em>'.
+	 * @see ft.Tournament#getHost()
 	 * @see #getTournament()
 	 * @generated
 	 */
-	EReference getTournament_Region();
+	EReference getTournament_Host();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link ft.Tournament#getSeasons <em>Seasons</em>}'.
@@ -1075,17 +1580,6 @@ public interface FtPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getClub_Region();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ft.Club#getSeasons <em>Seasons</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Seasons</em>'.
-	 * @see ft.Club#getSeasons()
-	 * @see #getClub()
-	 * @generated
-	 */
-	EReference getClub_Seasons();
 
 	/**
 	 * Returns the meta object for class '{@link ft.Season <em>Season</em>}'.
@@ -1194,6 +1688,17 @@ public interface FtPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getStage_Rounds();
+
+	/**
+	 * Returns the meta object for the reference list '{@link ft.Stage#getClubs <em>Clubs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Clubs</em>'.
+	 * @see ft.Stage#getClubs()
+	 * @see #getStage()
+	 * @generated
+	 */
+	EReference getStage_Clubs();
 
 	/**
 	 * Returns the meta object for class '{@link ft.DoubleRoundRobin <em>Double Round Robin</em>}'.
@@ -1335,6 +1840,49 @@ public interface FtPackage extends EPackage {
 	EReference getMatch_Result();
 
 	/**
+	 * Returns the meta object for class '{@link ft.AbstractResult <em>Abstract Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Result</em>'.
+	 * @see ft.AbstractResult
+	 * @generated
+	 */
+	EClass getAbstractResult();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ft.AbstractResult#getWinner <em>Winner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Winner</em>'.
+	 * @see ft.AbstractResult#getWinner()
+	 * @see #getAbstractResult()
+	 * @generated
+	 */
+	EAttribute getAbstractResult_Winner();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ft.AbstractResult#getHomeGoalsFinal <em>Home Goals Final</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Home Goals Final</em>'.
+	 * @see ft.AbstractResult#getHomeGoalsFinal()
+	 * @see #getAbstractResult()
+	 * @generated
+	 */
+	EAttribute getAbstractResult_HomeGoalsFinal();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ft.AbstractResult#getAwayGoalsFinal <em>Away Goals Final</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Away Goals Final</em>'.
+	 * @see ft.AbstractResult#getAwayGoalsFinal()
+	 * @see #getAbstractResult()
+	 * @generated
+	 */
+	EAttribute getAbstractResult_AwayGoalsFinal();
+
+	/**
 	 * Returns the meta object for class '{@link ft.Result <em>Result</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1367,15 +1915,68 @@ public interface FtPackage extends EPackage {
 	EAttribute getResult_AwayGoalsFullTime();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ft.Result#getWinner <em>Winner</em>}'.
+	 * Returns the meta object for class '{@link ft.ExtendedTimeResult <em>Extended Time Result</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Winner</em>'.
-	 * @see ft.Result#getWinner()
-	 * @see #getResult()
+	 * @return the meta object for class '<em>Extended Time Result</em>'.
+	 * @see ft.ExtendedTimeResult
 	 * @generated
 	 */
-	EAttribute getResult_Winner();
+	EClass getExtendedTimeResult();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ft.ExtendedTimeResult#getHomeGoalsExtendedTime <em>Home Goals Extended Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Home Goals Extended Time</em>'.
+	 * @see ft.ExtendedTimeResult#getHomeGoalsExtendedTime()
+	 * @see #getExtendedTimeResult()
+	 * @generated
+	 */
+	EAttribute getExtendedTimeResult_HomeGoalsExtendedTime();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ft.ExtendedTimeResult#getAwayGoalsExtendedTime <em>Away Goals Extended Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Away Goals Extended Time</em>'.
+	 * @see ft.ExtendedTimeResult#getAwayGoalsExtendedTime()
+	 * @see #getExtendedTimeResult()
+	 * @generated
+	 */
+	EAttribute getExtendedTimeResult_AwayGoalsExtendedTime();
+
+	/**
+	 * Returns the meta object for class '{@link ft.PenaltyShootoutResult <em>Penalty Shootout Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Penalty Shootout Result</em>'.
+	 * @see ft.PenaltyShootoutResult
+	 * @generated
+	 */
+	EClass getPenaltyShootoutResult();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ft.PenaltyShootoutResult#getHomeGoalsPenaltyShootout <em>Home Goals Penalty Shootout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Home Goals Penalty Shootout</em>'.
+	 * @see ft.PenaltyShootoutResult#getHomeGoalsPenaltyShootout()
+	 * @see #getPenaltyShootoutResult()
+	 * @generated
+	 */
+	EAttribute getPenaltyShootoutResult_HomeGoalsPenaltyShootout();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ft.PenaltyShootoutResult#getAwayGoalsPenaltyShootout <em>Away Goals Penalty Shootout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Away Goals Penalty Shootout</em>'.
+	 * @see ft.PenaltyShootoutResult#getAwayGoalsPenaltyShootout()
+	 * @see #getPenaltyShootoutResult()
+	 * @generated
+	 */
+	EAttribute getPenaltyShootoutResult_AwayGoalsPenaltyShootout();
 
 	/**
 	 * Returns the meta object for class '{@link ft.Table <em>Table</em>}'.
@@ -1593,6 +2194,30 @@ public interface FtPackage extends EPackage {
 	EDataType getELocalDateTime();
 
 	/**
+	 * Returns the meta object for data type '{@link java.lang.Integer <em>Score</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Score</em>'.
+	 * @see java.lang.Integer
+	 * @model instanceClass="java.lang.Integer"
+	 *        extendedMetaData="minInclusive='0'"
+	 * @generated
+	 */
+	EDataType getScore();
+
+	/**
+	 * Returns the meta object for data type '{@link java.lang.Integer <em>Round Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Round Number</em>'.
+	 * @see java.lang.Integer
+	 * @model instanceClass="java.lang.Integer"
+	 *        extendedMetaData="minInclusive='1'"
+	 * @generated
+	 */
+	EDataType getRoundNumber();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1626,12 +2251,74 @@ public interface FtPackage extends EPackage {
 		EClass FOOTBALL_TOURNAMENTS = eINSTANCE.getFootballTournaments();
 
 		/**
+		 * The meta object literal for the '<em><b>Hosts</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FOOTBALL_TOURNAMENTS__HOSTS = eINSTANCE.getFootballTournaments_Hosts();
+
+		/**
 		 * The meta object literal for the '<em><b>Regions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference FOOTBALL_TOURNAMENTS__REGIONS = eINSTANCE.getFootballTournaments_Regions();
+
+		/**
+		 * The meta object literal for the '{@link ft.impl.AbstractHostImpl <em>Abstract Host</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ft.impl.AbstractHostImpl
+		 * @see ft.impl.FtPackageImpl#getAbstractHost()
+		 * @generated
+		 */
+		EClass ABSTRACT_HOST = eINSTANCE.getAbstractHost();
+
+		/**
+		 * The meta object literal for the '<em><b>Tournaments</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_HOST__TOURNAMENTS = eINSTANCE.getAbstractHost_Tournaments();
+
+		/**
+		 * The meta object literal for the '{@link ft.impl.AssociationHostImpl <em>Association Host</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ft.impl.AssociationHostImpl
+		 * @see ft.impl.FtPackageImpl#getAssociationHost()
+		 * @generated
+		 */
+		EClass ASSOCIATION_HOST = eINSTANCE.getAssociationHost();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSOCIATION_HOST__NAME = eINSTANCE.getAssociationHost_Name();
+
+		/**
+		 * The meta object literal for the '{@link ft.impl.RegionalHostImpl <em>Regional Host</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ft.impl.RegionalHostImpl
+		 * @see ft.impl.FtPackageImpl#getRegionalHost()
+		 * @generated
+		 */
+		EClass REGIONAL_HOST = eINSTANCE.getRegionalHost();
+
+		/**
+		 * The meta object literal for the '<em><b>Region</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGIONAL_HOST__REGION = eINSTANCE.getRegionalHost_Region();
 
 		/**
 		 * The meta object literal for the '{@link ft.impl.RegionImpl <em>Region</em>}' class.
@@ -1660,14 +2347,6 @@ public interface FtPackage extends EPackage {
 		EReference REGION__CLUBS = eINSTANCE.getRegion_Clubs();
 
 		/**
-		 * The meta object literal for the '<em><b>Tournaments</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REGION__TOURNAMENTS = eINSTANCE.getRegion_Tournaments();
-
-		/**
 		 * The meta object literal for the '{@link ft.impl.TournamentImpl <em>Tournament</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1694,12 +2373,12 @@ public interface FtPackage extends EPackage {
 		EAttribute TOURNAMENT__GENDER = eINSTANCE.getTournament_Gender();
 
 		/**
-		 * The meta object literal for the '<em><b>Region</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Host</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TOURNAMENT__REGION = eINSTANCE.getTournament_Region();
+		EReference TOURNAMENT__HOST = eINSTANCE.getTournament_Host();
 
 		/**
 		 * The meta object literal for the '<em><b>Seasons</b></em>' containment reference list feature.
@@ -1742,14 +2421,6 @@ public interface FtPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CLUB__REGION = eINSTANCE.getClub_Region();
-
-		/**
-		 * The meta object literal for the '<em><b>Seasons</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CLUB__SEASONS = eINSTANCE.getClub_Seasons();
 
 		/**
 		 * The meta object literal for the '{@link ft.impl.SeasonImpl <em>Season</em>}' class.
@@ -1834,6 +2505,14 @@ public interface FtPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STAGE__ROUNDS = eINSTANCE.getStage_Rounds();
+
+		/**
+		 * The meta object literal for the '<em><b>Clubs</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STAGE__CLUBS = eINSTANCE.getStage_Clubs();
 
 		/**
 		 * The meta object literal for the '{@link ft.impl.DoubleRoundRobinImpl <em>Double Round Robin</em>}' class.
@@ -1948,6 +2627,40 @@ public interface FtPackage extends EPackage {
 		EReference MATCH__RESULT = eINSTANCE.getMatch_Result();
 
 		/**
+		 * The meta object literal for the '{@link ft.impl.AbstractResultImpl <em>Abstract Result</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ft.impl.AbstractResultImpl
+		 * @see ft.impl.FtPackageImpl#getAbstractResult()
+		 * @generated
+		 */
+		EClass ABSTRACT_RESULT = eINSTANCE.getAbstractResult();
+
+		/**
+		 * The meta object literal for the '<em><b>Winner</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_RESULT__WINNER = eINSTANCE.getAbstractResult_Winner();
+
+		/**
+		 * The meta object literal for the '<em><b>Home Goals Final</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_RESULT__HOME_GOALS_FINAL = eINSTANCE.getAbstractResult_HomeGoalsFinal();
+
+		/**
+		 * The meta object literal for the '<em><b>Away Goals Final</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_RESULT__AWAY_GOALS_FINAL = eINSTANCE.getAbstractResult_AwayGoalsFinal();
+
+		/**
 		 * The meta object literal for the '{@link ft.impl.ResultImpl <em>Result</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1974,12 +2687,56 @@ public interface FtPackage extends EPackage {
 		EAttribute RESULT__AWAY_GOALS_FULL_TIME = eINSTANCE.getResult_AwayGoalsFullTime();
 
 		/**
-		 * The meta object literal for the '<em><b>Winner</b></em>' attribute feature.
+		 * The meta object literal for the '{@link ft.impl.ExtendedTimeResultImpl <em>Extended Time Result</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ft.impl.ExtendedTimeResultImpl
+		 * @see ft.impl.FtPackageImpl#getExtendedTimeResult()
+		 * @generated
+		 */
+		EClass EXTENDED_TIME_RESULT = eINSTANCE.getExtendedTimeResult();
+
+		/**
+		 * The meta object literal for the '<em><b>Home Goals Extended Time</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RESULT__WINNER = eINSTANCE.getResult_Winner();
+		EAttribute EXTENDED_TIME_RESULT__HOME_GOALS_EXTENDED_TIME = eINSTANCE.getExtendedTimeResult_HomeGoalsExtendedTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Away Goals Extended Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTENDED_TIME_RESULT__AWAY_GOALS_EXTENDED_TIME = eINSTANCE.getExtendedTimeResult_AwayGoalsExtendedTime();
+
+		/**
+		 * The meta object literal for the '{@link ft.impl.PenaltyShootoutResultImpl <em>Penalty Shootout Result</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ft.impl.PenaltyShootoutResultImpl
+		 * @see ft.impl.FtPackageImpl#getPenaltyShootoutResult()
+		 * @generated
+		 */
+		EClass PENALTY_SHOOTOUT_RESULT = eINSTANCE.getPenaltyShootoutResult();
+
+		/**
+		 * The meta object literal for the '<em><b>Home Goals Penalty Shootout</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PENALTY_SHOOTOUT_RESULT__HOME_GOALS_PENALTY_SHOOTOUT = eINSTANCE.getPenaltyShootoutResult_HomeGoalsPenaltyShootout();
+
+		/**
+		 * The meta object literal for the '<em><b>Away Goals Penalty Shootout</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PENALTY_SHOOTOUT_RESULT__AWAY_GOALS_PENALTY_SHOOTOUT = eINSTANCE.getPenaltyShootoutResult_AwayGoalsPenaltyShootout();
 
 		/**
 		 * The meta object literal for the '{@link ft.impl.TableImpl <em>Table</em>}' class.
@@ -2154,6 +2911,26 @@ public interface FtPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType ELOCAL_DATE_TIME = eINSTANCE.getELocalDateTime();
+
+		/**
+		 * The meta object literal for the '<em>Score</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.Integer
+		 * @see ft.impl.FtPackageImpl#getScore()
+		 * @generated
+		 */
+		EDataType SCORE = eINSTANCE.getScore();
+
+		/**
+		 * The meta object literal for the '<em>Round Number</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.Integer
+		 * @see ft.impl.FtPackageImpl#getRoundNumber()
+		 * @generated
+		 */
+		EDataType ROUND_NUMBER = eINSTANCE.getRoundNumber();
 
 	}
 

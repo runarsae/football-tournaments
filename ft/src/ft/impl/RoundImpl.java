@@ -47,7 +47,7 @@ public class RoundImpl extends MinimalEObjectImpl.Container implements Round {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int ROUND_NUMBER_EDEFAULT = 0;
+	protected static final Integer ROUND_NUMBER_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRoundNumber() <em>Round Number</em>}' attribute.
@@ -57,7 +57,7 @@ public class RoundImpl extends MinimalEObjectImpl.Container implements Round {
 	 * @generated
 	 * @ordered
 	 */
-	protected int roundNumber = ROUND_NUMBER_EDEFAULT;
+	protected Integer roundNumber = ROUND_NUMBER_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getMatches() <em>Matches</em>}' containment reference list.
@@ -93,7 +93,7 @@ public class RoundImpl extends MinimalEObjectImpl.Container implements Round {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getRoundNumber() {
+	public Integer getRoundNumber() {
 		return roundNumber;
 	}
 
@@ -102,8 +102,8 @@ public class RoundImpl extends MinimalEObjectImpl.Container implements Round {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRoundNumber(int newRoundNumber) {
-		int oldRoundNumber = roundNumber;
+	public void setRoundNumber(Integer newRoundNumber) {
+		Integer oldRoundNumber = roundNumber;
 		roundNumber = newRoundNumber;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FtPackage.ROUND__ROUND_NUMBER, oldRoundNumber, roundNumber));
@@ -282,7 +282,7 @@ public class RoundImpl extends MinimalEObjectImpl.Container implements Round {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FtPackage.ROUND__ROUND_NUMBER:
-				return roundNumber != ROUND_NUMBER_EDEFAULT;
+				return ROUND_NUMBER_EDEFAULT == null ? roundNumber != null : !ROUND_NUMBER_EDEFAULT.equals(roundNumber);
 			case FtPackage.ROUND__MATCHES:
 				return matches != null && !matches.isEmpty();
 			case FtPackage.ROUND__STAGE:

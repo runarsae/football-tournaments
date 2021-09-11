@@ -84,6 +84,26 @@ public class FtSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FtPackage.ABSTRACT_HOST: {
+				AbstractHost abstractHost = (AbstractHost)theEObject;
+				T result = caseAbstractHost(abstractHost);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FtPackage.ASSOCIATION_HOST: {
+				AssociationHost associationHost = (AssociationHost)theEObject;
+				T result = caseAssociationHost(associationHost);
+				if (result == null) result = caseAbstractHost(associationHost);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FtPackage.REGIONAL_HOST: {
+				RegionalHost regionalHost = (RegionalHost)theEObject;
+				T result = caseRegionalHost(regionalHost);
+				if (result == null) result = caseAbstractHost(regionalHost);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case FtPackage.REGION: {
 				Region region = (Region)theEObject;
 				T result = caseRegion(region);
@@ -152,11 +172,35 @@ public class FtSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FtPackage.ABSTRACT_RESULT: {
+				AbstractResult abstractResult = (AbstractResult)theEObject;
+				T result = caseAbstractResult(abstractResult);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case FtPackage.RESULT: {
 				Result result = (Result)theEObject;
 				T theResult = caseResult(result);
+				if (theResult == null) theResult = caseAbstractResult(result);
 				if (theResult == null) theResult = defaultCase(theEObject);
 				return theResult;
+			}
+			case FtPackage.EXTENDED_TIME_RESULT: {
+				ExtendedTimeResult extendedTimeResult = (ExtendedTimeResult)theEObject;
+				T result = caseExtendedTimeResult(extendedTimeResult);
+				if (result == null) result = caseResult(extendedTimeResult);
+				if (result == null) result = caseAbstractResult(extendedTimeResult);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FtPackage.PENALTY_SHOOTOUT_RESULT: {
+				PenaltyShootoutResult penaltyShootoutResult = (PenaltyShootoutResult)theEObject;
+				T result = casePenaltyShootoutResult(penaltyShootoutResult);
+				if (result == null) result = caseExtendedTimeResult(penaltyShootoutResult);
+				if (result == null) result = caseResult(penaltyShootoutResult);
+				if (result == null) result = caseAbstractResult(penaltyShootoutResult);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
@@ -174,6 +218,51 @@ public class FtSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFootballTournaments(FootballTournaments object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Host</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Host</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractHost(AbstractHost object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Association Host</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Association Host</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAssociationHost(AssociationHost object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Regional Host</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Regional Host</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRegionalHost(RegionalHost object) {
 		return null;
 	}
 
@@ -313,6 +402,21 @@ public class FtSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Result</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractResult(AbstractResult object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Result</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -324,6 +428,36 @@ public class FtSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseResult(Result object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Extended Time Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Extended Time Result</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExtendedTimeResult(ExtendedTimeResult object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Penalty Shootout Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Penalty Shootout Result</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePenaltyShootoutResult(PenaltyShootoutResult object) {
 		return null;
 	}
 

@@ -108,6 +108,12 @@ public class FtValidator extends EObjectValidator {
 		switch (classifierID) {
 			case FtPackage.FOOTBALL_TOURNAMENTS:
 				return validateFootballTournaments((FootballTournaments)value, diagnostics, context);
+			case FtPackage.ABSTRACT_HOST:
+				return validateAbstractHost((AbstractHost)value, diagnostics, context);
+			case FtPackage.ASSOCIATION_HOST:
+				return validateAssociationHost((AssociationHost)value, diagnostics, context);
+			case FtPackage.REGIONAL_HOST:
+				return validateRegionalHost((RegionalHost)value, diagnostics, context);
 			case FtPackage.REGION:
 				return validateRegion((Region)value, diagnostics, context);
 			case FtPackage.CLUB:
@@ -130,8 +136,14 @@ public class FtValidator extends EObjectValidator {
 				return validateRound((Round)value, diagnostics, context);
 			case FtPackage.MATCH:
 				return validateMatch((Match)value, diagnostics, context);
+			case FtPackage.ABSTRACT_RESULT:
+				return validateAbstractResult((AbstractResult)value, diagnostics, context);
 			case FtPackage.RESULT:
 				return validateResult((Result)value, diagnostics, context);
+			case FtPackage.EXTENDED_TIME_RESULT:
+				return validateExtendedTimeResult((ExtendedTimeResult)value, diagnostics, context);
+			case FtPackage.PENALTY_SHOOTOUT_RESULT:
+				return validatePenaltyShootoutResult((PenaltyShootoutResult)value, diagnostics, context);
 			case FtPackage.GENDER_KIND:
 				return validateGenderKind((GenderKind)value, diagnostics, context);
 			case FtPackage.RESULT_KIND:
@@ -142,6 +154,10 @@ public class FtValidator extends EObjectValidator {
 				return validateELocalDate((LocalDate)value, diagnostics, context);
 			case FtPackage.ELOCAL_DATE_TIME:
 				return validateELocalDateTime((LocalDateTime)value, diagnostics, context);
+			case FtPackage.SCORE:
+				return validateScore((Integer)value, diagnostics, context);
+			case FtPackage.ROUND_NUMBER:
+				return validateRoundNumber((Integer)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -161,8 +177,113 @@ public class FtValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateAbstractHost(AbstractHost abstractHost, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(abstractHost, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssociationHost(AssociationHost associationHost, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(associationHost, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRegionalHost(RegionalHost regionalHost, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(regionalHost, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(regionalHost, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(regionalHost, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(regionalHost, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(regionalHost, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(regionalHost, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(regionalHost, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(regionalHost, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(regionalHost, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRegionalHost_clubsInTournamentSeasonsMustBeInRegion(regionalHost, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the clubsInTournamentSeasonsMustBeInRegion constraint of '<em>Regional Host</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String REGIONAL_HOST__CLUBS_IN_TOURNAMENT_SEASONS_MUST_BE_IN_REGION__EEXPRESSION = "self.tournaments.seasons.clubs->forAll(club | club.region = self.region)";
+
+	/**
+	 * Validates the clubsInTournamentSeasonsMustBeInRegion constraint of '<em>Regional Host</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRegionalHost_clubsInTournamentSeasonsMustBeInRegion(RegionalHost regionalHost, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(FtPackage.Literals.REGIONAL_HOST,
+				 regionalHost,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "clubsInTournamentSeasonsMustBeInRegion",
+				 REGIONAL_HOST__CLUBS_IN_TOURNAMENT_SEASONS_MUST_BE_IN_REGION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateRegion(Region region, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(region, diagnostics, context);
+		if (!validate_NoCircularContainment(region, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRegion_clubsMustBeUnique(region, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the clubsMustBeUnique constraint of '<em>Region</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String REGION__CLUBS_MUST_BE_UNIQUE__EEXPRESSION = "self.clubs->isUnique(club | club.name + club.gender)";
+
+	/**
+	 * Validates the clubsMustBeUnique constraint of '<em>Region</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRegion_clubsMustBeUnique(Region region, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(FtPackage.Literals.REGION,
+				 region,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "clubsMustBeUnique",
+				 REGION__CLUBS_MUST_BE_UNIQUE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -210,10 +331,6 @@ public class FtValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validateSeason_startDateMustBeBeforeEndDate(Season season, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (season.getStartDate() == null) {
-			return true;
-		}
-		
 		// Check if season start date is before end date 
 		if (!season.getStartDate().isBefore(season.getEndDate())) {
 			if (diagnostics != null) {
@@ -277,6 +394,7 @@ public class FtValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(stage, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(stage, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStage_roundNumbersMustBeUnique(stage, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStage_clubsInStageMustBeInSeason(stage, diagnostics, context);
 		return result;
 	}
 
@@ -310,6 +428,35 @@ public class FtValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the clubsInStageMustBeInSeason constraint of '<em>Stage</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STAGE__CLUBS_IN_STAGE_MUST_BE_IN_SEASON__EEXPRESSION = "self.season.clubs->includesAll(self.clubs)";
+
+	/**
+	 * Validates the clubsInStageMustBeInSeason constraint of '<em>Stage</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStage_clubsInStageMustBeInSeason(Stage stage, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(FtPackage.Literals.STAGE,
+				 stage,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "clubsInStageMustBeInSeason",
+				 STAGE__CLUBS_IN_STAGE_MUST_BE_IN_SEASON__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -325,10 +472,12 @@ public class FtValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(doubleRoundRobin, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(doubleRoundRobin, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStage_roundNumbersMustBeUnique(doubleRoundRobin, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStage_clubsInStageMustBeInSeason(doubleRoundRobin, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDoubleRoundRobin_numberOfRoundsIsCorrect(doubleRoundRobin, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDoubleRoundRobin_roundNumbersMustBeInValidRange(doubleRoundRobin, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDoubleRoundRobin_everyClubMustMeetEveryOtherClubHomeAndAway(doubleRoundRobin, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDoubleRoundRobin_everyClubMustMeetEveryOtherClubHomeAndAwayOnce(doubleRoundRobin, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDoubleRoundRobin_numberOfMatchesInEachRoundIsCorrect(doubleRoundRobin, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDoubleRoundRobin_noExtendedTimeOrPenaltyShootout(doubleRoundRobin, diagnostics, context);
 		return result;
 	}
 
@@ -338,7 +487,7 @@ public class FtValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DOUBLE_ROUND_ROBIN__NUMBER_OF_ROUNDS_IS_CORRECT__EEXPRESSION = "self.rounds->size() = (self.season.clubs->size() - 1) * 2";
+	protected static final String DOUBLE_ROUND_ROBIN__NUMBER_OF_ROUNDS_IS_CORRECT__EEXPRESSION = " self.rounds->size() <= (self.clubs->size() - 1) * 2";
 
 	/**
 	 * Validates the numberOfRoundsIsCorrect constraint of '<em>Double Round Robin</em>'.
@@ -367,7 +516,7 @@ public class FtValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DOUBLE_ROUND_ROBIN__ROUND_NUMBERS_MUST_BE_IN_VALID_RANGE__EEXPRESSION = "self.rounds.roundNumber->forAll(roundNumber | roundNumber >= 1 and roundNumber <=  ((self.season.clubs->size() - 1) * 2))";
+	protected static final String DOUBLE_ROUND_ROBIN__ROUND_NUMBERS_MUST_BE_IN_VALID_RANGE__EEXPRESSION = "self.rounds.roundNumber->forAll(roundNumber | roundNumber >= 1 and roundNumber <=  ((self.clubs->size() - 1) * 2))";
 
 	/**
 	 * Validates the roundNumbersMustBeInValidRange constraint of '<em>Double Round Robin</em>'.
@@ -391,20 +540,20 @@ public class FtValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the everyClubMustMeetEveryOtherClubHomeAndAway constraint of '<em>Double Round Robin</em>'.
+	 * The cached validation expression for the everyClubMustMeetEveryOtherClubHomeAndAwayOnce constraint of '<em>Double Round Robin</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DOUBLE_ROUND_ROBIN__EVERY_CLUB_MUST_MEET_EVERY_OTHER_CLUB_HOME_AND_AWAY__EEXPRESSION = "self.season.clubs->collect(club1 | self.season.clubs->select(club2 | club1 <> club2)->collect(club2  | self.rounds->collect(round | round.matches)->exists(match | match.homeClub = club1 and match.awayClub = club2)))->forAll(v | v)";
+	protected static final String DOUBLE_ROUND_ROBIN__EVERY_CLUB_MUST_MEET_EVERY_OTHER_CLUB_HOME_AND_AWAY_ONCE__EEXPRESSION = "self.clubs->collect(club1 | self.clubs->select(club2 | club1 <> club2)->collect(club2  | self.rounds.matches->select(match | match.homeClub = club1 and match.awayClub = club2)->size()->collect(size | size = 0 or size = 1)))->forAll(v | v)";
 
 	/**
-	 * Validates the everyClubMustMeetEveryOtherClubHomeAndAway constraint of '<em>Double Round Robin</em>'.
+	 * Validates the everyClubMustMeetEveryOtherClubHomeAndAwayOnce constraint of '<em>Double Round Robin</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDoubleRoundRobin_everyClubMustMeetEveryOtherClubHomeAndAway(DoubleRoundRobin doubleRoundRobin, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDoubleRoundRobin_everyClubMustMeetEveryOtherClubHomeAndAwayOnce(DoubleRoundRobin doubleRoundRobin, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(FtPackage.Literals.DOUBLE_ROUND_ROBIN,
@@ -412,8 +561,8 @@ public class FtValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/acceleo/query/1.0",
-				 "everyClubMustMeetEveryOtherClubHomeAndAway",
-				 DOUBLE_ROUND_ROBIN__EVERY_CLUB_MUST_MEET_EVERY_OTHER_CLUB_HOME_AND_AWAY__EEXPRESSION,
+				 "everyClubMustMeetEveryOtherClubHomeAndAwayOnce",
+				 DOUBLE_ROUND_ROBIN__EVERY_CLUB_MUST_MEET_EVERY_OTHER_CLUB_HOME_AND_AWAY_ONCE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -425,7 +574,7 @@ public class FtValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DOUBLE_ROUND_ROBIN__NUMBER_OF_MATCHES_IN_EACH_ROUND_IS_CORRECT__EEXPRESSION = "self.rounds->forAll(round | round.matches->size() = (self.season.clubs->size() /2))";
+	protected static final String DOUBLE_ROUND_ROBIN__NUMBER_OF_MATCHES_IN_EACH_ROUND_IS_CORRECT__EEXPRESSION = "self.rounds->forAll(round | round.matches->size() = (self.clubs->size() /2))";
 
 	/**
 	 * Validates the numberOfMatchesInEachRoundIsCorrect constraint of '<em>Double Round Robin</em>'.
@@ -449,6 +598,35 @@ public class FtValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the noExtendedTimeOrPenaltyShootout constraint of '<em>Double Round Robin</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DOUBLE_ROUND_ROBIN__NO_EXTENDED_TIME_OR_PENALTY_SHOOTOUT__EEXPRESSION = "self.rounds.matches.result->forAll(result | result.eClass().name = 'Result')";
+
+	/**
+	 * Validates the noExtendedTimeOrPenaltyShootout constraint of '<em>Double Round Robin</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDoubleRoundRobin_noExtendedTimeOrPenaltyShootout(DoubleRoundRobin doubleRoundRobin, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(FtPackage.Literals.DOUBLE_ROUND_ROBIN,
+				 doubleRoundRobin,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "noExtendedTimeOrPenaltyShootout",
+				 DOUBLE_ROUND_ROBIN__NO_EXTENDED_TIME_OR_PENALTY_SHOOTOUT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -464,10 +642,12 @@ public class FtValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(singleElimination, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(singleElimination, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStage_roundNumbersMustBeUnique(singleElimination, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStage_clubsInStageMustBeInSeason(singleElimination, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSingleElimination_numberOfRoundsIsCorrect(singleElimination, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSingleElimination_roundNumbersMustBeInValidRange(singleElimination, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSingleElimination_numberOfMatchesInEachRoundIsCorrect(singleElimination, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSingleElimination_everyClubMustHaveWonInPreviousRound(singleElimination, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSingleElimination_matchesMustHaveAWinner(singleElimination, diagnostics, context);
 		return result;
 	}
 
@@ -478,8 +658,8 @@ public class FtValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validateSingleElimination_numberOfRoundsIsCorrect(SingleElimination singleElimination, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// Number of rounds must be minimum 1 and maximum log2(number of clubs in season)
-		if (singleElimination.getRounds().size() < 1 || singleElimination.getRounds().size() > (int) (Math.log(singleElimination.getSeason().getClubs().size()) / Math.log(2))) {
+		// Number of rounds must be maximum log2(number of clubs)
+		if (singleElimination.getRounds().size() > (int) (Math.log(singleElimination.getClubs().size()) / Math.log(2))) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -503,13 +683,13 @@ public class FtValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validateSingleElimination_roundNumbersMustBeInValidRange(SingleElimination singleElimination, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// Round numbers must be in range from 1 to log2(number of clubs in season), inclusive
+		// Round numbers must be in range from 1 to log2(number of clubs), inclusive
 		
 		boolean valid = true;
 		
 		// Check each round number if valid
 		for (Round round : singleElimination.getRounds()) {
-			if (round.getRoundNumber() < 1 || round.getRoundNumber() > (int) (Math.log(singleElimination.getSeason().getClubs().size()) / Math.log(2))) {
+			if (round.getRoundNumber() < 1 || round.getRoundNumber() > (int) (Math.log(singleElimination.getClubs().size()) / Math.log(2))) {
 				valid = false;
 				break;
 			}
@@ -539,12 +719,13 @@ public class FtValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validateSingleElimination_numberOfMatchesInEachRoundIsCorrect(SingleElimination singleElimination, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// Round i (starting from 1) must have 2^(log2(number of clubs in season) - i) matches
+		// Round i (starting from 1) must have 2^(log2(number of clubs) - i) matches
 		
 		boolean valid = true;
-
+		
+		// Go through each round to check the number of matches
 		for (Round round : singleElimination.getRounds()) {
-			if (round.getMatches().size() != (int) Math.pow(2, ((int) (Math.log(singleElimination.getSeason().getClubs().size()) / Math.log(2)) - round.getRoundNumber()))) {
+			if (round.getMatches().size() != (int) Math.pow(2, ((int) (Math.log(singleElimination.getClubs().size()) / Math.log(2)) - round.getRoundNumber()))) {
 				valid = false;
 				break;
 			}
@@ -578,6 +759,7 @@ public class FtValidator extends EObjectValidator {
 		EList<Round> rounds = singleElimination.getRounds();
 		
 		if (rounds.size() < 2) {
+			// Does not apply to stages with number of rounds less than 2
 			return true;
 		}
 		
@@ -592,10 +774,12 @@ public class FtValidator extends EObjectValidator {
 			
 			// Get all winners from previous round
 			for (Match match : prevRound.getMatches()) {
-				if (match.getResult().getWinner() == WinnerKind.HOME) {
-					prevRoundWinners.add(match.getHomeClub());
-				} else {
-					prevRoundWinners.add(match.getAwayClub());
+				if (match.getResult() != null) {
+					if (match.getResult().getWinner() == WinnerKind.HOME) {
+						prevRoundWinners.add(match.getHomeClub());
+					} else {
+						prevRoundWinners.add(match.getAwayClub());
+					}
 				}
 			}
 			
@@ -630,6 +814,48 @@ public class FtValidator extends EObjectValidator {
 	}
 
 	/**
+	 * Validates the matchesMustHaveAWinner constraint of '<em>Single Elimination</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean validateSingleElimination_matchesMustHaveAWinner(SingleElimination singleElimination, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// Every match must have a winner, i.e. not draw
+		
+		boolean valid = true;
+		
+		// Loop through all matches in stage to check if any has DRAW as the winner
+		for (Round round : singleElimination.getRounds()) {
+			for (Match match : round.getMatches()) {
+				if (match.getResult() != null && match.getResult().getWinner() == WinnerKind.DRAW) {
+					valid = false;
+					break;
+				}
+			}
+			
+			if (!valid) {
+				break;
+			}
+		}
+
+		if (!valid) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "matchesMustHaveAWinner", getObjectLabel(singleElimination, context) },
+						 new Object[] { singleElimination },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -654,8 +880,8 @@ public class FtValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(match, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(match, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMatch_homeClubAndAwayClubCannotBeTheSame(match, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMatch_homeClubMustBeInSeason(match, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMatch_awayClubMustBeInSeason(match, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMatch_homeClubMustBeInStage(match, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMatch_awayClubMustBeInStage(match, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMatch_homeClubMustBeInOnlyOneMatchPerRound(match, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMatch_awayClubMustBeInOnlyOneMatchPerRound(match, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMatch_dateMustBeWithinSeasonStartAndEnd(match, diagnostics, context);
@@ -692,20 +918,20 @@ public class FtValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the homeClubMustBeInSeason constraint of '<em>Match</em>'.
+	 * The cached validation expression for the homeClubMustBeInStage constraint of '<em>Match</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MATCH__HOME_CLUB_MUST_BE_IN_SEASON__EEXPRESSION = "self.round.stage.season.clubs->includes(self.homeClub)";
+	protected static final String MATCH__HOME_CLUB_MUST_BE_IN_STAGE__EEXPRESSION = "self.round.stage.clubs->includes(self.homeClub)";
 
 	/**
-	 * Validates the homeClubMustBeInSeason constraint of '<em>Match</em>'.
+	 * Validates the homeClubMustBeInStage constraint of '<em>Match</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMatch_homeClubMustBeInSeason(Match match, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateMatch_homeClubMustBeInStage(Match match, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(FtPackage.Literals.MATCH,
@@ -713,28 +939,28 @@ public class FtValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/acceleo/query/1.0",
-				 "homeClubMustBeInSeason",
-				 MATCH__HOME_CLUB_MUST_BE_IN_SEASON__EEXPRESSION,
+				 "homeClubMustBeInStage",
+				 MATCH__HOME_CLUB_MUST_BE_IN_STAGE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the awayClubMustBeInSeason constraint of '<em>Match</em>'.
+	 * The cached validation expression for the awayClubMustBeInStage constraint of '<em>Match</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MATCH__AWAY_CLUB_MUST_BE_IN_SEASON__EEXPRESSION = "self.round.stage.season.clubs->includes(self.awayClub)";
+	protected static final String MATCH__AWAY_CLUB_MUST_BE_IN_STAGE__EEXPRESSION = "self.round.stage.clubs->includes(self.awayClub)";
 
 	/**
-	 * Validates the awayClubMustBeInSeason constraint of '<em>Match</em>'.
+	 * Validates the awayClubMustBeInStage constraint of '<em>Match</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMatch_awayClubMustBeInSeason(Match match, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateMatch_awayClubMustBeInStage(Match match, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(FtPackage.Literals.MATCH,
@@ -742,8 +968,8 @@ public class FtValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/acceleo/query/1.0",
-				 "awayClubMustBeInSeason",
-				 MATCH__AWAY_CLUB_MUST_BE_IN_SEASON__EEXPRESSION,
+				 "awayClubMustBeInStage",
+				 MATCH__AWAY_CLUB_MUST_BE_IN_STAGE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -814,13 +1040,9 @@ public class FtValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validateMatch_dateMustBeWithinSeasonStartAndEnd(Match match, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		
-		if (match.getDate() == null) {
-			return true;
-		}
-		
 		Season season = match.getRound().getStage().getSeason();
 		
+		// Check if match date is before or after season duration
 		if (match.getDate().toLocalDate().isBefore(season.getStartDate()) || match.getDate().toLocalDate().isAfter(season.getEndDate())) {
 			if (diagnostics != null) {
 				diagnostics.add
@@ -843,8 +1065,35 @@ public class FtValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateAbstractResult(AbstractResult abstractResult, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(abstractResult, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateResult(Result result, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(result, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtendedTimeResult(ExtendedTimeResult extendedTimeResult, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(extendedTimeResult, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePenaltyShootoutResult(PenaltyShootoutResult penaltyShootoutResult, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(penaltyShootoutResult, diagnostics, context);
 	}
 
 	/**
@@ -862,25 +1111,25 @@ public class FtValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(table, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(table, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(table, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTable_numberOfStatisticsMustEqualNumberOfClubsInSeason(table, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTable_numberOfStatisticsMustEqualNumberOfClubsInStage(table, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the numberOfStatisticsMustEqualNumberOfClubsInSeason constraint of '<em>Table</em>'.
+	 * The cached validation expression for the numberOfStatisticsMustEqualNumberOfClubsInStage constraint of '<em>Table</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TABLE__NUMBER_OF_STATISTICS_MUST_EQUAL_NUMBER_OF_CLUBS_IN_SEASON__EEXPRESSION = "self.statistics->size() = self.stage.season.clubs->size()";
+	protected static final String TABLE__NUMBER_OF_STATISTICS_MUST_EQUAL_NUMBER_OF_CLUBS_IN_STAGE__EEXPRESSION = "self.statistics->size() = self.stage.clubs->size()";
 
 	/**
-	 * Validates the numberOfStatisticsMustEqualNumberOfClubsInSeason constraint of '<em>Table</em>'.
+	 * Validates the numberOfStatisticsMustEqualNumberOfClubsInStage constraint of '<em>Table</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTable_numberOfStatisticsMustEqualNumberOfClubsInSeason(Table table, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateTable_numberOfStatisticsMustEqualNumberOfClubsInStage(Table table, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(FtPackage.Literals.TABLE,
@@ -888,8 +1137,8 @@ public class FtValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/acceleo/query/1.0",
-				 "numberOfStatisticsMustEqualNumberOfClubsInSeason",
-				 TABLE__NUMBER_OF_STATISTICS_MUST_EQUAL_NUMBER_OF_CLUBS_IN_SEASON__EEXPRESSION,
+				 "numberOfStatisticsMustEqualNumberOfClubsInStage",
+				 TABLE__NUMBER_OF_STATISTICS_MUST_EQUAL_NUMBER_OF_CLUBS_IN_STAGE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -910,26 +1159,26 @@ public class FtValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(statistic, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(statistic, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(statistic, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatistic_clubMustBeInSeason(statistic, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStatistic_clubMustBeInStage(statistic, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStatistic_clubMustBeInOnlyOneStatisticPerTable(statistic, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the clubMustBeInSeason constraint of '<em>Statistic</em>'.
+	 * The cached validation expression for the clubMustBeInStage constraint of '<em>Statistic</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATISTIC__CLUB_MUST_BE_IN_SEASON__EEXPRESSION = "self.eContainer().stage.season.clubs->includes(self.club)";
+	protected static final String STATISTIC__CLUB_MUST_BE_IN_STAGE__EEXPRESSION = "self.eContainer().stage.clubs->includes(self.club)";
 
 	/**
-	 * Validates the clubMustBeInSeason constraint of '<em>Statistic</em>'.
+	 * Validates the clubMustBeInStage constraint of '<em>Statistic</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateStatistic_clubMustBeInSeason(Statistic statistic, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateStatistic_clubMustBeInStage(Statistic statistic, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(FtPackage.Literals.STATISTIC,
@@ -937,8 +1186,8 @@ public class FtValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/acceleo/query/1.0",
-				 "clubMustBeInSeason",
-				 STATISTIC__CLUB_MUST_BE_IN_SEASON__EEXPRESSION,
+				 "clubMustBeInStage",
+				 STATISTIC__CLUB_MUST_BE_IN_STAGE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1016,6 +1265,68 @@ public class FtValidator extends EObjectValidator {
 	 */
 	public boolean validateELocalDateTime(LocalDateTime eLocalDateTime, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScore(Integer score, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validateScore_Min(score, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateScore_Min
+	 */
+	public static final Integer SCORE__MIN__VALUE = new Integer(0);
+
+	/**
+	 * Validates the Min constraint of '<em>Score</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScore_Min(Integer score, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = score.compareTo(SCORE__MIN__VALUE) >= 0;
+		if (!result && diagnostics != null)
+			reportMinViolation(FtPackage.Literals.SCORE, score, SCORE__MIN__VALUE, true, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRoundNumber(Integer roundNumber, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validateRoundNumber_Min(roundNumber, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateRoundNumber_Min
+	 */
+	public static final Integer ROUND_NUMBER__MIN__VALUE = new Integer(1);
+
+	/**
+	 * Validates the Min constraint of '<em>Round Number</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRoundNumber_Min(Integer roundNumber, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = roundNumber.compareTo(ROUND_NUMBER__MIN__VALUE) >= 0;
+		if (!result && diagnostics != null)
+			reportMinViolation(FtPackage.Literals.ROUND_NUMBER, roundNumber, ROUND_NUMBER__MIN__VALUE, true, diagnostics, context);
+		return result;
 	}
 
 	/**

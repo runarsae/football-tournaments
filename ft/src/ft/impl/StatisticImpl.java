@@ -5,6 +5,7 @@ package ft.impl;
 import ft.Club;
 import ft.FtPackage;
 import ft.Match;
+import ft.Result;
 import ft.ResultKind;
 import ft.Round;
 import ft.Statistic;
@@ -207,21 +208,30 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 		int points = this.getPoints();
 		int goalDifference = this.getGoalDifference();
 		int goalsFor = this.getGoalsFor();
-
+		
+		// Loop through all statistics in the table
 		for (Statistic statistic : ((Table) this.eContainer()).getStatistics()) {
 			int otherPoints = statistic.getPoints();
 
 			if (points < otherPoints) {
+				// If this statistic's points is less than the other statistic, 
+				// increment the position on the table
 				position.getAndIncrement();
 			} else if (points == otherPoints) {
+				// If points are equal, check goal difference
 				int otherGoalDifference = statistic.getGoalDifference();
 
 				if (goalDifference < otherGoalDifference) {
+					// If this statistic's goal difference is less than the other statistic, 
+					// increment the position on the table
 					position.getAndIncrement();
 				} else if (goalDifference == otherGoalDifference) {
+					// If goal difference is equal, check goals for
 					int otherGoalsFor = statistic.getGoalsFor();
 
 					if (goalsFor < otherGoalsFor) {
+						// If this statistic's goals for is less than the other statistic, 
+						// increment the position on the table
 						position.getAndIncrement();
 					}
 				}
@@ -238,7 +248,8 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	 */
 	public int getPlayed() {
 		AtomicInteger counter = new AtomicInteger(0);
-
+		
+		// Count all matches the club has played this stage
 		for (Round round : ((Table) this.eContainer()).getStage().getRounds()) {
 			for (Match match : round.getMatches()) {
 				if (match.getResult() != null) {
@@ -260,6 +271,7 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	public int getWon() {
 		AtomicInteger counter = new AtomicInteger(0);
 
+		// Go through all matches for the club in this stage and count number of wins
 		for (Round round : ((Table) this.eContainer()).getStage().getRounds()) {
 			for (Match match : round.getMatches()) {
 				if (match.getResult() != null) {
@@ -282,6 +294,7 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	public int getDrawn() {
 		AtomicInteger counter = new AtomicInteger(0);
 
+		// Go through all matches for the club in this stage and count number of draws
 		for (Round round : ((Table) this.eContainer()).getStage().getRounds()) {
 			for (Match match : round.getMatches()) {
 				if (match.getResult() != null) {
@@ -303,7 +316,8 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	 */
 	public int getLost() {
 		AtomicInteger counter = new AtomicInteger(0);
-
+		
+		// Go through all matches for the club in this stage and count number of losses
 		for (Round round : ((Table) this.eContainer()).getStage().getRounds()) {
 			for (Match match : round.getMatches()) {
 				if (match.getResult() != null) {
@@ -326,13 +340,14 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	public int getGoalsFor() {
 		AtomicInteger counter = new AtomicInteger(0);
 
+		// Go through all matches for the club in this stage and count goals scored for
 		for (Round round : ((Table) this.eContainer()).getStage().getRounds()) {
 			for (Match match : round.getMatches()) {
 				if (match.getResult() != null) {
 					if (match.getHomeClub() == this.club) {
-						counter.getAndAdd(match.getResult().getHomeGoalsFullTime());
+						counter.getAndAdd(((Result) match.getResult()).getHomeGoalsFullTime());
 					} else if (match.getAwayClub() == this.club) {
-						counter.getAndAdd(match.getResult().getAwayGoalsFullTime());
+						counter.getAndAdd(((Result) match.getResult()).getAwayGoalsFullTime());
 					}
 				}
 			}
@@ -348,14 +363,15 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	 */
 	public int getGoalsAgainst() {
 		AtomicInteger counter = new AtomicInteger(0);
-
+		
+		// Go through all matches for the club in this stage and count goals scored against
 		for (Round round : ((Table) this.eContainer()).getStage().getRounds()) {
 			for (Match match : round.getMatches()) {
 				if (match.getResult() != null) {
 					if (match.getHomeClub() == this.club) {
-						counter.getAndAdd(match.getResult().getAwayGoalsFullTime());
+						counter.getAndAdd(((Result) match.getResult()).getAwayGoalsFullTime());
 					} else if (match.getAwayClub() == this.club) {
-						counter.getAndAdd(match.getResult().getHomeGoalsFullTime());
+						counter.getAndAdd(((Result) match.getResult()).getHomeGoalsFullTime());
 					}
 				}
 			}
@@ -370,6 +386,7 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	 * @generated NOT
 	 */
 	public int getGoalDifference() {
+		// Total goal difference is goals scored this stage minus goals scored against
 		return this.getGoalsFor() - this.getGoalsAgainst();
 	}
 
@@ -379,6 +396,7 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 	 * @generated NOT
 	 */
 	public int getPoints() {
+		// Calculate total points where win = 3 points and draw = 1 point
 		return (this.getWon() * 3) + this.getDrawn();
 	}
 
@@ -410,7 +428,7 @@ public class StatisticImpl extends MinimalEObjectImpl.Container implements Stati
 			matches = matches.subList(matches.size() - 6, matches.size());
 		}
 		
-		// Generate a ResultKind for each match
+		// Generate a ResultKind for each match based on the winner
 		ResultKind[] form = new ResultKind[matches.size()];
 		
 		for (int i = 0; i < matches.size(); i++) {

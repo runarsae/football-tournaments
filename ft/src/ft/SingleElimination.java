@@ -10,7 +10,7 @@ package ft;
  *
  *
  * @see ft.FtPackage#getSingleElimination()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='numberOfRoundsIsCorrect roundNumbersMustBeInValidRange numberOfMatchesInEachRoundIsCorrect everyClubMustHaveWonInPreviousRound'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='numberOfRoundsIsCorrect roundNumbersMustBeInValidRange numberOfMatchesInEachRoundIsCorrect everyClubMustHaveWonInPreviousRound matchesMustHaveAWinner'"
  * @generated
  */
 public interface SingleElimination extends Stage {

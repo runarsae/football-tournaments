@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see ft.FtPackage#getTable()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='numberOfStatisticsMustEqualNumberOfClubsInSeason'"
- *        annotation="http://www.eclipse.org/acceleo/query/1.0 numberOfStatisticsMustEqualNumberOfClubsInSeason='self.statistics-&gt;size() = self.stage.season.clubs-&gt;size()'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='numberOfStatisticsMustEqualNumberOfClubsInStage'"
+ *        annotation="http://www.eclipse.org/acceleo/query/1.0 numberOfStatisticsMustEqualNumberOfClubsInStage='self.statistics-&gt;size() = self.stage.clubs-&gt;size()'"
  * @generated
  */
 public interface Table extends EObject {

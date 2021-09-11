@@ -37,7 +37,7 @@ public interface Season extends EObject {
 	 * @return the value of the '<em>Start Date</em>' attribute.
 	 * @see #setStartDate(LocalDate)
 	 * @see ft.FtPackage#getSeason_StartDate()
-	 * @model dataType="ft.ELocalDate"
+	 * @model dataType="ft.ELocalDate" required="true"
 	 * @generated
 	 */
 	LocalDate getStartDate();
@@ -59,7 +59,7 @@ public interface Season extends EObject {
 	 * @return the value of the '<em>End Date</em>' attribute.
 	 * @see #setEndDate(LocalDate)
 	 * @see ft.FtPackage#getSeason_EndDate()
-	 * @model dataType="ft.ELocalDate"
+	 * @model dataType="ft.ELocalDate" required="true"
 	 * @generated
 	 */
 	LocalDate getEndDate();
@@ -112,13 +112,11 @@ public interface Season extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Clubs</b></em>' reference list.
 	 * The list contents are of type {@link ft.Club}.
-	 * It is bidirectional and its opposite is '{@link ft.Club#getSeasons <em>Seasons</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Clubs</em>' reference list.
 	 * @see ft.FtPackage#getSeason_Clubs()
-	 * @see ft.Club#getSeasons
-	 * @model opposite="seasons"
+	 * @model
 	 * @generated
 	 */
 	EList<Club> getClubs();

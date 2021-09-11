@@ -26,7 +26,7 @@ public class PrintTable {
 		
 		FootballTournaments ft = (FootballTournaments) resource.getContents().get(0);
 		
-		Table table = ((DoubleRoundRobin) ft.getRegions().get(0).getTournaments().get(0).getSeasons().get(0).getStage()).getTable();
+		Table table = ((DoubleRoundRobin) ft.getHosts().get(0).getTournaments().get(0).getSeasons().get(0).getStage()).getTable();
 		
 		table.getStatistics().forEach(s -> {
 			System.out.println(s.getClub().getName() + " " + s.getPosition() + " " + s.getPlayed() + " " + s.getWon() + " " + s.getDrawn() + " " + s.getLost() + " " + s.getGoalsFor() + " " + s.getGoalsAgainst() + " " + s.getGoalDifference() + " " + s.getPoints() + " " + s.getForm());

@@ -84,6 +84,18 @@ public class FtAdapterFactory extends AdapterFactoryImpl {
 				return createFootballTournamentsAdapter();
 			}
 			@Override
+			public Adapter caseAbstractHost(AbstractHost object) {
+				return createAbstractHostAdapter();
+			}
+			@Override
+			public Adapter caseAssociationHost(AssociationHost object) {
+				return createAssociationHostAdapter();
+			}
+			@Override
+			public Adapter caseRegionalHost(RegionalHost object) {
+				return createRegionalHostAdapter();
+			}
+			@Override
 			public Adapter caseRegion(Region object) {
 				return createRegionAdapter();
 			}
@@ -128,8 +140,20 @@ public class FtAdapterFactory extends AdapterFactoryImpl {
 				return createMatchAdapter();
 			}
 			@Override
+			public Adapter caseAbstractResult(AbstractResult object) {
+				return createAbstractResultAdapter();
+			}
+			@Override
 			public Adapter caseResult(Result object) {
 				return createResultAdapter();
+			}
+			@Override
+			public Adapter caseExtendedTimeResult(ExtendedTimeResult object) {
+				return createExtendedTimeResultAdapter();
+			}
+			@Override
+			public Adapter casePenaltyShootoutResult(PenaltyShootoutResult object) {
+				return createPenaltyShootoutResultAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -162,6 +186,48 @@ public class FtAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFootballTournamentsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ft.AbstractHost <em>Abstract Host</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ft.AbstractHost
+	 * @generated
+	 */
+	public Adapter createAbstractHostAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ft.AssociationHost <em>Association Host</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ft.AssociationHost
+	 * @generated
+	 */
+	public Adapter createAssociationHostAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ft.RegionalHost <em>Regional Host</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ft.RegionalHost
+	 * @generated
+	 */
+	public Adapter createRegionalHostAdapter() {
 		return null;
 	}
 
@@ -292,6 +358,20 @@ public class FtAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link ft.AbstractResult <em>Abstract Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ft.AbstractResult
+	 * @generated
+	 */
+	public Adapter createAbstractResultAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link ft.Result <em>Result</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -302,6 +382,34 @@ public class FtAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createResultAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ft.ExtendedTimeResult <em>Extended Time Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ft.ExtendedTimeResult
+	 * @generated
+	 */
+	public Adapter createExtendedTimeResultAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ft.PenaltyShootoutResult <em>Penalty Shootout Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ft.PenaltyShootoutResult
+	 * @generated
+	 */
+	public Adapter createPenaltyShootoutResultAdapter() {
 		return null;
 	}
 

@@ -6,24 +6,14 @@ import ft.Club;
 import ft.FtPackage;
 import ft.GenderKind;
 import ft.Region;
-import ft.Season;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +26,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link ft.impl.ClubImpl#getName <em>Name</em>}</li>
  *   <li>{@link ft.impl.ClubImpl#getGender <em>Gender</em>}</li>
  *   <li>{@link ft.impl.ClubImpl#getRegion <em>Region</em>}</li>
- *   <li>{@link ft.impl.ClubImpl#getSeasons <em>Seasons</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,16 +70,6 @@ public class ClubImpl extends MinimalEObjectImpl.Container implements Club {
 	 * @ordered
 	 */
 	protected GenderKind gender = GENDER_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSeasons() <em>Seasons</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSeasons()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Season> seasons;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,18 +178,6 @@ public class ClubImpl extends MinimalEObjectImpl.Container implements Club {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Season> getSeasons() {
-		if (seasons == null) {
-			seasons = new EObjectWithInverseResolvingEList.ManyInverse<Season>(Season.class, this, FtPackage.CLUB__SEASONS, FtPackage.SEASON__CLUBS);
-		}
-		return seasons;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -219,8 +186,6 @@ public class ClubImpl extends MinimalEObjectImpl.Container implements Club {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetRegion((Region)otherEnd, msgs);
-			case FtPackage.CLUB__SEASONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSeasons()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -235,8 +200,6 @@ public class ClubImpl extends MinimalEObjectImpl.Container implements Club {
 		switch (featureID) {
 			case FtPackage.CLUB__REGION:
 				return basicSetRegion(null, msgs);
-			case FtPackage.CLUB__SEASONS:
-				return ((InternalEList<?>)getSeasons()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -269,8 +232,6 @@ public class ClubImpl extends MinimalEObjectImpl.Container implements Club {
 				return getGender();
 			case FtPackage.CLUB__REGION:
 				return getRegion();
-			case FtPackage.CLUB__SEASONS:
-				return getSeasons();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -293,10 +254,6 @@ public class ClubImpl extends MinimalEObjectImpl.Container implements Club {
 			case FtPackage.CLUB__REGION:
 				setRegion((Region)newValue);
 				return;
-			case FtPackage.CLUB__SEASONS:
-				getSeasons().clear();
-				getSeasons().addAll((Collection<? extends Season>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -318,9 +275,6 @@ public class ClubImpl extends MinimalEObjectImpl.Container implements Club {
 			case FtPackage.CLUB__REGION:
 				setRegion((Region)null);
 				return;
-			case FtPackage.CLUB__SEASONS:
-				getSeasons().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -339,8 +293,6 @@ public class ClubImpl extends MinimalEObjectImpl.Container implements Club {
 				return gender != GENDER_EDEFAULT;
 			case FtPackage.CLUB__REGION:
 				return getRegion() != null;
-			case FtPackage.CLUB__SEASONS:
-				return seasons != null && !seasons.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -30,12 +30,12 @@ public interface Round extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Round Number</em>' attribute.
-	 * @see #setRoundNumber(int)
+	 * @see #setRoundNumber(Integer)
 	 * @see ft.FtPackage#getRound_RoundNumber()
-	 * @model required="true"
+	 * @model dataType="ft.RoundNumber" required="true"
 	 * @generated
 	 */
-	int getRoundNumber();
+	Integer getRoundNumber();
 
 	/**
 	 * Sets the value of the '{@link ft.Round#getRoundNumber <em>Round Number</em>}' attribute.
@@ -45,7 +45,7 @@ public interface Round extends EObject {
 	 * @see #getRoundNumber()
 	 * @generated
 	 */
-	void setRoundNumber(int value);
+	void setRoundNumber(Integer value);
 
 	/**
 	 * Returns the value of the '<em><b>Matches</b></em>' containment reference list.

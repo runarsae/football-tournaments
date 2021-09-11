@@ -17,11 +17,12 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ft.Stage#getSeason <em>Season</em>}</li>
  *   <li>{@link ft.Stage#getRounds <em>Rounds</em>}</li>
+ *   <li>{@link ft.Stage#getClubs <em>Clubs</em>}</li>
  * </ul>
  *
  * @see ft.FtPackage#getStage()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='roundNumbersMustBeUnique'"
- *        annotation="http://www.eclipse.org/acceleo/query/1.0 roundNumbersMustBeUnique='self.rounds-&gt;isUnique(r | r.roundNumber)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='roundNumbersMustBeUnique clubsInStageMustBeInSeason'"
+ *        annotation="http://www.eclipse.org/acceleo/query/1.0 roundNumbersMustBeUnique='self.rounds-&gt;isUnique(r | r.roundNumber)' clubsInStageMustBeInSeason='self.season.clubs-&gt;includesAll(self.clubs)'"
  * @generated
  */
 public interface Stage extends EObject {
@@ -62,5 +63,17 @@ public interface Stage extends EObject {
 	 * @generated
 	 */
 	EList<Round> getRounds();
+
+	/**
+	 * Returns the value of the '<em><b>Clubs</b></em>' reference list.
+	 * The list contents are of type {@link ft.Club}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Clubs</em>' reference list.
+	 * @see ft.FtPackage#getStage_Clubs()
+	 * @model
+	 * @generated
+	 */
+	EList<Club> getClubs();
 
 } // Stage

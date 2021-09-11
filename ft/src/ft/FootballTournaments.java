@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link ft.FootballTournaments#getHosts <em>Hosts</em>}</li>
  *   <li>{@link ft.FootballTournaments#getRegions <em>Regions</em>}</li>
  * </ul>
  *
@@ -23,6 +24,18 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface FootballTournaments extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Hosts</b></em>' containment reference list.
+	 * The list contents are of type {@link ft.AbstractHost}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hosts</em>' containment reference list.
+	 * @see ft.FtPackage#getFootballTournaments_Hosts()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AbstractHost> getHosts();
+
 	/**
 	 * Returns the value of the '<em><b>Regions</b></em>' containment reference list.
 	 * The list contents are of type {@link ft.Region}.

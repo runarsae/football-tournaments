@@ -76,6 +76,8 @@ public class FtFactoryImpl extends EFactoryImpl implements FtFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case FtPackage.FOOTBALL_TOURNAMENTS: return createFootballTournaments();
+			case FtPackage.ASSOCIATION_HOST: return createAssociationHost();
+			case FtPackage.REGIONAL_HOST: return createRegionalHost();
 			case FtPackage.REGION: return createRegion();
 			case FtPackage.CLUB: return createClub();
 			case FtPackage.TOURNAMENT: return createTournament();
@@ -88,6 +90,8 @@ public class FtFactoryImpl extends EFactoryImpl implements FtFactory {
 			case FtPackage.ROUND: return createRound();
 			case FtPackage.MATCH: return createMatch();
 			case FtPackage.RESULT: return createResult();
+			case FtPackage.EXTENDED_TIME_RESULT: return createExtendedTimeResult();
+			case FtPackage.PENALTY_SHOOTOUT_RESULT: return createPenaltyShootoutResult();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -111,6 +115,10 @@ public class FtFactoryImpl extends EFactoryImpl implements FtFactory {
 				return createELocalDateFromString(eDataType, initialValue);
 			case FtPackage.ELOCAL_DATE_TIME:
 				return createELocalDateTimeFromString(eDataType, initialValue);
+			case FtPackage.SCORE:
+				return createScoreFromString(eDataType, initialValue);
+			case FtPackage.ROUND_NUMBER:
+				return createRoundNumberFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -134,6 +142,10 @@ public class FtFactoryImpl extends EFactoryImpl implements FtFactory {
 				return convertELocalDateToString(eDataType, instanceValue);
 			case FtPackage.ELOCAL_DATE_TIME:
 				return convertELocalDateTimeToString(eDataType, instanceValue);
+			case FtPackage.SCORE:
+				return convertScoreToString(eDataType, instanceValue);
+			case FtPackage.ROUND_NUMBER:
+				return convertRoundNumberToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -147,6 +159,26 @@ public class FtFactoryImpl extends EFactoryImpl implements FtFactory {
 	public FootballTournaments createFootballTournaments() {
 		FootballTournamentsImpl footballTournaments = new FootballTournamentsImpl();
 		return footballTournaments;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AssociationHost createAssociationHost() {
+		AssociationHostImpl associationHost = new AssociationHostImpl();
+		return associationHost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RegionalHost createRegionalHost() {
+		RegionalHostImpl regionalHost = new RegionalHostImpl();
+		return regionalHost;
 	}
 
 	/**
@@ -254,6 +286,26 @@ public class FtFactoryImpl extends EFactoryImpl implements FtFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ExtendedTimeResult createExtendedTimeResult() {
+		ExtendedTimeResultImpl extendedTimeResult = new ExtendedTimeResultImpl();
+		return extendedTimeResult;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PenaltyShootoutResult createPenaltyShootoutResult() {
+		PenaltyShootoutResultImpl penaltyShootoutResult = new PenaltyShootoutResultImpl();
+		return penaltyShootoutResult;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Table createTable() {
 		TableImpl table = new TableImpl();
 		return table;
@@ -335,7 +387,7 @@ public class FtFactoryImpl extends EFactoryImpl implements FtFactory {
 	 * @generated NOT
 	 */
 	public LocalDate createELocalDateFromString(EDataType eDataType, String initialValue) {
-		return LocalDate.parse(initialValue);
+		return initialValue == null || initialValue.isBlank() ? null : LocalDate.parse(initialValue);
 	}
 
 	/**
@@ -344,7 +396,7 @@ public class FtFactoryImpl extends EFactoryImpl implements FtFactory {
 	 * @generated NOT
 	 */
 	public String convertELocalDateToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
+		return instanceValue == null ? null : ((LocalDate) instanceValue).toString();
 	}
 
 	/**
@@ -353,7 +405,7 @@ public class FtFactoryImpl extends EFactoryImpl implements FtFactory {
 	 * @generated NOT
 	 */
 	public LocalDateTime createELocalDateTimeFromString(EDataType eDataType, String initialValue) {
-		return LocalDateTime.parse(initialValue);	
+		return initialValue == null || initialValue.isBlank() ? null : LocalDateTime.parse(initialValue);	
 	}
 
 	/**
@@ -362,6 +414,42 @@ public class FtFactoryImpl extends EFactoryImpl implements FtFactory {
 	 * @generated NOT
 	 */
 	public String convertELocalDateTimeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : ((LocalDateTime) instanceValue).toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Integer createScoreFromString(EDataType eDataType, String initialValue) {
+		return (Integer)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertScoreToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Integer createRoundNumberFromString(EDataType eDataType, String initialValue) {
+		return (Integer)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRoundNumberToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

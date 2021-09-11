@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ft.Tournament#getName <em>Name</em>}</li>
  *   <li>{@link ft.Tournament#getGender <em>Gender</em>}</li>
- *   <li>{@link ft.Tournament#getRegion <em>Region</em>}</li>
+ *   <li>{@link ft.Tournament#getHost <em>Host</em>}</li>
  *   <li>{@link ft.Tournament#getSeasons <em>Seasons</em>}</li>
  * </ul>
  *
@@ -74,28 +74,28 @@ public interface Tournament extends EObject {
 	void setGender(GenderKind value);
 
 	/**
-	 * Returns the value of the '<em><b>Region</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link ft.Region#getTournaments <em>Tournaments</em>}'.
+	 * Returns the value of the '<em><b>Host</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link ft.AbstractHost#getTournaments <em>Tournaments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Region</em>' container reference.
-	 * @see #setRegion(Region)
-	 * @see ft.FtPackage#getTournament_Region()
-	 * @see ft.Region#getTournaments
+	 * @return the value of the '<em>Host</em>' container reference.
+	 * @see #setHost(AbstractHost)
+	 * @see ft.FtPackage#getTournament_Host()
+	 * @see ft.AbstractHost#getTournaments
 	 * @model opposite="tournaments" required="true" transient="false"
 	 * @generated
 	 */
-	Region getRegion();
+	AbstractHost getHost();
 
 	/**
-	 * Sets the value of the '{@link ft.Tournament#getRegion <em>Region</em>}' container reference.
+	 * Sets the value of the '{@link ft.Tournament#getHost <em>Host</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Region</em>' container reference.
-	 * @see #getRegion()
+	 * @param value the new value of the '<em>Host</em>' container reference.
+	 * @see #getHost()
 	 * @generated
 	 */
-	void setRegion(Region value);
+	void setHost(AbstractHost value);
 
 	/**
 	 * Returns the value of the '<em><b>Seasons</b></em>' containment reference list.
