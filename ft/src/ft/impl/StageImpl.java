@@ -114,7 +114,7 @@ public class StageImpl extends MinimalEObjectImpl.Container implements Stage {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newSeason != null)
-				msgs = ((InternalEObject)newSeason).eInverseAdd(this, FtPackage.SEASON__STAGE, Season.class, msgs);
+				msgs = ((InternalEObject)newSeason).eInverseAdd(this, FtPackage.SEASON__STAGES, Season.class, msgs);
 			msgs = basicSetSeason(newSeason, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -190,7 +190,7 @@ public class StageImpl extends MinimalEObjectImpl.Container implements Stage {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case FtPackage.STAGE__SEASON:
-				return eInternalContainer().eInverseRemove(this, FtPackage.SEASON__STAGE, Season.class, msgs);
+				return eInternalContainer().eInverseRemove(this, FtPackage.SEASON__STAGES, Season.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

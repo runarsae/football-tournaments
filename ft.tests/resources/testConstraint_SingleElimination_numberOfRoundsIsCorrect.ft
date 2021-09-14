@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ft:FootballTournaments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ft="platform:/plugin/ft/model/ft.ecore">
+  <hosts xsi:type="ft:RegionalHost" region="Norway">
+    <tournaments name="NM">
+      <seasons startDate="2021-01-01" endDate="2021-12-31" clubs="//@regions.0/@clubs.2 //@regions.0/@clubs.3 //@regions.0/@clubs.1 //@regions.0/@clubs.0">
+        <stages xsi:type="ft:SingleElimination" clubs="//@regions.0/@clubs.2 //@regions.0/@clubs.3 //@regions.0/@clubs.1 //@regions.0/@clubs.0">
+          <rounds roundNumber="1">
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.3" date="2021-01-01T18:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.1" date="2021-01-01T18:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="5" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="2">
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.2" date="2021-01-02T18:00"/>
+          </rounds>
+        </stages>
+        <stages xsi:type="ft:SingleElimination" clubs="//@regions.0/@clubs.2 //@regions.0/@clubs.3 //@regions.0/@clubs.1 //@regions.0/@clubs.0">
+          <rounds roundNumber="1">
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.3" date="2021-01-01T18:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.1" date="2021-01-01T18:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="5" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="2">
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.2" date="2021-01-02T18:00"/>
+          </rounds>
+          <rounds roundNumber="3"/>
+        </stages>
+      </seasons>
+    </tournaments>
+  </hosts>
+  <regions name="Norway">
+    <clubs name="Rosenborg"/>
+    <clubs name="Molde"/>
+    <clubs name="Bodø/Glimt"/>
+    <clubs name="Brann"/>
+  </regions>
+</ft:FootballTournaments>

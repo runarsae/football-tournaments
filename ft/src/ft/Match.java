@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see ft.FtPackage#getMatch()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='homeClubAndAwayClubCannotBeTheSame homeClubMustBeInStage awayClubMustBeInStage homeClubMustBeInOnlyOneMatchPerRound awayClubMustBeInOnlyOneMatchPerRound dateMustBeWithinSeasonStartAndEnd'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='homeClubAndAwayClubCannotBeTheSame homeClubMustBeInStage awayClubMustBeInStage dateMustBeWithinSeasonStartAndEnd'"
  *        annotation="http://www.eclipse.org/acceleo/query/1.0 homeClubAndAwayClubCannotBeTheSame='self.homeClub &lt;&gt; self.awayClub' homeClubMustBeInStage='self.round.stage.clubs-&gt;includes(self.homeClub)' awayClubMustBeInStage='self.round.stage.clubs-&gt;includes(self.awayClub)' homeClubMustBeInOnlyOneMatchPerRound='self.round.matches.homeClub-&gt;count(self.homeClub) = 1 and self.round.matches.awayClub-&gt;count(self.homeClub) = 0' awayClubMustBeInOnlyOneMatchPerRound='self.round.matches.homeClub-&gt;count(self.awayClub) = 0 and self.round.matches.awayClub-&gt;count(self.awayClub) = 1'"
  * @generated
  */

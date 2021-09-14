@@ -17,7 +17,8 @@ package ft;
  * </ul>
  *
  * @see ft.FtPackage#getExtendedTimeResult()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='fullTimeResultMustBeDraw mustBeAWinner'"
+ *        annotation="http://www.eclipse.org/acceleo/query/1.0 fullTimeResultMustBeDraw='self.homeGoalsFullTime = self.awayGoalsFullTime' mustBeAWinner='self.winner = ft::WinnerKind::HOME or self.winner = ft::WinnerKind::AWAY'"
  * @generated
  */
 public interface ExtendedTimeResult extends AbstractResult, Result {

@@ -331,8 +331,8 @@ public class FtValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validateSeason_startDateMustBeBeforeEndDate(Season season, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// Check if season start date is before end date 
-		if (!season.getStartDate().isBefore(season.getEndDate())) {
+		// Check if season start date is before end date (or equal)
+		if (!season.getStartDate().isBefore(season.getEndDate()) && !season.getStartDate().isEqual(season.getEndDate())) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -861,7 +861,46 @@ public class FtValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateRound(Round round, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(round, diagnostics, context);
+		if (!validate_NoCircularContainment(round, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(round, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(round, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(round, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(round, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(round, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(round, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(round, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(round, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRound_clubsInRoundMatchesMustBeUnique(round, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the clubsInRoundMatchesMustBeUnique constraint of '<em>Round</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ROUND__CLUBS_IN_ROUND_MATCHES_MUST_BE_UNIQUE__EEXPRESSION = "self.matches.homeClub->concat(self.matches.awayClub)->isUnique(club | club)";
+
+	/**
+	 * Validates the clubsInRoundMatchesMustBeUnique constraint of '<em>Round</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRound_clubsInRoundMatchesMustBeUnique(Round round, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(FtPackage.Literals.ROUND,
+				 round,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "clubsInRoundMatchesMustBeUnique",
+				 ROUND__CLUBS_IN_ROUND_MATCHES_MUST_BE_UNIQUE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -882,8 +921,6 @@ public class FtValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateMatch_homeClubAndAwayClubCannotBeTheSame(match, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMatch_homeClubMustBeInStage(match, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMatch_awayClubMustBeInStage(match, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMatch_homeClubMustBeInOnlyOneMatchPerRound(match, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMatch_awayClubMustBeInOnlyOneMatchPerRound(match, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMatch_dateMustBeWithinSeasonStartAndEnd(match, diagnostics, context);
 		return result;
 	}
@@ -976,64 +1013,6 @@ public class FtValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the homeClubMustBeInOnlyOneMatchPerRound constraint of '<em>Match</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String MATCH__HOME_CLUB_MUST_BE_IN_ONLY_ONE_MATCH_PER_ROUND__EEXPRESSION = "self.round.matches.homeClub->count(self.homeClub) = 1 and self.round.matches.awayClub->count(self.homeClub) = 0";
-
-	/**
-	 * Validates the homeClubMustBeInOnlyOneMatchPerRound constraint of '<em>Match</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMatch_homeClubMustBeInOnlyOneMatchPerRound(Match match, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(FtPackage.Literals.MATCH,
-				 match,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/acceleo/query/1.0",
-				 "homeClubMustBeInOnlyOneMatchPerRound",
-				 MATCH__HOME_CLUB_MUST_BE_IN_ONLY_ONE_MATCH_PER_ROUND__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the awayClubMustBeInOnlyOneMatchPerRound constraint of '<em>Match</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String MATCH__AWAY_CLUB_MUST_BE_IN_ONLY_ONE_MATCH_PER_ROUND__EEXPRESSION = "self.round.matches.homeClub->count(self.awayClub) = 0 and self.round.matches.awayClub->count(self.awayClub) = 1";
-
-	/**
-	 * Validates the awayClubMustBeInOnlyOneMatchPerRound constraint of '<em>Match</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMatch_awayClubMustBeInOnlyOneMatchPerRound(Match match, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(FtPackage.Literals.MATCH,
-				 match,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/acceleo/query/1.0",
-				 "awayClubMustBeInOnlyOneMatchPerRound",
-				 MATCH__AWAY_CLUB_MUST_BE_IN_ONLY_ONE_MATCH_PER_ROUND__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
 	 * Validates the dateMustBeWithinSeasonStartAndEnd constraint of '<em>Match</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1084,7 +1063,76 @@ public class FtValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateExtendedTimeResult(ExtendedTimeResult extendedTimeResult, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(extendedTimeResult, diagnostics, context);
+		if (!validate_NoCircularContainment(extendedTimeResult, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(extendedTimeResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(extendedTimeResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(extendedTimeResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(extendedTimeResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(extendedTimeResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(extendedTimeResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(extendedTimeResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(extendedTimeResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtendedTimeResult_fullTimeResultMustBeDraw(extendedTimeResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtendedTimeResult_mustBeAWinner(extendedTimeResult, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the fullTimeResultMustBeDraw constraint of '<em>Extended Time Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String EXTENDED_TIME_RESULT__FULL_TIME_RESULT_MUST_BE_DRAW__EEXPRESSION = "self.homeGoalsFullTime = self.awayGoalsFullTime";
+
+	/**
+	 * Validates the fullTimeResultMustBeDraw constraint of '<em>Extended Time Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtendedTimeResult_fullTimeResultMustBeDraw(ExtendedTimeResult extendedTimeResult, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(FtPackage.Literals.EXTENDED_TIME_RESULT,
+				 extendedTimeResult,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "fullTimeResultMustBeDraw",
+				 EXTENDED_TIME_RESULT__FULL_TIME_RESULT_MUST_BE_DRAW__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the mustBeAWinner constraint of '<em>Extended Time Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String EXTENDED_TIME_RESULT__MUST_BE_AWINNER__EEXPRESSION = "self.winner = ft::WinnerKind::HOME or self.winner = ft::WinnerKind::AWAY";
+
+	/**
+	 * Validates the mustBeAWinner constraint of '<em>Extended Time Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtendedTimeResult_mustBeAWinner(ExtendedTimeResult extendedTimeResult, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(FtPackage.Literals.EXTENDED_TIME_RESULT,
+				 extendedTimeResult,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "mustBeAWinner",
+				 EXTENDED_TIME_RESULT__MUST_BE_AWINNER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1093,7 +1141,48 @@ public class FtValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePenaltyShootoutResult(PenaltyShootoutResult penaltyShootoutResult, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(penaltyShootoutResult, diagnostics, context);
+		if (!validate_NoCircularContainment(penaltyShootoutResult, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(penaltyShootoutResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(penaltyShootoutResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(penaltyShootoutResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(penaltyShootoutResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(penaltyShootoutResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(penaltyShootoutResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(penaltyShootoutResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(penaltyShootoutResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtendedTimeResult_fullTimeResultMustBeDraw(penaltyShootoutResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtendedTimeResult_mustBeAWinner(penaltyShootoutResult, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePenaltyShootoutResult_extendedTimeResultMustBeDraw(penaltyShootoutResult, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the extendedTimeResultMustBeDraw constraint of '<em>Penalty Shootout Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PENALTY_SHOOTOUT_RESULT__EXTENDED_TIME_RESULT_MUST_BE_DRAW__EEXPRESSION = "self.homeGoalsExtendedTime = self.awayGoalsExtendedTime";
+
+	/**
+	 * Validates the extendedTimeResultMustBeDraw constraint of '<em>Penalty Shootout Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePenaltyShootoutResult_extendedTimeResultMustBeDraw(PenaltyShootoutResult penaltyShootoutResult, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(FtPackage.Literals.PENALTY_SHOOTOUT_RESULT,
+				 penaltyShootoutResult,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "extendedTimeResultMustBeDraw",
+				 PENALTY_SHOOTOUT_RESULT__EXTENDED_TIME_RESULT_MUST_BE_DRAW__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1102,46 +1191,7 @@ public class FtValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateTable(Table table, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(table, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(table, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(table, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(table, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(table, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(table, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(table, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(table, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(table, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTable_numberOfStatisticsMustEqualNumberOfClubsInStage(table, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the numberOfStatisticsMustEqualNumberOfClubsInStage constraint of '<em>Table</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String TABLE__NUMBER_OF_STATISTICS_MUST_EQUAL_NUMBER_OF_CLUBS_IN_STAGE__EEXPRESSION = "self.statistics->size() = self.stage.clubs->size()";
-
-	/**
-	 * Validates the numberOfStatisticsMustEqualNumberOfClubsInStage constraint of '<em>Table</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTable_numberOfStatisticsMustEqualNumberOfClubsInStage(Table table, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(FtPackage.Literals.TABLE,
-				 table,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/acceleo/query/1.0",
-				 "numberOfStatisticsMustEqualNumberOfClubsInStage",
-				 TABLE__NUMBER_OF_STATISTICS_MUST_EQUAL_NUMBER_OF_CLUBS_IN_STAGE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return validate_EveryDefaultConstraint(table, diagnostics, context);
 	}
 
 	/**
@@ -1150,76 +1200,7 @@ public class FtValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateStatistic(Statistic statistic, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(statistic, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(statistic, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(statistic, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(statistic, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(statistic, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(statistic, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(statistic, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(statistic, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(statistic, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatistic_clubMustBeInStage(statistic, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStatistic_clubMustBeInOnlyOneStatisticPerTable(statistic, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the clubMustBeInStage constraint of '<em>Statistic</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String STATISTIC__CLUB_MUST_BE_IN_STAGE__EEXPRESSION = "self.eContainer().stage.clubs->includes(self.club)";
-
-	/**
-	 * Validates the clubMustBeInStage constraint of '<em>Statistic</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateStatistic_clubMustBeInStage(Statistic statistic, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(FtPackage.Literals.STATISTIC,
-				 statistic,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/acceleo/query/1.0",
-				 "clubMustBeInStage",
-				 STATISTIC__CLUB_MUST_BE_IN_STAGE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the clubMustBeInOnlyOneStatisticPerTable constraint of '<em>Statistic</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String STATISTIC__CLUB_MUST_BE_IN_ONLY_ONE_STATISTIC_PER_TABLE__EEXPRESSION = "self.eContainer().statistics.club->count(self.club) = 1";
-
-	/**
-	 * Validates the clubMustBeInOnlyOneStatisticPerTable constraint of '<em>Statistic</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateStatistic_clubMustBeInOnlyOneStatisticPerTable(Statistic statistic, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(FtPackage.Literals.STATISTIC,
-				 statistic,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/acceleo/query/1.0",
-				 "clubMustBeInOnlyOneStatisticPerTable",
-				 STATISTIC__CLUB_MUST_BE_IN_ONLY_ONE_STATISTIC_PER_TABLE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return validate_EveryDefaultConstraint(statistic, diagnostics, context);
 	}
 
 	/**
@@ -1333,13 +1314,10 @@ public class FtValidator extends EObjectValidator {
 	 * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		// TODO
-		// Specialize this to return a resource locator for messages specific to this validator.
-		// Ensure that you remove @generated or mark it @generated NOT
 		return super.getResourceLocator();
 	}
 

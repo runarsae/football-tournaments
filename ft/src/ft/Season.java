@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ft.Season#getYearIdentifier <em>Year Identifier</em>}</li>
  *   <li>{@link ft.Season#getTournament <em>Tournament</em>}</li>
  *   <li>{@link ft.Season#getClubs <em>Clubs</em>}</li>
- *   <li>{@link ft.Season#getStage <em>Stage</em>}</li>
+ *   <li>{@link ft.Season#getStages <em>Stages</em>}</li>
  * </ul>
  *
  * @see ft.FtPackage#getSeason()
@@ -122,27 +122,17 @@ public interface Season extends EObject {
 	EList<Club> getClubs();
 
 	/**
-	 * Returns the value of the '<em><b>Stage</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Stages</b></em>' containment reference list.
+	 * The list contents are of type {@link ft.Stage}.
 	 * It is bidirectional and its opposite is '{@link ft.Stage#getSeason <em>Season</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Stage</em>' containment reference.
-	 * @see #setStage(Stage)
-	 * @see ft.FtPackage#getSeason_Stage()
+	 * @return the value of the '<em>Stages</em>' containment reference list.
+	 * @see ft.FtPackage#getSeason_Stages()
 	 * @see ft.Stage#getSeason
-	 * @model opposite="season" containment="true" required="true"
+	 * @model opposite="season" containment="true"
 	 * @generated
 	 */
-	Stage getStage();
-
-	/**
-	 * Sets the value of the '{@link ft.Season#getStage <em>Stage</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Stage</em>' containment reference.
-	 * @see #getStage()
-	 * @generated
-	 */
-	void setStage(Stage value);
+	EList<Stage> getStages();
 
 } // Season

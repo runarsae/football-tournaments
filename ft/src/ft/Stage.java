@@ -28,14 +28,14 @@ import org.eclipse.emf.ecore.EObject;
 public interface Stage extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Season</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link ft.Season#getStage <em>Stage</em>}'.
+	 * It is bidirectional and its opposite is '{@link ft.Season#getStages <em>Stages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Season</em>' container reference.
 	 * @see #setSeason(Season)
 	 * @see ft.FtPackage#getStage_Season()
-	 * @see ft.Season#getStage
-	 * @model opposite="stage" required="true" transient="false"
+	 * @see ft.Season#getStages
+	 * @model opposite="stages" required="true" transient="false"
 	 * @generated
 	 */
 	Season getSeason();

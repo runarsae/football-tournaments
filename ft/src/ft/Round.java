@@ -21,7 +21,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see ft.FtPackage#getRound()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='clubsInRoundMatchesMustBeUnique'"
+ *        annotation="http://www.eclipse.org/acceleo/query/1.0 clubsInRoundMatchesMustBeUnique='self.matches.homeClub-&gt;concat(self.matches.awayClub)-&gt;isUnique(club | club)'"
  * @generated
  */
 public interface Round extends EObject {

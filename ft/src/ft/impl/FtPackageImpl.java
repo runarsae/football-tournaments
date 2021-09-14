@@ -547,7 +547,7 @@ public class FtPackageImpl extends EPackageImpl implements FtPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSeason_Stage() {
+	public EReference getSeason_Stages() {
 		return (EReference)seasonEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1081,7 +1081,7 @@ public class FtPackageImpl extends EPackageImpl implements FtPackage {
 		createEAttribute(seasonEClass, SEASON__YEAR_IDENTIFIER);
 		createEReference(seasonEClass, SEASON__TOURNAMENT);
 		createEReference(seasonEClass, SEASON__CLUBS);
-		createEReference(seasonEClass, SEASON__STAGE);
+		createEReference(seasonEClass, SEASON__STAGES);
 
 		stageEClass = createEClass(STAGE);
 		createEReference(stageEClass, STAGE__SEASON);
@@ -1224,10 +1224,10 @@ public class FtPackageImpl extends EPackageImpl implements FtPackage {
 		initEAttribute(getSeason_YearIdentifier(), ecorePackage.getEString(), "yearIdentifier", null, 0, 1, Season.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getSeason_Tournament(), this.getTournament(), this.getTournament_Seasons(), "tournament", null, 1, 1, Season.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSeason_Clubs(), this.getClub(), null, "clubs", null, 0, -1, Season.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSeason_Stage(), this.getStage(), this.getStage_Season(), "stage", null, 1, 1, Season.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSeason_Stages(), this.getStage(), this.getStage_Season(), "stages", null, 0, -1, Season.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stageEClass, Stage.class, "Stage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStage_Season(), this.getSeason(), this.getSeason_Stage(), "season", null, 1, 1, Stage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStage_Season(), this.getSeason(), this.getSeason_Stages(), "season", null, 1, 1, Stage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStage_Rounds(), this.getRound(), this.getRound_Stage(), "rounds", null, 0, -1, Stage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStage_Clubs(), this.getClub(), null, "clubs", null, 0, -1, Stage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1366,22 +1366,28 @@ public class FtPackageImpl extends EPackageImpl implements FtPackage {
 			   "constraints", "numberOfRoundsIsCorrect roundNumbersMustBeInValidRange numberOfMatchesInEachRoundIsCorrect everyClubMustHaveWonInPreviousRound matchesMustHaveAWinner"
 		   });
 		addAnnotation
-		  (tableEClass,
+		  (roundEClass,
 		   source,
 		   new String[] {
-			   "constraints", "numberOfStatisticsMustEqualNumberOfClubsInStage"
-		   });
-		addAnnotation
-		  (statisticEClass,
-		   source,
-		   new String[] {
-			   "constraints", "clubMustBeInStage clubMustBeInOnlyOneStatisticPerTable"
+			   "constraints", "clubsInRoundMatchesMustBeUnique"
 		   });
 		addAnnotation
 		  (matchEClass,
 		   source,
 		   new String[] {
-			   "constraints", "homeClubAndAwayClubCannotBeTheSame homeClubMustBeInStage awayClubMustBeInStage homeClubMustBeInOnlyOneMatchPerRound awayClubMustBeInOnlyOneMatchPerRound dateMustBeWithinSeasonStartAndEnd"
+			   "constraints", "homeClubAndAwayClubCannotBeTheSame homeClubMustBeInStage awayClubMustBeInStage dateMustBeWithinSeasonStartAndEnd"
+		   });
+		addAnnotation
+		  (extendedTimeResultEClass,
+		   source,
+		   new String[] {
+			   "constraints", "fullTimeResultMustBeDraw mustBeAWinner"
+		   });
+		addAnnotation
+		  (penaltyShootoutResultEClass,
+		   source,
+		   new String[] {
+			   "constraints", "extendedTimeResultMustBeDraw"
 		   });
 	}
 
@@ -1429,17 +1435,10 @@ public class FtPackageImpl extends EPackageImpl implements FtPackage {
 			   "noExtendedTimeOrPenaltyShootout", "self.rounds.matches.result->forAll(result | result.eClass().name = \'Result\')"
 		   });
 		addAnnotation
-		  (tableEClass,
+		  (roundEClass,
 		   source,
 		   new String[] {
-			   "numberOfStatisticsMustEqualNumberOfClubsInStage", "self.statistics->size() = self.stage.clubs->size()"
-		   });
-		addAnnotation
-		  (statisticEClass,
-		   source,
-		   new String[] {
-			   "clubMustBeInStage", "self.eContainer().stage.clubs->includes(self.club)",
-			   "clubMustBeInOnlyOneStatisticPerTable", "self.eContainer().statistics.club->count(self.club) = 1"
+			   "clubsInRoundMatchesMustBeUnique", "self.matches.homeClub->concat(self.matches.awayClub)->isUnique(club | club)"
 		   });
 		addAnnotation
 		  (matchEClass,
@@ -1450,6 +1449,19 @@ public class FtPackageImpl extends EPackageImpl implements FtPackage {
 			   "awayClubMustBeInStage", "self.round.stage.clubs->includes(self.awayClub)",
 			   "homeClubMustBeInOnlyOneMatchPerRound", "self.round.matches.homeClub->count(self.homeClub) = 1 and self.round.matches.awayClub->count(self.homeClub) = 0",
 			   "awayClubMustBeInOnlyOneMatchPerRound", "self.round.matches.homeClub->count(self.awayClub) = 0 and self.round.matches.awayClub->count(self.awayClub) = 1"
+		   });
+		addAnnotation
+		  (extendedTimeResultEClass,
+		   source,
+		   new String[] {
+			   "fullTimeResultMustBeDraw", "self.homeGoalsFullTime = self.awayGoalsFullTime",
+			   "mustBeAWinner", "self.winner = ft::WinnerKind::HOME or self.winner = ft::WinnerKind::AWAY"
+		   });
+		addAnnotation
+		  (penaltyShootoutResultEClass,
+		   source,
+		   new String[] {
+			   "extendedTimeResultMustBeDraw", "self.homeGoalsExtendedTime = self.awayGoalsExtendedTime"
 		   });
 	}
 

@@ -8,10 +8,10 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import ft.FootballTournaments;
 import ft.FtPackage;
+import ft.util.FtResourceFactoryImpl;
 
 public class RunValidator {
 	
@@ -26,10 +26,10 @@ public class RunValidator {
 		// Maps the URI for the model to the package
 		resSet.getPackageRegistry().put(FtPackage.eNS_URI, FtPackage.eINSTANCE);
 		
-		// When loading an XMI file, use an XMIResourceFactory to handle resources (parsing it to real instances of our model)
-		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
+		// When loading an .ft file, use FtResourceFactory to handle resources (parsing to real instances of our model)
+		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ft", new FtResourceFactoryImpl());
 		
-		Resource resource = resSet.getResource(URI.createURI("model/FootballTournaments.xmi"), true);
+		Resource resource = resSet.getResource(URI.createURI("model/FootballTournaments.ft"), true);
 		
 		// Validate football tournaments
 		FootballTournaments ft = (FootballTournaments) resource.getContents().get(0);

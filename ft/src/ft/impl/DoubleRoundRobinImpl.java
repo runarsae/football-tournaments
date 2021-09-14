@@ -72,7 +72,7 @@ public class DoubleRoundRobinImpl extends StageImpl implements DoubleRoundRobin 
 		
 		EList<Statistic> statistics = table.getStatistics();
 		
-		// Generate a statistic for each club in the season
+		// Generate a statistic for each club in the stage
 		for (Club club : this.getClubs()) {
 			Statistic statistic = factory.createStatistic();
 			statistic.setClub(club);

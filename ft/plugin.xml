@@ -14,4 +14,11 @@
             genModel="model/ft.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated ft -->
+      <parser
+            type="ft"
+            class="ft.util.FtResourceFactoryImpl"/>
+   </extension>
+
 </plugin>

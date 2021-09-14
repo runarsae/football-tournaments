@@ -29,8 +29,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see ft.FtPackage#getStatistic()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='clubMustBeInStage clubMustBeInOnlyOneStatisticPerTable'"
- *        annotation="http://www.eclipse.org/acceleo/query/1.0 clubMustBeInStage='self.eContainer().stage.clubs-&gt;includes(self.club)' clubMustBeInOnlyOneStatisticPerTable='self.eContainer().statistics.club-&gt;count(self.club) = 1'"
+ * @model
  * @generated
  */
 public interface Statistic extends EObject {

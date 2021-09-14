@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ft:FootballTournaments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ft="platform:/plugin/ft/model/ft.ecore">
+  <hosts xsi:type="ft:RegionalHost" region="Norway">
+    <tournaments name="Eliteserien">
+      <seasons startDate="2021-01-01" endDate="2021-12-31" clubs="//@regions.1/@clubs.0"/>
+    </tournaments>
+  </hosts>
+  <hosts xsi:type="ft:RegionalHost" region="England">
+    <tournaments name="Premier League">
+      <seasons startDate="2021-08-01" endDate="2022-05-01" clubs="//@regions.0/@clubs.0 //@regions.1/@clubs.0"/>
+    </tournaments>
+  </hosts>
+  <regions name="England">
+    <clubs name="Manchester United"/>
+  </regions>
+  <regions name="Norway">
+    <clubs name="Rosenborg"/>
+  </regions>
+</ft:FootballTournaments>

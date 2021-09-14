@@ -22,8 +22,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +40,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link ft.impl.SeasonImpl#getYearIdentifier <em>Year Identifier</em>}</li>
  *   <li>{@link ft.impl.SeasonImpl#getTournament <em>Tournament</em>}</li>
  *   <li>{@link ft.impl.SeasonImpl#getClubs <em>Clubs</em>}</li>
- *   <li>{@link ft.impl.SeasonImpl#getStage <em>Stage</em>}</li>
+ *   <li>{@link ft.impl.SeasonImpl#getStages <em>Stages</em>}</li>
  * </ul>
  *
  * @generated
@@ -105,14 +107,14 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	protected EList<Club> clubs;
 
 	/**
-	 * The cached value of the '{@link #getStage() <em>Stage</em>}' containment reference.
+	 * The cached value of the '{@link #getStages() <em>Stages</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStage()
+	 * @see #getStages()
 	 * @generated
 	 * @ordered
 	 */
-	protected Stage stage;
+	protected EList<Stage> stages;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,10 +185,15 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	public String getYearIdentifier() {
 		// Use startDate and endDate to generate the years the season stretches over
 		// E.g. "2021" or "2021/2022"
+		
+		if (this.startDate == null || this.endDate == null) {
+			return null;
+		}
+		
 		Integer startYear = this.startDate.getYear();
 		Integer endYear = this.endDate.getYear();
 		
-		if (startYear == endYear || (endYear - startYear > 1)) {
+		if (startYear.equals(endYear) || (endYear - startYear > 1)) {
 			return startYear.toString();
 		}
 		
@@ -251,42 +258,11 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Stage getStage() {
-		return stage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetStage(Stage newStage, NotificationChain msgs) {
-		Stage oldStage = stage;
-		stage = newStage;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FtPackage.SEASON__STAGE, oldStage, newStage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<Stage> getStages() {
+		if (stages == null) {
+			stages = new EObjectContainmentWithInverseEList<Stage>(Stage.class, this, FtPackage.SEASON__STAGES, FtPackage.STAGE__SEASON);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStage(Stage newStage) {
-		if (newStage != stage) {
-			NotificationChain msgs = null;
-			if (stage != null)
-				msgs = ((InternalEObject)stage).eInverseRemove(this, FtPackage.STAGE__SEASON, Stage.class, msgs);
-			if (newStage != null)
-				msgs = ((InternalEObject)newStage).eInverseAdd(this, FtPackage.STAGE__SEASON, Stage.class, msgs);
-			msgs = basicSetStage(newStage, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FtPackage.SEASON__STAGE, newStage, newStage));
+		return stages;
 	}
 
 	/**
@@ -302,10 +278,8 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTournament((Tournament)otherEnd, msgs);
-			case FtPackage.SEASON__STAGE:
-				if (stage != null)
-					msgs = ((InternalEObject)stage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FtPackage.SEASON__STAGE, null, msgs);
-				return basicSetStage((Stage)otherEnd, msgs);
+			case FtPackage.SEASON__STAGES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStages()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -320,8 +294,8 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 		switch (featureID) {
 			case FtPackage.SEASON__TOURNAMENT:
 				return basicSetTournament(null, msgs);
-			case FtPackage.SEASON__STAGE:
-				return basicSetStage(null, msgs);
+			case FtPackage.SEASON__STAGES:
+				return ((InternalEList<?>)getStages()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -358,8 +332,8 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 				return getTournament();
 			case FtPackage.SEASON__CLUBS:
 				return getClubs();
-			case FtPackage.SEASON__STAGE:
-				return getStage();
+			case FtPackage.SEASON__STAGES:
+				return getStages();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -386,8 +360,9 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 				getClubs().clear();
 				getClubs().addAll((Collection<? extends Club>)newValue);
 				return;
-			case FtPackage.SEASON__STAGE:
-				setStage((Stage)newValue);
+			case FtPackage.SEASON__STAGES:
+				getStages().clear();
+				getStages().addAll((Collection<? extends Stage>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -413,8 +388,8 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 			case FtPackage.SEASON__CLUBS:
 				getClubs().clear();
 				return;
-			case FtPackage.SEASON__STAGE:
-				setStage((Stage)null);
+			case FtPackage.SEASON__STAGES:
+				getStages().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -438,8 +413,8 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 				return getTournament() != null;
 			case FtPackage.SEASON__CLUBS:
 				return clubs != null && !clubs.isEmpty();
-			case FtPackage.SEASON__STAGE:
-				return stage != null;
+			case FtPackage.SEASON__STAGES:
+				return stages != null && !stages.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -17,7 +17,8 @@ package ft;
  * </ul>
  *
  * @see ft.FtPackage#getPenaltyShootoutResult()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='extendedTimeResultMustBeDraw'"
+ *        annotation="http://www.eclipse.org/acceleo/query/1.0 extendedTimeResultMustBeDraw='self.homeGoalsExtendedTime = self.awayGoalsExtendedTime'"
  * @generated
  */
 public interface PenaltyShootoutResult extends AbstractResult, ExtendedTimeResult {

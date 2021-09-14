@@ -455,13 +455,13 @@ public interface FtPackage extends EPackage {
 	int SEASON__CLUBS = 4;
 
 	/**
-	 * The feature id for the '<em><b>Stage</b></em>' containment reference.
+	 * The feature id for the '<em><b>Stages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEASON__STAGE = 5;
+	int SEASON__STAGES = 5;
 
 	/**
 	 * The number of structural features of the '<em>Season</em>' class.
@@ -1647,15 +1647,15 @@ public interface FtPackage extends EPackage {
 	EReference getSeason_Clubs();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link ft.Season#getStage <em>Stage</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ft.Season#getStages <em>Stages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Stage</em>'.
-	 * @see ft.Season#getStage()
+	 * @return the meta object for the containment reference list '<em>Stages</em>'.
+	 * @see ft.Season#getStages()
 	 * @see #getSeason()
 	 * @generated
 	 */
-	EReference getSeason_Stage();
+	EReference getSeason_Stages();
 
 	/**
 	 * Returns the meta object for class '{@link ft.Stage <em>Stage</em>}'.
@@ -2473,12 +2473,12 @@ public interface FtPackage extends EPackage {
 		EReference SEASON__CLUBS = eINSTANCE.getSeason_Clubs();
 
 		/**
-		 * The meta object literal for the '<em><b>Stage</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Stages</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SEASON__STAGE = eINSTANCE.getSeason_Stage();
+		EReference SEASON__STAGES = eINSTANCE.getSeason_Stages();
 
 		/**
 		 * The meta object literal for the '{@link ft.impl.StageImpl <em>Stage</em>}' class.

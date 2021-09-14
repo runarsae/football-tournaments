@@ -83,24 +83,32 @@ public abstract class AbstractResultImpl extends MinimalEObjectImpl.Container im
 	 */
 	public WinnerKind getWinner() {
 		// Get the winner based on what type of result this is (full time, extended time or penalty shoot-out)
-		String resultType = this.eClass().getName();
 		
-		if (resultType == "Result") {
-			// If it is a normal result, calculate winner based on goals at full time
-			Result result = (Result) this;
+		if (this instanceof PenaltyShootoutResult) {
+			// If this is a result for a match with penalty shoot-out,
+			// calculate winner based on goals at penalty shoot-out
+			PenaltyShootoutResult result = (PenaltyShootoutResult) this;
 			
-			if (result.getHomeGoalsFullTime() > result.getAwayGoalsFullTime()) {
-				return WinnerKind.HOME;
-			} else if (result.getHomeGoalsFullTime() < result.getAwayGoalsFullTime()) {
-				return WinnerKind.AWAY;
-			} else {
-				return WinnerKind.DRAW;
+			if (result.getHomeGoalsFinal() == null || result.getAwayGoalsFinal() == null || result.getHomeGoalsPenaltyShootout() == null || result.getAwayGoalsPenaltyShootout() == null) {
+				return null;
 			}
 			
-		} else if (resultType == "ExtendedTimeResult") {
+			if (result.getHomeGoalsPenaltyShootout() > result.getAwayGoalsPenaltyShootout()) {
+				return WinnerKind.HOME;
+			} else if (result.getHomeGoalsPenaltyShootout() < result.getAwayGoalsPenaltyShootout()) {
+				return WinnerKind.AWAY;
+			} else {
+				throw new IllegalStateException("The result of a penalty shoot-out cannot be DRAW.");
+			}
+			
+		} else if (this instanceof ExtendedTimeResult) {
 			// If this is a result for a match with extended time, 
 			// calculate winner based on goals at full time plus goals at extended time
 			ExtendedTimeResult result = (ExtendedTimeResult) this;
+			
+			if (result.getHomeGoalsFinal() == null || result.getAwayGoalsFinal() == null) {
+				return null;
+			}
 			
 			if (result.getHomeGoalsFinal() > result.getAwayGoalsFinal()) {
 				return WinnerKind.HOME;
@@ -110,18 +118,22 @@ public abstract class AbstractResultImpl extends MinimalEObjectImpl.Container im
 				throw new IllegalStateException("The result of a match with extended time cannot be DRAW. Consider using a penalty shoout-out result instead.");
 			}	
 			
-		} else {
-			// If this is a result for a match with penalty shoot-out,
-			// calculate winner based on goals at penalty shoot-out
-			PenaltyShootoutResult result = (PenaltyShootoutResult) this;
+		 } else {
+			// If it is a normal result, calculate winner based on goals at full time
+			Result result = (Result) this;
 			
-			if (result.getHomeGoalsPenaltyShootout() > result.getAwayGoalsPenaltyShootout()) {
+			if (result.getHomeGoalsFinal() == null || result.getAwayGoalsFinal() == null) {
+				return null;
+			}
+			
+			if (result.getHomeGoalsFullTime() > result.getAwayGoalsFullTime()) {
 				return WinnerKind.HOME;
-			} else if (result.getHomeGoalsPenaltyShootout() < result.getAwayGoalsPenaltyShootout()) {
+			} else if (result.getHomeGoalsFullTime() < result.getAwayGoalsFullTime()) {
 				return WinnerKind.AWAY;
 			} else {
-				throw new IllegalStateException("The result of a penalty shoot-out cannot be DRAW.");
+				return WinnerKind.DRAW;
 			}
+			
 		}
 	}
 
@@ -132,19 +144,25 @@ public abstract class AbstractResultImpl extends MinimalEObjectImpl.Container im
 	 */
 	public Integer getHomeGoalsFinal() {
 		// Sum goals at full time and goals at extended time (if present)
-		
-		String resultType = this.eClass().getName();
 
-		if (resultType == "Result") {
+		if (this instanceof ExtendedTimeResult) {
+			// Extended time or penalty shoot-out (PenaltyShootoutResult inherits from ExtendedTimeResult)
+			ExtendedTimeResult result = (ExtendedTimeResult) this;
+			
+			if (result.getHomeGoalsFullTime() == null || result.getHomeGoalsExtendedTime() == null) {
+				return null;
+			}
+			
+			return result.getHomeGoalsFullTime() + result.getHomeGoalsExtendedTime();
+		} else {
 			// No extended time
 			Result result = (Result) this;
 			
-			return result.getHomeGoalsFullTime();
-		} else {
-			// Extended time or penalty shoot-out
-			ExtendedTimeResult result = (ExtendedTimeResult) this;
+			if (result.getHomeGoalsFullTime() == null) {
+				return null;
+			}
 			
-			return result.getHomeGoalsFullTime() + result.getHomeGoalsExtendedTime();
+			return result.getHomeGoalsFullTime();
 		}
 	}
 
@@ -155,19 +173,25 @@ public abstract class AbstractResultImpl extends MinimalEObjectImpl.Container im
 	 */
 	public Integer getAwayGoalsFinal() {
 		// Sum goals at full time and goals at extended time (if present)
-		
-		String resultType = this.eClass().getName();
 
-		if (resultType == "Result") {
+		if (this instanceof ExtendedTimeResult) {
+			// Extended time or penalty shoot-out (PenaltyShootoutResult inherits from ExtendedTimeResult)
+			ExtendedTimeResult result = (ExtendedTimeResult) this;
+			
+			if (result.getAwayGoalsFullTime() == null || result.getAwayGoalsExtendedTime() == null) {
+				return null;
+			}
+			
+			return result.getAwayGoalsFullTime() + result.getAwayGoalsExtendedTime();
+		} else {
 			// No extended time
 			Result result = (Result) this;
 			
-			return result.getAwayGoalsFullTime();
-		} else {
-			// Extended time or penalty shoot-out
-			ExtendedTimeResult result = (ExtendedTimeResult) this;
+			if (result.getAwayGoalsFullTime() == null) {
+				return null;
+			}
 			
-			return result.getAwayGoalsFullTime() + result.getAwayGoalsExtendedTime();
+			return result.getAwayGoalsFullTime();
 		}
 	}
 

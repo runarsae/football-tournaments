@@ -4,7 +4,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>ft.ecore</foreignModel>
-  <genPackages prefix="Ft" disposableProviderFactory="true" ecorePackage="ft.ecore#/">
+  <genPackages prefix="Ft" resource="XMI" disposableProviderFactory="true" ecorePackage="ft.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="ft.ecore#//GenderKind">
       <genEnumLiterals ecoreEnumLiteral="ft.ecore#//GenderKind/MALE"/>
       <genEnumLiterals ecoreEnumLiteral="ft.ecore#//GenderKind/FEMALE"/>
@@ -57,7 +57,7 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ft.ecore#//Season/yearIdentifier"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ft.ecore#//Season/tournament"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ft.ecore#//Season/clubs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ft.ecore#//Season/stage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ft.ecore#//Season/stages"/>
     </genClasses>
     <genClasses ecoreClass="ft.ecore#//Stage">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ft.ecore#//Stage/season"/>

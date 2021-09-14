@@ -3,7 +3,7 @@
   <hosts xsi:type="ft:RegionalHost" region="Norway">
     <tournaments name="Eliteserien">
       <seasons startDate="2021-05-09" endDate="2021-12-12" clubs="//@regions.0/@clubs.0 //@regions.0/@clubs.1 //@regions.0/@clubs.2 //@regions.0/@clubs.3 //@regions.0/@clubs.4 //@regions.0/@clubs.5 //@regions.0/@clubs.6 //@regions.0/@clubs.7 //@regions.0/@clubs.8 //@regions.0/@clubs.9 //@regions.0/@clubs.10 //@regions.0/@clubs.11 //@regions.0/@clubs.12 //@regions.0/@clubs.13 //@regions.0/@clubs.14 //@regions.0/@clubs.15">
-        <stage xsi:type="ft:DoubleRoundRobin" clubs="//@regions.0/@clubs.0 //@regions.0/@clubs.1 //@regions.0/@clubs.2 //@regions.0/@clubs.3 //@regions.0/@clubs.4 //@regions.0/@clubs.5 //@regions.0/@clubs.6 //@regions.0/@clubs.7 //@regions.0/@clubs.8 //@regions.0/@clubs.9 //@regions.0/@clubs.10 //@regions.0/@clubs.11 //@regions.0/@clubs.12 //@regions.0/@clubs.13 //@regions.0/@clubs.14 //@regions.0/@clubs.15">
+        <stages xsi:type="ft:DoubleRoundRobin" clubs="//@regions.0/@clubs.0 //@regions.0/@clubs.1 //@regions.0/@clubs.2 //@regions.0/@clubs.3 //@regions.0/@clubs.4 //@regions.0/@clubs.5 //@regions.0/@clubs.6 //@regions.0/@clubs.7 //@regions.0/@clubs.8 //@regions.0/@clubs.9 //@regions.0/@clubs.10 //@regions.0/@clubs.11 //@regions.0/@clubs.12 //@regions.0/@clubs.13 //@regions.0/@clubs.14 //@regions.0/@clubs.15">
           <rounds roundNumber="1">
             <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.1" date="2021-05-09T18:00">
               <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
@@ -353,7 +353,7 @@
               <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
             </matches>
             <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.11" date="2021-08-08T18:00">
-              <result xsi:type="ft:Result" homeGoalsFullTime="5" awayGoalsFullTime="4"/>
+              <result xsi:type="ft:Result" homeGoalsFullTime="6" awayGoalsFullTime="5"/>
             </matches>
             <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.1" date="2021-08-08T18:00">
               <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="2"/>
@@ -376,7 +376,7 @@
               <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
             </matches>
             <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.0" date="2021-08-15T18:00">
-              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="2"/>
+              <result xsi:type="ft:Result" homeGoalsFullTime="15" awayGoalsFullTime="2"/>
             </matches>
             <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.4" date="2021-08-15T18:00">
               <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
@@ -388,7 +388,7 @@
               <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
             </matches>
             <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.11" date="2021-08-15T18:00">
-              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="2"/>
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="3"/>
             </matches>
             <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.10" date="2021-08-15T20:00">
               <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="2"/>
@@ -408,7 +408,7 @@
               <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
             </matches>
             <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.9" date="2021-08-22T18:00">
-              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="5"/>
             </matches>
             <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.2" date="2021-08-22T18:00">
               <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
@@ -425,7 +425,7 @@
               <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
             </matches>
             <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.11" date="2021-08-28T20:00">
-              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
             </matches>
             <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.0" date="2021-08-29T18:00">
               <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
@@ -434,7 +434,7 @@
               <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="3"/>
             </matches>
             <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.14" date="2021-08-29T18:00">
-              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="3"/>
             </matches>
             <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.10" date="2021-08-29T18:00">
               <result xsi:type="ft:Result" homeGoalsFullTime="5" awayGoalsFullTime="0"/>
@@ -447,7 +447,9 @@
             </matches>
           </rounds>
           <rounds roundNumber="18">
-            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.3" date="2021-09-11T18:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.3" date="2021-09-11T18:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
             <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.2" date="2021-09-11T18:00"/>
             <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.15" date="2021-09-12T18:00"/>
             <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.1" date="2021-09-12T18:00"/>
@@ -576,7 +578,7 @@
             <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.2" date="2021-12-12T17:00"/>
             <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.0" date="2021-12-12T17:00"/>
           </rounds>
-        </stage>
+        </stages>
       </seasons>
     </tournaments>
   </hosts>

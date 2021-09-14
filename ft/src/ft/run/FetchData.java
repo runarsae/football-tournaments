@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMIResource;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import ft.AbstractHost;
 import ft.AssociationHost;
@@ -32,13 +31,14 @@ import ft.Round;
 import ft.Season;
 import ft.Stage;
 import ft.Tournament;
+import ft.util.FtResourceFactoryImpl;
 
 public class FetchData {
 	
 	static FtFactory factory = FtFactory.eINSTANCE;
 
 	
-	static String MODEL_FILE = "model/FootballTournaments.xmi";
+	static String MODEL_FILE = "model/StatisticTest.ft";
 	
 	static String FILE = "datasets/eliteserien_2021.csv";
 	static String HOST_TYPE = "REGIONAL";
@@ -58,8 +58,8 @@ public class FetchData {
 		// Maps the URI for the model to the package
 		resSet.getPackageRegistry().put(FtPackage.eNS_URI, FtPackage.eINSTANCE);
 		
-		// When loading an XMI file, use an XMIResourceFactory to handle resources (parsing it to real instances of our model)
-		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
+		// When loading an .ft file, use FtResourceFactory to handle resources (parsing to real instances of our model)
+		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ft", new FtResourceFactoryImpl());
 		
 		Resource resource = resSet.getResource(URI.createURI(MODEL_FILE), true);
 		
@@ -69,7 +69,7 @@ public class FetchData {
 	public static void save(FootballTournaments ft) {
         Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
         Map<String, Object> m = reg.getExtensionToFactoryMap();
-        m.put("xmi", new XMIResourceFactoryImpl());
+        m.put("ft", new FtResourceFactoryImpl());
 
         // Obtain a new resource set
         ResourceSet resSet = new ResourceSetImpl();
