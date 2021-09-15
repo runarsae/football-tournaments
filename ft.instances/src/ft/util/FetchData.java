@@ -1,10 +1,9 @@
-package ft.run;
+package ft.util;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,16 +13,17 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMIResource;
 
 import ft.AbstractHost;
 import ft.AssociationHost;
 import ft.Club;
+import ft.ExtendedTimeResult;
 import ft.FootballTournaments;
 import ft.FtFactory;
 import ft.FtPackage;
 import ft.GenderKind;
 import ft.Match;
+import ft.PenaltyShootoutResult;
 import ft.Region;
 import ft.RegionalHost;
 import ft.Result;
@@ -31,28 +31,26 @@ import ft.Round;
 import ft.Season;
 import ft.Stage;
 import ft.Tournament;
-import ft.util.FtResourceFactoryImpl;
 
+/**
+ * Reads data from a .ft file, fetches data from .csv files, 
+ * combines the data and stores it back into the .ft file.
+ */
 public class FetchData {
 	
 	static FtFactory factory = FtFactory.eINSTANCE;
 
 	
-	static String MODEL_FILE = "model/StatisticTest.ft";
-	
-	static String FILE = "datasets/eliteserien_2021.csv";
+	static String MODEL_FILE = "instances/EnglishTournaments.ft";
+	static String FILE = "datasets/premier_league_2021_2022.csv";
 	static String HOST_TYPE = "REGIONAL";
 	static String ASSOCIATION_HOST_NAME = "";
-	static String REGION = "Norway";
-	static String TOURNAMENT = "Eliteserien";
+	static String REGION = "England";
+	static String TOURNAMENT = "Premier League";
 	static Stage stage = factory.createDoubleRoundRobin();
 	static GenderKind GENDER = GenderKind.MALE;
-	static LocalDate START_DATE = LocalDate.of(2021, 5, 9);
-	static LocalDate END_DATE = LocalDate.of(2021, 12, 12);
-
 	
 	public static FootballTournaments load() {
-		
 		ResourceSet resSet = new ResourceSetImpl();
 		
 		// Maps the URI for the model to the package
@@ -84,7 +82,7 @@ public class FetchData {
         // Save the content
         try {
         	Map<Object, Object> saveOptions = new HashMap<Object, Object>();	  
-        	saveOptions.put(XMIResource.OPTION_ENCODING,"UTF-8");
+        	saveOptions.put(FtResourceImpl.OPTION_ENCODING,"UTF-8");
         	resource.save(saveOptions);
         } catch (IOException e) {
             e.printStackTrace();
@@ -144,8 +142,6 @@ public class FetchData {
 		}
 		
 		Season season = factory.createSeason();
-		season.setStartDate(START_DATE);
-		season.setEndDate(END_DATE);
 		season.setTournament(tournament);
 		
 		stage.setSeason(season);
@@ -172,15 +168,33 @@ public class FetchData {
 
 				String homeClubName = matchString[3];
 				String awayClubName = matchString[5];
-
+				
 				String resultString = matchString[4];
-				Integer homeGoals = null;
-				Integer awayGoals = null;
+				Integer homeGoalsFullTime = null;
+				Integer awayGoalsFullTime = null;
 
 				if (resultString.length() >= 5 && resultString.contains(" - ")) {
 					String[] results = resultString.split(" - ");
-					homeGoals = Integer.parseInt(results[0]);
-					awayGoals = Integer.parseInt(results[1]);
+					homeGoalsFullTime = Integer.parseInt(results[0]);
+					awayGoalsFullTime = Integer.parseInt(results[1]);
+				}
+				
+				Integer homeGoalsExtendedTime = null;
+				Integer awayGoalsExtendedTime = null;
+				
+				if (matchString.length >= 7) {
+					String[] results = matchString[6].split(" - ");
+					homeGoalsExtendedTime = Integer.parseInt(results[0]);
+					awayGoalsExtendedTime = Integer.parseInt(results[1]);
+				}
+				
+				Integer homeGoalsPenaltyShootout = null;
+				Integer awayGoalsPenaltyShootout = null;
+				
+				if (matchString.length == 8) {
+					String[] results = matchString[7].split(" - ");
+					homeGoalsPenaltyShootout = Integer.parseInt(results[0]);
+					awayGoalsPenaltyShootout = Integer.parseInt(results[1]);
 				}
 
 				if (!stage.getRounds().stream().anyMatch(x -> x.getRoundNumber() == roundNumber)) {
@@ -241,12 +255,36 @@ public class FetchData {
 				match.setAwayClub(awayClub);
 				match.setRound(currentRound);
 				match.setDate(date);
-
-				if (homeGoals != null && awayGoals != null) {
+				
+				if (season.getStartDate() == null || season.getEndDate() == null) {
+					season.setStartDate(date.toLocalDate());
+					season.setEndDate(date.toLocalDate());
+				} else if (date.toLocalDate().isBefore(season.getStartDate())) {
+					season.setStartDate(date.toLocalDate());
+				} else if (date.toLocalDate().isAfter(season.getEndDate())) {
+					season.setEndDate(date.toLocalDate());
+				}
+				
+				if (homeGoalsPenaltyShootout != null) {
+					PenaltyShootoutResult result = factory.createPenaltyShootoutResult();
+					result.setHomeGoalsFullTime(homeGoalsFullTime);
+					result.setAwayGoalsFullTime(awayGoalsFullTime);
+					result.setHomeGoalsExtendedTime(homeGoalsExtendedTime);
+					result.setAwayGoalsExtendedTime(awayGoalsExtendedTime);
+					result.setHomeGoalsPenaltyShootout(homeGoalsPenaltyShootout);
+					result.setAwayGoalsPenaltyShootout(awayGoalsPenaltyShootout);
+					match.setResult(result);
+				} else if (homeGoalsExtendedTime != null) {
+					ExtendedTimeResult result = factory.createExtendedTimeResult();
+					result.setHomeGoalsFullTime(homeGoalsFullTime);
+					result.setAwayGoalsFullTime(awayGoalsFullTime);
+					result.setHomeGoalsExtendedTime(homeGoalsExtendedTime);
+					result.setAwayGoalsExtendedTime(awayGoalsExtendedTime);
+					match.setResult(result);
+				} else if (homeGoalsFullTime != null && awayGoalsFullTime != null) {
 					Result result = factory.createResult();
-					result.setHomeGoalsFullTime(homeGoals);
-					result.setAwayGoalsFullTime(awayGoals);
-
+					result.setHomeGoalsFullTime(homeGoalsFullTime);
+					result.setAwayGoalsFullTime(awayGoalsFullTime);
 					match.setResult(result);
 				}
 

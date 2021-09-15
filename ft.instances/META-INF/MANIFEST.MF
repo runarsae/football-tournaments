@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Instances
+Bundle-SymbolicName: ft.instances
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: ft.instances
+Bundle-RequiredExecutionEnvironment: JavaSE-16
+Require-Bundle: ft

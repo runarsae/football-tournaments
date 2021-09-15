@@ -1,0 +1,1793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ft:FootballTournaments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ft="platform:/plugin/ft/model/ft.ecore">
+  <hosts xsi:type="ft:RegionalHost" region="England">
+    <tournaments name="Premier League">
+      <seasons startDate="2020-09-12" endDate="2021-05-23" clubs="//@regions.0/@clubs.0 //@regions.0/@clubs.1 //@regions.0/@clubs.2 //@regions.0/@clubs.3 //@regions.0/@clubs.4 //@regions.0/@clubs.5 //@regions.0/@clubs.6 //@regions.0/@clubs.7 //@regions.0/@clubs.8 //@regions.0/@clubs.9 //@regions.0/@clubs.10 //@regions.0/@clubs.11 //@regions.0/@clubs.12 //@regions.0/@clubs.13 //@regions.0/@clubs.14 //@regions.0/@clubs.15 //@regions.0/@clubs.16 //@regions.0/@clubs.17 //@regions.0/@clubs.18 //@regions.0/@clubs.19">
+        <stages xsi:type="ft:DoubleRoundRobin" clubs="//@regions.0/@clubs.0 //@regions.0/@clubs.1 //@regions.0/@clubs.2 //@regions.0/@clubs.3 //@regions.0/@clubs.4 //@regions.0/@clubs.5 //@regions.0/@clubs.6 //@regions.0/@clubs.7 //@regions.0/@clubs.8 //@regions.0/@clubs.9 //@regions.0/@clubs.10 //@regions.0/@clubs.11 //@regions.0/@clubs.12 //@regions.0/@clubs.13 //@regions.0/@clubs.14 //@regions.0/@clubs.15 //@regions.0/@clubs.16 //@regions.0/@clubs.17 //@regions.0/@clubs.18 //@regions.0/@clubs.19">
+          <rounds roundNumber="1">
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.1" date="2020-09-12T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.3" date="2020-09-12T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.5" date="2020-09-12T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.7" date="2020-09-12T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.9" date="2020-09-13T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.11" date="2020-09-13T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.13" date="2020-09-14T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.15" date="2020-09-14T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.17" date="2021-01-12T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.19" date="2021-01-20T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="2">
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.8" date="2020-09-19T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="5" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.0" date="2020-09-19T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.2" date="2020-09-19T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.6" date="2020-09-19T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.10" date="2020-09-20T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="5"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.14" date="2020-09-20T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.4" date="2020-09-20T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.16" date="2020-09-20T20:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.12" date="2020-09-21T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.18" date="2020-09-21T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="3">
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.17" date="2020-09-26T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.11" date="2020-09-26T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.15" date="2020-09-26T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.3" date="2020-09-26T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.5" date="2020-09-27T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.7" date="2020-09-27T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.9" date="2020-09-27T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="5"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.13" date="2020-09-27T20:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.19" date="2020-09-28T18:45">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.1" date="2020-09-28T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="4">
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.2" date="2020-10-03T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.14" date="2020-10-03T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.18" date="2020-10-03T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.16" date="2020-10-03T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.6" date="2020-10-04T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.8" date="2020-10-04T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.12" date="2020-10-04T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.0" date="2020-10-04T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.10" date="2020-10-04T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="6"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.4" date="2020-10-04T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="7" awayGoalsFullTime="2"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="5">
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.4" date="2020-10-17T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.3" date="2020-10-17T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.1" date="2020-10-17T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.17" date="2020-10-17T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="4"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.0" date="2020-10-18T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.14" date="2020-10-18T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.6" date="2020-10-18T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.19" date="2020-10-18T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.16" date="2020-10-19T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.13" date="2020-10-19T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="6">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.5" date="2020-10-23T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.18" date="2020-10-24T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.2" date="2020-10-24T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.15" date="2020-10-24T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.12" date="2020-10-24T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.11" date="2020-10-25T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.7" date="2020-10-25T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.9" date="2020-10-25T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.8" date="2020-10-26T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.10" date="2020-10-26T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="7">
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.2" date="2020-10-30T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.18" date="2020-10-31T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.15" date="2020-10-31T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.6" date="2020-10-31T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.3" date="2020-11-01T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="4"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.11" date="2020-11-01T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.1" date="2020-11-01T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.14" date="2020-11-01T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.8" date="2020-11-02T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.9" date="2020-11-02T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="4"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="8">
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.16" date="2020-11-06T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.7" date="2020-11-06T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.17" date="2020-11-07T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.5" date="2020-11-07T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.12" date="2020-11-07T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.0" date="2020-11-07T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.10" date="2020-11-08T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.13" date="2020-11-08T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.4" date="2020-11-08T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.19" date="2020-11-08T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="9">
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.15" date="2020-11-21T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.14" date="2020-11-21T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.18" date="2020-11-21T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.8" date="2020-11-21T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.11" date="2020-11-22T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.6" date="2020-11-22T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.1" date="2020-11-22T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.9" date="2020-11-22T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.2" date="2020-11-23T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.3" date="2020-11-23T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="10">
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.7" date="2020-11-27T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.4" date="2020-11-28T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.16" date="2020-11-28T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="5" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.5" date="2020-11-28T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.12" date="2020-11-28T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.17" date="2020-11-29T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.10" date="2020-11-29T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.13" date="2020-11-29T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.0" date="2020-11-30T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.19" date="2020-11-30T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="11">
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.11" date="2020-12-05T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.0" date="2020-12-05T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.17" date="2020-12-05T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.5" date="2020-12-05T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.2" date="2020-12-06T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="5"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.9" date="2020-12-06T15:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.1" date="2020-12-06T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.13" date="2020-12-06T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.3" date="2020-12-07T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.7" date="2021-01-23T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="12">
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.6" date="2020-12-11T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.19" date="2020-12-12T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.8" date="2020-12-12T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.18" date="2020-12-12T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.15" date="2020-12-12T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.12" date="2020-12-13T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.10" date="2020-12-13T15:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.4" date="2020-12-13T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.16" date="2020-12-13T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.14" date="2020-12-13T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="13">
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.15" date="2020-12-15T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.8" date="2020-12-15T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.3" date="2020-12-16T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.7" date="2020-12-16T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="5" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.11" date="2020-12-16T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.14" date="2020-12-16T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.2" date="2020-12-16T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.10" date="2020-12-16T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.16" date="2020-12-17T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.17" date="2020-12-17T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="3"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="14">
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.4" date="2020-12-19T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="7"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.18" date="2020-12-19T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.1" date="2020-12-19T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.0" date="2020-12-19T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.12" date="2020-12-20T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.9" date="2020-12-20T15:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.5" date="2020-12-20T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="6" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.19" date="2020-12-20T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.13" date="2020-12-21T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.6" date="2020-12-21T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="15">
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.17" date="2020-12-26T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.2" date="2020-12-26T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.3" date="2020-12-26T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.15" date="2020-12-26T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.7" date="2020-12-26T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.11" date="2020-12-26T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.16" date="2020-12-27T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.14" date="2020-12-27T15:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.8" date="2020-12-27T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.10" date="2020-12-27T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="16">
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.9" date="2020-12-28T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.19" date="2020-12-28T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.1" date="2020-12-29T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.12" date="2020-12-29T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.6" date="2020-12-29T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.5" date="2020-12-29T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="5"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.13" date="2020-12-29T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.4" date="2020-12-30T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.0" date="2021-01-13T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.18" date="2021-02-17T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="17">
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.6" date="2021-01-01T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.19" date="2021-01-01T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.5" date="2021-01-02T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.12" date="2021-01-02T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.13" date="2021-01-02T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.1" date="2021-01-02T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="4"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.9" date="2021-01-03T15:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.18" date="2021-01-03T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.4" date="2021-01-04T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.0" date="2021-02-17T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="18">
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.7" date="2021-01-12T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.11" date="2021-01-12T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.14" date="2021-01-13T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.2" date="2021-01-14T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.8" date="2021-01-19T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.15" date="2021-01-19T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.17" date="2021-01-20T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.16" date="2021-01-21T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.3" date="2021-02-23T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.10" date="2021-03-21T20:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="19">
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.8" date="2021-01-16T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.14" date="2021-01-16T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.16" date="2021-01-16T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.15" date="2021-01-16T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.3" date="2021-01-16T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.10" date="2021-01-17T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.17" date="2021-01-17T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.2" date="2021-01-17T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.7" date="2021-01-18T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.11" date="2021-05-13T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="20">
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.5" date="2021-01-26T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.6" date="2021-01-26T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.18" date="2021-01-26T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="5"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.1" date="2021-01-26T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.19" date="2021-01-27T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.13" date="2021-01-27T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.0" date="2021-01-27T20:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.9" date="2021-01-27T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.12" date="2021-01-27T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.4" date="2021-01-28T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="21">
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.7" date="2021-01-30T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.13" date="2021-01-30T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.12" date="2021-01-30T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.0" date="2021-01-30T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.17" date="2021-01-30T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.19" date="2021-01-30T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.16" date="2021-01-31T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.5" date="2021-01-31T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.4" date="2021-01-31T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.10" date="2021-01-31T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="22">
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.8" date="2021-02-02T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.1" date="2021-02-02T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.3" date="2021-02-02T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="9" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.2" date="2021-02-02T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.18" date="2021-02-03T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.9" date="2021-02-03T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.11" date="2021-02-03T20:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.6" date="2021-02-03T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.14" date="2021-02-03T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.15" date="2021-02-04T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="23">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.1" date="2021-02-06T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.14" date="2021-02-06T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.3" date="2021-02-06T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.6" date="2021-02-06T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.11" date="2021-02-06T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.8" date="2021-02-07T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.9" date="2021-02-07T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.18" date="2021-02-07T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="4"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.15" date="2021-02-07T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.2" date="2021-02-08T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="24">
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.4" date="2021-02-13T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.16" date="2021-02-13T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.10" date="2021-02-13T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.19" date="2021-02-13T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.13" date="2021-02-14T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.17" date="2021-02-14T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.5" date="2021-02-14T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.0" date="2021-02-14T20:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.12" date="2021-02-15T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.7" date="2021-02-15T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="25">
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.5" date="2021-02-19T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.15" date="2021-02-20T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.8" date="2021-02-20T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.11" date="2021-02-20T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.12" date="2021-02-20T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.10" date="2021-02-21T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.9" date="2021-02-21T15:05">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.18" date="2021-02-21T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.7" date="2021-02-21T20:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.2" date="2021-02-22T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="26">
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.6" date="2021-02-27T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.14" date="2021-02-27T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.19" date="2021-02-27T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.13" date="2021-02-27T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.0" date="2021-02-28T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.1" date="2021-02-28T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.16" date="2021-02-28T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.17" date="2021-02-28T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.4" date="2021-02-28T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.3" date="2021-03-01T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="27">
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.1" date="2021-03-06T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.3" date="2021-03-06T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.13" date="2021-03-06T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.9" date="2021-03-06T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.7" date="2021-03-07T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.0" date="2021-03-07T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.17" date="2021-03-07T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.2" date="2021-03-07T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.11" date="2021-03-08T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.5" date="2021-03-08T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="28">
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.19" date="2021-03-12T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.15" date="2021-03-13T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.8" date="2021-03-13T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.16" date="2021-03-13T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.18" date="2021-03-13T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.14" date="2021-03-14T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.12" date="2021-03-14T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="5" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.10" date="2021-03-14T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.6" date="2021-03-14T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.4" date="2021-03-15T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="29">
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.13" date="2021-03-02T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.9" date="2021-03-03T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.19" date="2021-03-03T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.17" date="2021-03-03T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.11" date="2021-03-04T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.15" date="2021-03-04T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.5" date="2021-03-19T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.7" date="2021-03-20T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.1" date="2021-03-21T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.3" date="2021-04-21T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="30">
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.8" date="2021-04-03T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="5"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.12" date="2021-04-03T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.18" date="2021-04-03T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.4" date="2021-04-03T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.16" date="2021-04-04T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.10" date="2021-04-04T15:05">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.0" date="2021-04-04T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.14" date="2021-04-04T20:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.2" date="2021-04-05T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.6" date="2021-04-05T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="3"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="31">
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.13" date="2021-04-09T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.5" date="2021-04-10T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.19" date="2021-04-10T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.15" date="2021-04-10T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="4"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.7" date="2021-04-11T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.9" date="2021-04-11T15:05">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.17" date="2021-04-11T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.1" date="2021-04-11T20:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.3" date="2021-04-12T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.11" date="2021-04-12T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="32">
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.10" date="2021-04-16T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.6" date="2021-04-17T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.12" date="2021-04-17T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.0" date="2021-04-18T14:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.16" date="2021-04-18T17:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.4" date="2021-04-19T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.14" date="2021-04-20T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.18" date="2021-04-21T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.8" date="2021-04-22T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.2" date="2021-05-11T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="33">
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.10" date="2021-03-04T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.3" date="2021-03-10T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="5" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.11" date="2021-04-23T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.7" date="2021-04-24T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.15" date="2021-04-24T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.14" date="2021-04-24T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.16" date="2021-04-25T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="4"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.17" date="2021-04-25T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.8" date="2021-04-25T20:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.2" date="2021-04-26T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="34">
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.9" date="2021-04-30T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.18" date="2021-05-01T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.5" date="2021-05-01T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.0" date="2021-05-01T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.19" date="2021-05-01T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.1" date="2021-05-02T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.12" date="2021-05-02T20:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.13" date="2021-05-03T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.6" date="2021-05-03T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.4" date="2021-05-13T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="4"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="35">
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.7" date="2021-05-07T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="4"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.10" date="2021-05-08T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.2" date="2021-05-08T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.15" date="2021-05-08T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.3" date="2021-05-08T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.14" date="2021-05-09T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.17" date="2021-05-09T15:05">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.11" date="2021-05-09T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.8" date="2021-05-09T20:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.16" date="2021-05-10T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="36">
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.9" date="2021-05-11T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.1" date="2021-05-12T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.18" date="2021-05-14T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="4"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.5" date="2021-05-15T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="4"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.0" date="2021-05-15T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.6" date="2021-05-15T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.19" date="2021-05-16T13:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.13" date="2021-05-16T15:05">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.4" date="2021-05-16T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.12" date="2021-05-16T20:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="37">
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.0" date="2021-05-18T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.5" date="2021-05-18T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.18" date="2021-05-18T20:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.9" date="2021-05-18T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.13" date="2021-05-19T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.12" date="2021-05-19T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.19" date="2021-05-19T19:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.1" date="2021-05-19T20:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.4" date="2021-05-19T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.8" awayClub="//@regions.0/@clubs.6" date="2021-05-19T21:15">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="3"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="38">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.14" date="2021-05-23T17:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.15" date="2021-05-23T17:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.0" awayClub="//@regions.0/@clubs.7" date="2021-05-23T17:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.8" date="2021-05-23T17:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.10" date="2021-05-23T17:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="4"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.2" date="2021-05-23T17:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.11" date="2021-05-23T17:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="5" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.12" awayClub="//@regions.0/@clubs.16" date="2021-05-23T17:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.3" date="2021-05-23T17:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.13" awayClub="//@regions.0/@clubs.17" date="2021-05-23T17:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+          </rounds>
+        </stages>
+      </seasons>
+      <seasons startDate="2021-08-13" endDate="2022-05-22" clubs="//@regions.0/@clubs.20 //@regions.0/@clubs.1 //@regions.0/@clubs.17 //@regions.0/@clubs.5 //@regions.0/@clubs.16 //@regions.0/@clubs.14 //@regions.0/@clubs.15 //@regions.0/@clubs.2 //@regions.0/@clubs.11 //@regions.0/@clubs.3 //@regions.0/@clubs.9 //@regions.0/@clubs.21 //@regions.0/@clubs.22 //@regions.0/@clubs.19 //@regions.0/@clubs.23 //@regions.0/@clubs.4 //@regions.0/@clubs.7 //@regions.0/@clubs.6 //@regions.0/@clubs.10 //@regions.0/@clubs.18">
+        <stages xsi:type="ft:DoubleRoundRobin" clubs="//@regions.0/@clubs.20 //@regions.0/@clubs.1 //@regions.0/@clubs.17 //@regions.0/@clubs.5 //@regions.0/@clubs.16 //@regions.0/@clubs.14 //@regions.0/@clubs.15 //@regions.0/@clubs.2 //@regions.0/@clubs.11 //@regions.0/@clubs.3 //@regions.0/@clubs.9 //@regions.0/@clubs.21 //@regions.0/@clubs.22 //@regions.0/@clubs.19 //@regions.0/@clubs.23 //@regions.0/@clubs.4 //@regions.0/@clubs.7 //@regions.0/@clubs.6 //@regions.0/@clubs.10 //@regions.0/@clubs.18">
+          <rounds roundNumber="1">
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.1" date="2021-08-13T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.5" date="2021-08-14T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="5" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.14" date="2021-08-14T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.2" date="2021-08-14T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.3" date="2021-08-14T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.21" date="2021-08-14T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.19" date="2021-08-14T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.4" date="2021-08-14T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.6" date="2021-08-15T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="4"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.18" date="2021-08-15T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="2">
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.16" date="2021-08-21T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.7" date="2021-08-21T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.20" date="2021-08-21T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.11" date="2021-08-21T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.23" date="2021-08-21T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="5" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.22" date="2021-08-21T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.17" date="2021-08-22T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.10" date="2021-08-22T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.15" date="2021-08-22T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.9" date="2021-08-23T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="3">
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.1" date="2021-08-28T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="5" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.20" date="2021-08-28T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.11" date="2021-08-28T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.3" date="2021-08-28T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.9" date="2021-08-28T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.2" date="2021-08-28T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="2" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.15" date="2021-08-28T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.5" date="2021-08-29T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.22" date="2021-08-29T15:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.17" date="2021-08-29T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="4">
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.10" date="2021-09-11T13:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.23" date="2021-09-11T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="1" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.14" date="2021-09-11T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.18" date="2021-09-11T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.7" date="2021-09-11T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="4" awayGoalsFullTime="1"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.6" date="2021-09-11T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.21" date="2021-09-11T16:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="2"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.19" date="2021-09-11T18:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="0"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.4" date="2021-09-12T17:30">
+              <result xsi:type="ft:Result" homeGoalsFullTime="0" awayGoalsFullTime="3"/>
+            </matches>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.16" date="2021-09-13T21:00">
+              <result xsi:type="ft:Result" homeGoalsFullTime="3" awayGoalsFullTime="1"/>
+            </matches>
+          </rounds>
+          <rounds roundNumber="5">
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.5" date="2021-09-17T21:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.20" date="2021-09-18T13:30"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.1" date="2021-09-18T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.2" date="2021-09-18T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.3" date="2021-09-18T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.22" date="2021-09-18T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.11" date="2021-09-18T18:30"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.9" date="2021-09-19T15:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.17" date="2021-09-19T15:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.15" date="2021-09-19T17:30"/>
+          </rounds>
+          <rounds roundNumber="6">
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.18" date="2021-09-25T13:30"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.19" date="2021-09-25T13:30"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.23" date="2021-09-25T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.6" date="2021-09-25T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.16" date="2021-09-25T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.7" date="2021-09-25T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.4" date="2021-09-25T18:30"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.21" date="2021-09-26T15:00"/>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.10" date="2021-09-26T17:30"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.14" date="2021-09-27T21:00"/>
+          </rounds>
+          <rounds roundNumber="7">
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.11" date="2021-10-02T13:30"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.23" date="2021-10-02T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.3" date="2021-10-02T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.22" date="2021-10-02T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.7" date="2021-10-02T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.1" date="2021-10-02T18:30"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.9" date="2021-10-03T15:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.19" date="2021-10-03T15:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.20" date="2021-10-03T15:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.18" date="2021-10-03T17:30"/>
+          </rounds>
+          <rounds roundNumber="8">
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.4" date="2021-10-16T13:30"/>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.21" date="2021-10-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.17" date="2021-10-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.16" date="2021-10-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.14" date="2021-10-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.5" date="2021-10-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.15" date="2021-10-16T18:30"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.6" date="2021-10-17T15:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.10" date="2021-10-17T17:30"/>
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.2" date="2021-10-18T21:00"/>
+          </rounds>
+          <rounds roundNumber="9">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.19" date="2021-10-22T21:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.23" date="2021-10-23T13:30"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.7" date="2021-10-23T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.22" date="2021-10-23T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.21" date="2021-10-23T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.16" date="2021-10-23T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.18" date="2021-10-23T18:30"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.9" date="2021-10-24T15:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.10" date="2021-10-24T15:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.4" date="2021-10-24T17:30"/>
+          </rounds>
+          <rounds roundNumber="10">
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.1" date="2021-10-30T13:30"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.20" date="2021-10-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.14" date="2021-10-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.2" date="2021-10-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.15" date="2021-10-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.3" date="2021-10-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.17" date="2021-10-30T18:30"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.5" date="2021-10-31T15:00"/>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.6" date="2021-10-31T17:30"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.11" date="2021-11-01T21:00"/>
+          </rounds>
+          <rounds roundNumber="11">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.22" date="2021-11-06T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.23" date="2021-11-06T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.7" date="2021-11-06T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.16" date="2021-11-06T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.21" date="2021-11-06T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.10" date="2021-11-06T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.9" date="2021-11-06T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.18" date="2021-11-06T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.19" date="2021-11-06T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.4" date="2021-11-06T16:00"/>
+          </rounds>
+          <rounds roundNumber="12">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.14" date="2021-11-20T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.2" date="2021-11-20T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.15" date="2021-11-20T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.1" date="2021-11-20T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.11" date="2021-11-20T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.20" date="2021-11-20T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.3" date="2021-11-20T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.5" date="2021-11-20T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.17" date="2021-11-20T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.6" date="2021-11-20T16:00"/>
+          </rounds>
+          <rounds roundNumber="13">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.7" date="2021-11-27T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.11" date="2021-11-27T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.5" date="2021-11-27T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.10" date="2021-11-27T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.17" date="2021-11-27T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.19" date="2021-11-27T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.22" date="2021-11-27T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.3" date="2021-11-27T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.6" date="2021-11-27T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.21" date="2021-11-27T16:00"/>
+          </rounds>
+          <rounds roundNumber="14">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.18" date="2021-11-30T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.4" date="2021-11-30T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.2" date="2021-11-30T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.15" date="2021-11-30T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.14" date="2021-11-30T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.16" date="2021-11-30T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.1" date="2021-11-30T21:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.23" date="2021-12-01T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.9" date="2021-12-01T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.20" date="2021-12-01T20:45"/>
+          </rounds>
+          <rounds roundNumber="15">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.9" date="2021-12-04T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.1" date="2021-12-04T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.20" date="2021-12-04T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.2" date="2021-12-04T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.16" date="2021-12-04T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.14" date="2021-12-04T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.23" date="2021-12-04T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.18" date="2021-12-04T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.15" date="2021-12-04T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.4" date="2021-12-04T16:00"/>
+          </rounds>
+          <rounds roundNumber="16">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.3" date="2021-12-11T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.22" date="2021-12-11T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.10" date="2021-12-11T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.6" date="2021-12-11T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.5" date="2021-12-11T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.11" date="2021-12-11T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.7" date="2021-12-11T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.19" date="2021-12-11T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.21" date="2021-12-11T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.17" date="2021-12-11T16:00"/>
+          </rounds>
+          <rounds roundNumber="17">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.6" date="2021-12-14T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.17" date="2021-12-14T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.21" date="2021-12-14T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.22" date="2021-12-14T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.10" date="2021-12-14T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.19" date="2021-12-14T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.3" date="2021-12-14T21:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.11" date="2021-12-15T21:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.7" date="2021-12-15T21:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.5" date="2021-12-15T21:00"/>
+          </rounds>
+          <rounds roundNumber="18">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.16" date="2021-12-18T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.9" date="2021-12-18T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.1" date="2021-12-18T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.14" date="2021-12-18T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.18" date="2021-12-18T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.20" date="2021-12-18T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.4" date="2021-12-18T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.2" date="2021-12-18T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.23" date="2021-12-18T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.15" date="2021-12-18T16:00"/>
+          </rounds>
+          <rounds roundNumber="19">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.15" date="2021-12-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.20" date="2021-12-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.11" date="2021-12-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.5" date="2021-12-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.9" date="2021-12-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.17" date="2021-12-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.1" date="2021-12-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.2" date="2021-12-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.3" date="2021-12-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.22" date="2021-12-26T16:00"/>
+          </rounds>
+          <rounds roundNumber="20">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.21" date="2021-12-28T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.18" date="2021-12-28T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.14" date="2021-12-28T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.23" date="2021-12-28T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.7" date="2021-12-28T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.19" date="2021-12-28T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.4" date="2021-12-28T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.16" date="2021-12-28T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.10" date="2021-12-28T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.6" date="2021-12-28T16:00"/>
+          </rounds>
+          <rounds roundNumber="21">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.18" date="2022-01-01T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.19" date="2022-01-01T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.4" date="2022-01-01T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.6" date="2022-01-01T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.14" date="2022-01-01T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.16" date="2022-01-01T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.23" date="2022-01-01T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.21" date="2022-01-01T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.7" date="2022-01-01T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.10" date="2022-01-01T16:00"/>
+          </rounds>
+          <rounds roundNumber="22">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.17" date="2022-01-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.2" date="2022-01-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.9" date="2022-01-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.20" date="2022-01-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.15" date="2022-01-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.22" date="2022-01-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.11" date="2022-01-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.1" date="2022-01-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.5" date="2022-01-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.3" date="2022-01-15T16:00"/>
+          </rounds>
+          <rounds roundNumber="23">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.16" date="2022-01-22T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.21" date="2022-01-22T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.10" date="2022-01-22T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.4" date="2022-01-22T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.19" date="2022-01-22T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.7" date="2022-01-22T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.14" date="2022-01-22T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.6" date="2022-01-22T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.18" date="2022-01-22T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.23" date="2022-01-22T16:00"/>
+          </rounds>
+          <rounds roundNumber="24">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.5" date="2022-02-08T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.15" date="2022-02-08T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.17" date="2022-02-08T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.2" date="2022-02-08T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.22" date="2022-02-08T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.1" date="2022-02-08T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.11" date="2022-02-09T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.3" date="2022-02-09T20:45"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.9" date="2022-02-09T21:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.20" date="2022-02-09T21:00"/>
+          </rounds>
+          <rounds roundNumber="25">
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.2" date="2022-02-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.4" date="2022-02-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.1" date="2022-02-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.5" date="2022-02-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.6" date="2022-02-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.3" date="2022-02-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.19" date="2022-02-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.18" date="2022-02-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.21" date="2022-02-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.14" date="2022-02-12T16:00"/>
+          </rounds>
+          <rounds roundNumber="26">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.20" date="2022-02-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.22" date="2022-02-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.16" date="2022-02-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.15" date="2022-02-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.17" date="2022-02-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.23" date="2022-02-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.10" date="2022-02-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.11" date="2022-02-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.7" date="2022-02-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.9" date="2022-02-19T16:00"/>
+          </rounds>
+          <rounds roundNumber="27">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.4" date="2022-02-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.7" date="2022-02-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.19" date="2022-02-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.9" date="2022-02-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.16" date="2022-02-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.18" date="2022-02-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.10" date="2022-02-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.22" date="2022-02-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.23" date="2022-02-26T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.21" date="2022-02-26T16:00"/>
+          </rounds>
+          <rounds roundNumber="28">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.3" date="2022-03-05T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.15" date="2022-03-05T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.5" date="2022-03-05T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.6" date="2022-03-05T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.17" date="2022-03-05T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.14" date="2022-03-05T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.20" date="2022-03-05T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.11" date="2022-03-05T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.1" date="2022-03-05T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.2" date="2022-03-05T16:00"/>
+          </rounds>
+          <rounds roundNumber="29">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.9" date="2022-03-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.16" date="2022-03-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.4" date="2022-03-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.7" date="2022-03-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.18" date="2022-03-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.21" date="2022-03-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.23" date="2022-03-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.10" date="2022-03-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.22" date="2022-03-12T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.19" date="2022-03-12T16:00"/>
+          </rounds>
+          <rounds roundNumber="30">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.1" date="2022-03-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.3" date="2022-03-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.20" date="2022-03-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.17" date="2022-03-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.14" date="2022-03-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.2" date="2022-03-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.15" date="2022-03-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.6" date="2022-03-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.11" date="2022-03-19T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.5" date="2022-03-19T16:00"/>
+          </rounds>
+          <rounds roundNumber="31">
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.23" date="2022-04-02T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.18" date="2022-04-02T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.20" date="2022-04-02T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.1" date="2022-04-02T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.3" date="2022-04-02T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.22" date="2022-04-02T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.9" date="2022-04-02T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.7" date="2022-04-02T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.11" date="2022-04-02T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.19" date="2022-04-02T16:00"/>
+          </rounds>
+          <rounds roundNumber="32">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.14" date="2022-04-09T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.10" date="2022-04-09T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.6" date="2022-04-09T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.17" date="2022-04-09T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.2" date="2022-04-09T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.4" date="2022-04-09T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.21" date="2022-04-09T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.16" date="2022-04-09T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.15" date="2022-04-09T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.5" date="2022-04-09T16:00"/>
+          </rounds>
+          <rounds roundNumber="33">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.4" date="2022-04-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.2" date="2022-04-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.15" date="2022-04-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.23" date="2022-04-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.9" date="2022-04-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.1" date="2022-04-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.14" date="2022-04-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.20" date="2022-04-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.16" date="2022-04-16T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.18" date="2022-04-16T16:00"/>
+          </rounds>
+          <rounds roundNumber="34">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.17" date="2022-04-23T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.10" date="2022-04-23T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.3" date="2022-04-23T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.21" date="2022-04-23T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.6" date="2022-04-23T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.5" date="2022-04-23T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.19" date="2022-04-23T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.11" date="2022-04-23T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.22" date="2022-04-23T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.7" date="2022-04-23T16:00"/>
+          </rounds>
+          <rounds roundNumber="35">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.23" date="2022-04-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.15" date="2022-04-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.18" date="2022-04-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.20" date="2022-04-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.4" date="2022-04-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.2" date="2022-04-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.9" date="2022-04-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.16" date="2022-04-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.1" date="2022-04-30T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.14" date="2022-04-30T16:00"/>
+          </rounds>
+          <rounds roundNumber="36">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.5" date="2022-05-07T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.3" date="2022-05-07T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.17" date="2022-05-07T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.19" date="2022-05-07T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.21" date="2022-05-07T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.22" date="2022-05-07T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.11" date="2022-05-07T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.10" date="2022-05-07T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.7" date="2022-05-07T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.6" date="2022-05-07T16:00"/>
+          </rounds>
+          <rounds roundNumber="37">
+            <matches homeClub="//@regions.0/@clubs.19" awayClub="//@regions.0/@clubs.2" date="2022-05-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.11" awayClub="//@regions.0/@clubs.20" date="2022-05-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.5" awayClub="//@regions.0/@clubs.14" date="2022-05-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.17" awayClub="//@regions.0/@clubs.15" date="2022-05-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.7" awayClub="//@regions.0/@clubs.1" date="2022-05-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.3" awayClub="//@regions.0/@clubs.4" date="2022-05-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.10" awayClub="//@regions.0/@clubs.16" date="2022-05-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.22" awayClub="//@regions.0/@clubs.9" date="2022-05-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.6" awayClub="//@regions.0/@clubs.18" date="2022-05-15T16:00"/>
+            <matches homeClub="//@regions.0/@clubs.21" awayClub="//@regions.0/@clubs.23" date="2022-05-15T16:00"/>
+          </rounds>
+          <rounds roundNumber="38">
+            <matches homeClub="//@regions.0/@clubs.1" awayClub="//@regions.0/@clubs.11" date="2022-05-22T17:00"/>
+            <matches homeClub="//@regions.0/@clubs.20" awayClub="//@regions.0/@clubs.5" date="2022-05-22T17:00"/>
+            <matches homeClub="//@regions.0/@clubs.14" awayClub="//@regions.0/@clubs.6" date="2022-05-22T17:00"/>
+            <matches homeClub="//@regions.0/@clubs.16" awayClub="//@regions.0/@clubs.7" date="2022-05-22T17:00"/>
+            <matches homeClub="//@regions.0/@clubs.15" awayClub="//@regions.0/@clubs.22" date="2022-05-22T17:00"/>
+            <matches homeClub="//@regions.0/@clubs.2" awayClub="//@regions.0/@clubs.17" date="2022-05-22T17:00"/>
+            <matches homeClub="//@regions.0/@clubs.9" awayClub="//@regions.0/@clubs.3" date="2022-05-22T17:00"/>
+            <matches homeClub="//@regions.0/@clubs.4" awayClub="//@regions.0/@clubs.21" date="2022-05-22T17:00"/>
+            <matches homeClub="//@regions.0/@clubs.18" awayClub="//@regions.0/@clubs.19" date="2022-05-22T17:00"/>
+            <matches homeClub="//@regions.0/@clubs.23" awayClub="//@regions.0/@clubs.10" date="2022-05-22T17:00"/>
+          </rounds>
+        </stages>
+      </seasons>
+    </tournaments>
+  </hosts>
+  <regions name="England">
+    <clubs name="Fulham"/>
+    <clubs name="Arsenal"/>
+    <clubs name="Crystal Palace"/>
+    <clubs name="Southampton"/>
+    <clubs name="Liverpool"/>
+    <clubs name="Leeds United"/>
+    <clubs name="West Ham United"/>
+    <clubs name="Newcastle United"/>
+    <clubs name="West Bromwich Albion"/>
+    <clubs name="Leicester City"/>
+    <clubs name="Tottenham Hotspur"/>
+    <clubs name="Everton"/>
+    <clubs name="Sheffield United"/>
+    <clubs name="Wolverhampton Wanderers"/>
+    <clubs name="Brighton and Hove Albion"/>
+    <clubs name="Chelsea"/>
+    <clubs name="Burnley"/>
+    <clubs name="Manchester United"/>
+    <clubs name="Manchester City"/>
+    <clubs name="Aston Villa"/>
+    <clubs name="Brentford"/>
+    <clubs name="Wolverhampton Wanderes"/>
+    <clubs name="Watford"/>
+    <clubs name="Norwich City"/>
+  </regions>
+</ft:FootballTournaments>
