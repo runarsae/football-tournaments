@@ -1455,7 +1455,7 @@ public class FtPackageImpl extends EPackageImpl implements FtPackage {
 		   source,
 		   new String[] {
 			   "fullTimeResultMustBeDraw", "self.homeGoalsFullTime = self.awayGoalsFullTime",
-			   "mustBeAWinner", "self.winner = ft::WinnerKind::HOME or self.winner = ft::WinnerKind::AWAY"
+			   "mustBeAWinner", "self.winner.toString() = \'HOME\' or self.winner.toString() = \'AWAY\'"
 		   });
 		addAnnotation
 		  (penaltyShootoutResultEClass,

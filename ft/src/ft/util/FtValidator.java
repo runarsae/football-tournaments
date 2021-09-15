@@ -1112,7 +1112,7 @@ public class FtValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String EXTENDED_TIME_RESULT__MUST_BE_AWINNER__EEXPRESSION = "self.winner = ft::WinnerKind::HOME or self.winner = ft::WinnerKind::AWAY";
+	protected static final String EXTENDED_TIME_RESULT__MUST_BE_AWINNER__EEXPRESSION = "self.winner.toString() = 'HOME' or self.winner.toString() = 'AWAY'";
 
 	/**
 	 * Validates the mustBeAWinner constraint of '<em>Extended Time Result</em>'.
