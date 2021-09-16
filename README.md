@@ -131,7 +131,7 @@ Containment references are used create a hierarchy of classes, with the `Footbal
 
 Ordinary references are also used. The `Season`, `Stage` and `Match` classes have references to the `Club` class, representing which clubs are playing in the season/stage/match. `Statistic` also has a reference to `Club`, indicating which club the statistic is for. Another reference is from `RegionalHost` to `Region`, indicating what region a regional host is representing. `Table` has a reference to `Stage`, which is a pointer to the stage the table represents.
 
-Opposites are used to model mutual references between classes. Examples are between `AbstractHost` and `Tournament`, indicating that if a host has a tournament, the tournament must also has the same host. Other examples are between `Tournament` and `Season`, `Season` and `Stage`, `Stage` and `Round` and so on.
+Opposites are used to model mutual references between classes. Examples are between `AbstractHost` and `Tournament`, indicating that if a host has a tournament, the tournament must also have the same host. Other examples are between `Tournament` and `Season`, `Season` and `Stage`, `Stage` and `Round` and so on.
 
 The references used also have different multiplicities, for example a tournament can have multiple seasons and a match can only have one result.
 
