@@ -103,7 +103,7 @@ Instance file: `ft.instances/instances/EnglishTournaments.ft`
 |Premier League|2021/2022 (per 15.09.2021)|[Table](https://resultater.nrk.no/fotball/1/turneringer/7/2022/tabell) - [Results](https://resultater.nrk.no/fotball/1/turneringer/7/2022/resultater) - [Matches](https://resultater.nrk.no/fotball/1/turneringer/7/2022/kamper)|[Table](documentation/screenshots/premier_league_2021_2022_table.png) - [Results](documentation/screenshots/premier_league_2021_2022_results.png) - [Matches](documentation/screenshots/premier_league_2021_2022_matches.png)|
 |Premier League|2020/2021|[Table](https://resultater.nrk.no/fotball/1/turneringer/7/2021/tabell) - [Results](https://resultater.nrk.no/fotball/1/turneringer/7/2021/resultater)|[Table](documentation/screenshots/premier_league_2020_2021_table.png) - [Results](documentation/screenshots/premier_league_2020_2021_results.png)|
 
-The derived table of the Premier League sesaon 2020/2021 can be printed by running the `ft.instances/src/ft.util/PrintTable.java` file.
+The derived table of the Premier League season 2020/2021 can be printed by running the `ft.instances/src/ft.util/PrintTable.java` file.
 
 ## Model Implementation
 The Ecore model is located in the `/ft/model/ft.ecore` file along with a `ft.genmodel` file for generating code based on the model. Below is a generated UML diagram for the model.
