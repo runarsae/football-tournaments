@@ -2,6 +2,15 @@
 
 An Ecore project for modeling the domain of football tournaments, based on [NRK's football tournament pages](https://resultater.nrk.no/fotball/1/turneringer).
 
+## Table of Contents
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Domain](#domain)
+  - [Model Instances, Webpages and Screenshots](#model-instances-webpages-and-screenshots)
+  - [Model Implementation](#model-implementation)
+  - [Tests](#tests)
+
 ## Prerequisites
 To be able to use the model in a development or test environment, the following is required:
 * [Java JDK](https://www.oracle.com/java/technologies/downloads/)
