@@ -80,7 +80,7 @@ Since a whole tournament has hundreds of matches, the instances are made by runn
 
 The 2021 and 2021/2022 seasons are currently running at the time of writing (15.09.2021), so the web pages for these seasons may have changed and will not match the instances. Please refer to the screenshots if so.
 
-**Note**: Open the instance files using a testing environment, as described in the [usage](#usage) section.
+**NOTE**: Open the instance files using a testing environment, as described in the [usage](#usage) section.
 
 ### Norwegian Football Tournaments
 Instance file: `ft.instances/instances/NorwegianTournaments.ft`
