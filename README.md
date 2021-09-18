@@ -136,7 +136,7 @@ The types used on attributes are EString, EInt, and custom data types and enums.
 The attributes implemented have different multiplicities. Most have a lower bound and upper bound of 1, saying that one value must be set (for example _name_ and _gender_ in the `Tournament` class). The _form_ attribute of `Statistic` has upper bound set to 6, stating that it can have up to 6 match results.
 
 ### References
-Containment references are used create a hierarchy of classes, with the `FootballTournaments` class at the root. All classes are contained in another, except the root class and `Table`. The reference to `Table` is derived, so it does not make sense to make it contained in the `DoubleRoundRobin` stage.
+Containment references are used create a hierarchy of classes, with the `FootballTournaments` class at the root. All classes are contained in another, except the root class and `Table`. The reference to `Table` is derived and transient, so it does not make sense to make it contained in the `DoubleRoundRobin` stage.
 
 Ordinary references are also used. The `Season`, `Stage` and `Match` classes have references to the `Club` class, representing which clubs are playing in the season/stage/match. `Statistic` also has a reference to `Club`, indicating which club the statistic is for. Another reference is from `RegionalHost` to `Region`, indicating what region a regional host is representing. `Table` has a reference to `Stage`, which is a pointer to the stage the table represents.
 
