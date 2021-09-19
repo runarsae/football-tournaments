@@ -47,7 +47,7 @@ To be able to use the model in a development or test environment, the following 
 To create, view and edit instances of the model, the recommended way is to create a testing environment where the model is loaded: 
 1. Go to _Run_ -> _Run Configurations..._ in the top navigation in Eclipse.
 2. Right-click _Eclipse Application_ in the left list, and choose _New Configuration_. Give the configuration a name. 
-3. In the _Plug-ins_ tab, make sure `ft`, `ft.edit` and `ft.editor` are all selected (`ft.tests` is not needed). Apply the changes and run the environment. A new Eclipse will open where the model is loaded. 
+3. In the _Plug-ins_ tab, make sure `ft`, `ft.edit` and `ft.editor` are all selected (`ft.tests` and `ft.instances` are not needed). Apply the changes and run the environment. A new Eclipse will open where the model is loaded. 
 4. Import projects (for example `ft.instances` and `ft.tests`) or create a new one (Plug-in Project) in order to create, view and edit files with an _.ft_ extension (intances of the model).
 5. To create a new _.ft_ file/instance of the model, right-clik the desired location in the project/package explorer and choose _New_ -> _Others.._. Under _Example EMF Model Creation Wizards_, choose _Ft Model_ and follow the wizard.
 
