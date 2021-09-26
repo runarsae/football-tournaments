@@ -47,7 +47,7 @@ To be able to use the model in a development or test environment, the following 
 To create, view and edit instances of the model, the recommended way is to create a testing environment where the model is loaded: 
 1. Go to _Run_ -> _Run Configurations..._ in the top navigation in Eclipse.
 2. Right-click _Eclipse Application_ in the left list, and choose _New Configuration_. Give the configuration a name. 
-3. In the _Plug-ins_ tab, make sure `ft`, `ft.edit` and `ft.editor` are all selected (`ft.tests` is not needed). Apply the changes and run the environment. A new Eclipse will open where the model is loaded. 
+3. In the _Plug-ins_ tab, make sure `ft`, `ft.edit` and `ft.editor` are all selected (`ft.tests` and `ft.instances` are not needed). Apply the changes and run the environment. A new Eclipse will open where the model is loaded. 
 4. Import projects (for example `ft.instances` and `ft.tests`) or create a new one (Plug-in Project) in order to create, view and edit files with an _.ft_ extension (intances of the model).
 5. To create a new _.ft_ file/instance of the model, right-clik the desired location in the project/package explorer and choose _New_ -> _Others.._. Under _Example EMF Model Creation Wizards_, choose _Ft Model_ and follow the wizard.
 
@@ -80,7 +80,7 @@ Since a whole tournament has hundreds of matches, the instances are made by runn
 
 The 2021 and 2021/2022 seasons are currently running at the time of writing (15.09.2021), so the web pages for these seasons may have changed and will not match the instances. Please refer to the screenshots if so.
 
-**Note**: Open the instance files using a testing environment, as described in the [usage](#usage) section.
+**NOTE**: Open the instance files using a testing environment, as described in the [usage](#usage) section.
 
 ### Norwegian Football Tournaments
 Instance file: `ft.instances/instances/NorwegianTournaments.ft`
@@ -136,7 +136,7 @@ The types used on attributes are EString, EInt, and custom data types and enums.
 The attributes implemented have different multiplicities. Most have a lower bound and upper bound of 1, saying that one value must be set (for example _name_ and _gender_ in the `Tournament` class). The _form_ attribute of `Statistic` has upper bound set to 6, stating that it can have up to 6 match results.
 
 ### References
-Containment references are used create a hierarchy of classes, with the `FootballTournaments` class at the root. All classes are contained in another, except the root class and `Table`. The reference to `Table` is derived, so it does not make sense to make it contained in the `DoubleRoundRobin` stage.
+Containment references are used create a hierarchy of classes, with the `FootballTournaments` class at the root. All classes are contained in another, except the root class and `Table`. The reference to `Table` is derived and transient, so it does not make sense to make it contained in the `DoubleRoundRobin` stage.
 
 Ordinary references are also used. The `Season`, `Stage` and `Match` classes have references to the `Club` class, representing which clubs are playing in the season/stage/match. `Statistic` also has a reference to `Club`, indicating which club the statistic is for. Another reference is from `RegionalHost` to `Region`, indicating what region a regional host is representing. `Table` has a reference to `Stage`, which is a pointer to the stage the table represents.
 
