@@ -163,7 +163,7 @@ public interface Statistic extends EObject {
 	 * @return the value of the '<em>Form</em>' attribute list.
 	 * @see ft.ResultKind
 	 * @see ft.FtPackage#getStatistic_Form()
-	 * @model upper="6" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model unique="false" upper="6" transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	EList<ResultKind> getForm();

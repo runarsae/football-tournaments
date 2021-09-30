@@ -136,8 +136,9 @@
         changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="points" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         changeable="false" volatile="true" transient="true" derived="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="form" upperBound="6" eType="#//ResultKind"
-        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="form" unique="false" upperBound="6"
+        eType="#//ResultKind" changeable="false" volatile="true" transient="true"
+        derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Round">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">

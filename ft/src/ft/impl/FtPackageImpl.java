@@ -1251,7 +1251,7 @@ public class FtPackageImpl extends EPackageImpl implements FtPackage {
 		initEAttribute(getStatistic_GoalsAgainst(), ecorePackage.getEInt(), "goalsAgainst", null, 0, 1, Statistic.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatistic_GoalDifference(), ecorePackage.getEInt(), "goalDifference", null, 0, 1, Statistic.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatistic_Points(), ecorePackage.getEInt(), "points", null, 0, 1, Statistic.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStatistic_Form(), this.getResultKind(), "form", null, 0, 6, Statistic.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStatistic_Form(), this.getResultKind(), "form", null, 0, 6, Statistic.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(roundEClass, Round.class, "Round", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRound_RoundNumber(), this.getRoundNumber(), "roundNumber", null, 1, 1, Round.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
