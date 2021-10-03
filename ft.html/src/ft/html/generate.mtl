@@ -27,183 +27,208 @@
 		</html>
 	[/file]
 	
-	
-	
 	[comment
 		Generate a HTML file for each tournament
-		Corresponding web page: https://resultater.nrk.no/fotball/1/turneringer/5/2020/tabell
 	/]
 	[for (tournament : Tournament | footballTournaments.hosts.tournaments)]
-		[file (generateTournamentFile(tournament), false, 'UTF-8')]
-			<html>
-				<head>
-					<title>[tournament.name/]</title>
-					<meta charset="utf-8"/>
-	
-			        <link rel="stylesheet" type="text/css" href="../css/main.css">
-			        <link rel="stylesheet" type="text/css" href="../css/tournament.css">
-			        <link rel="stylesheet" type="text/css" href="../css/table.css">
-			        <link rel="stylesheet" type="text/css" href="../css/matches.css">
-				</head>
-				<body>
-			        <header>
-			            <input 
-			                id="tournaments-button"
-			                type="button" 
-			                onclick="location.href='../football-tournaments.html';" 
-			                value="&#171; Turneringer"
-			            />
-			            <div></div>
-			
-			            <div>
-			                <h1>[tournament.name/]</h1>
-			                <h2>[getHostName(tournament.host).toUpper()/]</h2>
-			            </div>
-			
-			            <div>
-			                <label for="season">SESONG:</label>
-			                <select name="season" id="season" onchange="changeSeason()">
-								[comment Generate an option for each tournament season /]
-								[for (season : Season | sortSeasons(tournament.seasons))]
-									[generateSeasonOption(season)/]
-								[/for]
-			                </select>
-			            </div>
-			        </header>
-			
-			        <nav>
-			            <div>
-			                <button id="matches-button" class="section-button" onclick="changeSection(currentSeason, 'matches')">Terminliste</button>
-			                <button id="results-button" class="section-button" onclick="changeSection(currentSeason, 'results')">Resultater</button>
-			        	
-							[comment If tournament has stages that are of type double round robin, generate a table button /]
-							[if (tournament.seasons.stages.oclIsTypeOf(DoubleRoundRobin)->includes(true))]
-			                	<button id="table-button" class="section-button" onclick="changeSection(currentSeason, 'table')">Tabell</button>
-			            	[/if]
-						</div>
-			        </nav>
-	
-			        <div id="content"></div>
-			
-			        <script>
-			            let currentSeason = document.getElementById("season").value;
-			
-			            const tableButton = document.getElementById("table-button");
-			            let currentSection = typeof(tableButton) != 'undefined' && tableButton != null ? "table" : "results"
-			            changeSection(currentSeason, currentSection);
-			
-			            function changeSeason() {
-			                currentSeason = document.getElementById("season").value;
-			                changeSection(currentSeason, currentSection);
-			            }
-			
-			            function changeSection(season, section) {
-			                currentSection = section;
-			
-			                // Remove emphasize on section buttons
-			                let sectionButtons = document.getElementsByClassName("section-button");
-			
-			                for (i = 0; i < sectionButtons.length; i++) {
-			                    sectionButtons['['/]i].className = sectionButtons['['/]i].className.replace(" active", "");
-			                }
-			
-			                // Emphasize current section button
-			                document.getElementById(section + "-button").className += " active";
-			
-			                // Fetch content
-			                let content = document.getElementById("content");
-			
-			                const page = "[urlify(tournament.name)/]" + "/" + season.replaceAll('/', '-') + "/" + section + ".html";
-			
-			                var xhttp = new XMLHttpRequest();
-			                xhttp.onreadystatechange = function() {
-			                    if (this.readyState == 4) {
-			                        if (this.status == 200) {
-			                        content.innerHTML = xhttp.responseText;
-			                        } else if (this.status == 404) {
-			                            content.innerHTML = "<b>ERROR</b>: 404 (Not Found)<br><i>" + page + "</i>";
-			                        }
-			                    }
-			                };
-			
-			                xhttp.open("GET", page, true);
-			                xhttp.send();
-			            }
-			        </script>
-				</body>
-			</html>
-		[/file]
+		[generateTournamentFile(tournament)/]
 	[/for]
 	
 	[comment
 		Generate a HTML file for matches in each season for each tournament
-		Corresponding web page: https://resultater.nrk.no/fotball/1/turneringer/5/2021/kamper
 	/]
 	[for (season : Season | footballTournaments.hosts.tournaments.seasons)]
-		[file (generateSeasonFile(season, 'matches'), false, 'UTF-8')]
-			[comment 
-				Get unplayed matches, sort them from oldest to newest, group them into match days and sort the match days from oldest to newest
-				For each match day, generate a section displaying its matches
-			/]
-			[for (matches : Sequence(Match) | matchDays(sortMatchesOnDate(getUnplayedMatches(season.stages.rounds.matches), false), false))]
-				[generateMatchDaySection(matches)/]
-			[/for]
-		[/file]
+		[generateSeasonMatchesFile(season)/]
 	[/for]
 
 	[comment
 		Generate a HTML file for results in each season for each tournament
-		Corresponding web page: https://resultater.nrk.no/fotball/1/turneringer/5/2021/resultater
 	/]
 	[for (season : Season | footballTournaments.hosts.tournaments.seasons)]
-		[file (generateSeasonFile(season, 'results'), false, 'UTF-8')]
-			[comment 
-				Get played matches, sort them from newest to oldest, group them into match days and sort the match days from newest to oldest
-				For each match day, generate a section displaying its matches
-			/]
-			[for (matches : Sequence(Match) |  matchDays(sortMatchesOnDate(getPlayedMatches(season.stages.rounds.matches), true), true))]
-				[generateMatchDaySection(matches)/]
-			[/for]
-		[/file]
+		[generateSeasonResultsFile(season)/]
 	[/for]
 
 	[comment
 		Generate a HTML file for a table for a double round robin stage in each season for each tournament
 		Assumption: Each season has only one stage
-		Corresponding web page: https://resultater.nrk.no/fotball/1/turneringer/5/2021/tabell
 	/]
 	[for (stage : Stage | footballTournaments.hosts.tournaments.seasons.stages)]
 		[let doubleRoundRobinStage : DoubleRoundRobin = stage]
-			[file (generateSeasonFile(doubleRoundRobinStage.season, 'table'), false, 'UTF-8')]
-				<h2>[doubleRoundRobinStage.season.tournament.name/] [doubleRoundRobinStage.season.yearIdentifier/]</h2>
-				<hr/>
-				<table>
-					<thead>
-					    <tr>
-				            <th class="small-padding">#</th>
-				            <th class="expand text-left small-padding">Lag</th>
-				            <th class="border-left">K</th>
-				            <th class="border-left">S</th>
-				            <th>U</th>
-				            <th>T</th>
-				            <th class="border-left">+</th>
-				            <th>-</th>
-				            <th>+/-</th>
-				            <th class="border-left">P</th>
-				            <th class="text-left small-padding border-left">Form</th>
-					    </tr>
-					</thead>
-					<tbody>
-						[comment For each statistic in table, generate a table row /]
-					    [for (statistic : Statistic | doubleRoundRobinStage.table.statistics)]
-							[generateTableRow(statistic)/]
-					    [/for]
-					</tbody>
-				</table>
-			[/file]
+			[generateSeasonTableFile(doubleRoundRobinStage)/]
 		[/let]
 	[/for]
+[/template]
 
+[**
+ *	Generate a HTML file for a tournament
+ *	Corresponding web page: https://resultater.nrk.no/fotball/1/turneringer/5/2020/tabell
+*/]
+[template public generateTournamentFile(tournament : Tournament)]
+	[file (generateTournamentFilePath(tournament), false, 'UTF-8')]
+		<html>
+			<head>
+				<title>[tournament.name/]</title>
+				<meta charset="utf-8"/>
+
+		        <link rel="stylesheet" type="text/css" href="../css/main.css">
+		        <link rel="stylesheet" type="text/css" href="../css/tournament.css">
+		        <link rel="stylesheet" type="text/css" href="../css/table.css">
+		        <link rel="stylesheet" type="text/css" href="../css/matches.css">
+			</head>
+			<body>
+		        <header>
+		            <input 
+		                id="tournaments-button"
+		                type="button" 
+		                onclick="location.href='../football-tournaments.html';" 
+		                value="&#171; Turneringer"
+		            />
+		            <div></div>
+		
+		            <div>
+		                <h1>[tournament.name/]</h1>
+		                <h2>[getHostName(tournament.host).toUpper()/]</h2>
+		            </div>
+		
+		            <div>
+		                <label for="season">SESONG:</label>
+		                <select name="season" id="season" onchange="changeSeason()">
+							[comment Generate an option for each tournament season /]
+							[for (season : Season | sortSeasons(tournament.seasons))]
+								[generateSeasonOption(season)/]
+							[/for]
+		                </select>
+		            </div>
+		        </header>
+		
+		        <nav>
+		            <div>
+		                <button id="matches-button" class="section-button" onclick="changeSection(currentSeason, 'matches')">Terminliste</button>
+		                <button id="results-button" class="section-button" onclick="changeSection(currentSeason, 'results')">Resultater</button>
+		        	
+						[comment If tournament has stages that are of type double round robin, generate a table button /]
+						[if (tournament.seasons.stages.oclIsTypeOf(DoubleRoundRobin)->includes(true))]
+		                	<button id="table-button" class="section-button" onclick="changeSection(currentSeason, 'table')">Tabell</button>
+		            	[/if]
+					</div>
+		        </nav>
+
+		        <div id="content"></div>
+		
+		        <script>
+		            let currentSeason = document.getElementById("season").value;
+		
+		            const tableButton = document.getElementById("table-button");
+		            let currentSection = typeof(tableButton) != 'undefined' && tableButton != null ? "table" : "results"
+		            changeSection(currentSeason, currentSection);
+		
+		            function changeSeason() {
+		                currentSeason = document.getElementById("season").value;
+		                changeSection(currentSeason, currentSection);
+		            }
+		
+		            function changeSection(season, section) {
+		                currentSection = section;
+		
+		                // Remove emphasize on section buttons
+		                let sectionButtons = document.getElementsByClassName("section-button");
+		
+		                for (i = 0; i < sectionButtons.length; i++) {
+		                    sectionButtons['['/]i].className = sectionButtons['['/]i].className.replace(" active", "");
+		                }
+		
+		                // Emphasize current section button
+		                document.getElementById(section + "-button").className += " active";
+		
+		                // Fetch content
+		                let content = document.getElementById("content");
+		
+		                const page = "[urlify(tournament.name)/]" + "/" + season.replaceAll('/', '-') + "/" + section + ".html";
+		
+		                var xhttp = new XMLHttpRequest();
+		                xhttp.onreadystatechange = function() {
+		                    if (this.readyState == 4) {
+		                        if (this.status == 200) {
+		                        content.innerHTML = xhttp.responseText;
+		                        } else if (this.status == 404) {
+		                            content.innerHTML = "<b>ERROR</b>: 404 (Not Found)<br><i>" + page + "</i>";
+		                        }
+		                    }
+		                };
+		
+		                xhttp.open("GET", page, true);
+		                xhttp.send();
+		            }
+		        </script>
+			</body>
+		</html>
+	[/file]
+[/template]
+
+[**
+ *	Generate a HTML file for matches in a season
+ *	Corresponding web page: https://resultater.nrk.no/fotball/1/turneringer/5/2021/kamper
+*/]
+[template public generateSeasonMatchesFile(season : Season)]
+	[file (generateSeasonFilePath(season, 'matches'), false, 'UTF-8')]
+		[comment 
+			Get unplayed matches, sort them from oldest to newest, group them into match days and sort the match days from oldest to newest
+			For each match day, generate a section displaying its matches
+		/]
+		[for (matches : Sequence(Match) | matchDays(sortMatchesOnDate(getUnplayedMatches(season.stages.rounds.matches), false), false))]
+			[generateMatchDaySection(matches)/]
+		[/for]
+	[/file]
+[/template]
+
+[**
+ *	Generate a HTML file for results in a season
+ *	Corresponding web page: https://resultater.nrk.no/fotball/1/turneringer/5/2021/resultater
+*/]
+[template public generateSeasonResultsFile(season : Season)]
+	[file (generateSeasonFilePath(season, 'results'), false, 'UTF-8')]
+		[comment 
+			Get played matches, sort them from newest to oldest, group them into match days and sort the match days from newest to oldest
+			For each match day, generate a section displaying its matches
+		/]
+		[for (matches : Sequence(Match) |  matchDays(sortMatchesOnDate(getPlayedMatches(season.stages.rounds.matches), true), true))]
+			[generateMatchDaySection(matches)/]
+		[/for]
+	[/file]
+[/template]
+
+[**
+ *	Generate a HTML file for a table representing a season with a double round dobin stage
+ *	Corresponding web page: https://resultater.nrk.no/fotball/1/turneringer/5/2021/tabell
+*/]
+[template public generateSeasonTableFile(doubleRoundRobinStage : DoubleRoundRobin)]
+	[file (generateSeasonFilePath(doubleRoundRobinStage.season, 'table'), false, 'UTF-8')]
+		<h2>[doubleRoundRobinStage.season.tournament.name/] [doubleRoundRobinStage.season.yearIdentifier/]</h2>
+		<hr/>
+		<table>
+			<thead>
+			    <tr>
+		            <th class="small-padding">#</th>
+		            <th class="expand text-left small-padding">Lag</th>
+		            <th class="border-left">K</th>
+		            <th class="border-left">S</th>
+		            <th>U</th>
+		            <th>T</th>
+		            <th class="border-left">+</th>
+		            <th>-</th>
+		            <th>+/-</th>
+		            <th class="border-left">P</th>
+		            <th class="text-left small-padding border-left">Form</th>
+			    </tr>
+			</thead>
+			<tbody>
+				[comment For each statistic in table, generate a table row /]
+			    [for (statistic : Statistic | doubleRoundRobinStage.table.statistics)]
+					[generateTableRow(statistic)/]
+			    [/for]
+			</tbody>
+		</table>
+	[/file]
 [/template]
 
 [comment
@@ -230,7 +255,7 @@
 [template public generateTournamentButton(tournament : Tournament)]
     <input 
         type="button" 
-        onclick="location.href='[generateTournamentFile(tournament)/]';" 
+        onclick="location.href='[generateTournamentFilePath(tournament)/]';" 
         value="[tournament.name/]"
     />
 [/template]
@@ -238,7 +263,7 @@
 [**
  *	Generate URL to a tournament file
  */]
-[template public generateTournamentFile(tournament : Tournament) post (trim())]
+[template public generateTournamentFilePath(tournament : Tournament) post (trim())]
 	[urlify(getHostName(tournament.host)) + '/' + urlify(tournament.name) + '.html'/]
 [/template]
 
@@ -252,7 +277,7 @@
 [**
  *	Generate URL to a specific season file (either table, matches or results)
  */]
-[template public generateSeasonFile(season : Season, fileString : String) post (trim())]
+[template public generateSeasonFilePath(season : Season, fileString : String) post (trim())]
 	[urlify(getHostName(season.tournament.host)) + '/' + urlify(season.tournament.name) + '/' + urlify(season.yearIdentifier) + '/' + fileString + '.html'/]
 [/template]
 
@@ -410,34 +435,34 @@
  *	Sort matches according to date and time, and optionally reverse the order
  */]
 [query public sortMatchesOnDate(matches : Sequence(Match), reverse : Boolean) : Sequence(Match) =
-	invoke('ft.html.GeneratorHelper', 'sortMatchesOnDate(java.util.List, java.lang.Boolean)', Sequence{matches, reverse})
+	invoke('ft.html.GenerateHelper', 'sortMatchesOnDate(java.util.List, java.lang.Boolean)', Sequence{matches, reverse})
 /]
 
 [**
  *	Group matches according to the day the match is played, and optionally reverse the order of the match days
  */]
 [query public matchDays(matches : Sequence(Match), reverse : Boolean) : Sequence(Sequence(Match)) =
-	invoke('ft.html.GeneratorHelper', 'groupOnMatchDays(java.util.List, java.lang.Boolean)', Sequence{matches, reverse})
+	invoke('ft.html.GenerateHelper', 'groupOnMatchDays(java.util.List, java.lang.Boolean)', Sequence{matches, reverse})
 /]
 
 [**
  *	Get a string representing the date of the match day for a match
  */]
 [query public getMatchDay(match : Match) : String =
-	invoke('ft.html.GeneratorHelper', 'getMatchDay(ft.Match)', Sequence{match})
+	invoke('ft.html.GenerateHelper', 'getMatchDay(ft.Match)', Sequence{match})
 /]
 
 [**
  *	Get the time a match is played
  */]
 [query public getMatchTime(match : Match) : String =
-	invoke('ft.html.GeneratorHelper', 'getMatchTime(ft.Match)', Sequence{match})
+	invoke('ft.html.GenerateHelper', 'getMatchTime(ft.Match)', Sequence{match})
 /]
 
 [**
  *	Capitalizes all words of a string
  */]
 [query public capitalizeFirstCharacter(str : String) : String =
-	invoke('ft.html.GeneratorHelper', 'capitalizeFirstCharacter(java.lang.String)', Sequence{str})
+	invoke('ft.html.GenerateHelper', 'capitalizeFirstCharacter(java.lang.String)', Sequence{str})
 /]
 
