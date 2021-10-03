@@ -1,0 +1,71 @@
+header {
+    max-width: 1280px;
+    margin: auto;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+#tournaments-button {
+    display: block;
+    width: fit-content;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    background-color: rgb(246, 246, 246);
+    height: 60px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#tournaments-button:hover {
+    color: rgb(171, 172, 172);
+}
+
+label {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+nav {
+    width: 100%;
+    background-color: rgb(21, 21, 21);
+}
+
+nav > div {
+    max-width: 1280px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 0 40px;
+}
+
+select {
+    background-color: #151515;
+    color: white;
+    padding: 0px 18px;
+    border-radius: 40px;
+    width: 150px;
+    height: 40px;
+}
+
+.section-button {
+    display: block;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    height: 60px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.section-button:not(.active):hover {
+    color: rgb(171, 172, 172);
+}
+
+.section-button.active {
+    background-color: rgb(229, 28, 48);
+}

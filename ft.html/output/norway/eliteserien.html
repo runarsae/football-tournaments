@@ -1,0 +1,93 @@
+			<html>
+				<head>
+					<title>Eliteserien</title>
+					<meta charset="utf-8"/>
+	
+			        <link rel="stylesheet" type="text/css" href="../css/main.css">
+			        <link rel="stylesheet" type="text/css" href="../css/tournament.css">
+			        <link rel="stylesheet" type="text/css" href="../css/table.css">
+			        <link rel="stylesheet" type="text/css" href="../css/matches.css">
+				</head>
+				<body>
+			        <header>
+			            <input 
+			                id="tournaments-button"
+			                type="button" 
+			                onclick="location.href='../football-tournaments.html';" 
+			                value="&#171; Turneringer"
+			            />
+			            <div></div>
+			
+			            <div>
+			                <h1>Eliteserien</h1>
+			                <h2>NORWAY</h2>
+			            </div>
+			
+			            <div>
+			                <label for="season">SESONG:</label>
+			                <select name="season" id="season" onchange="changeSeason()">
+										<option value="2021">2021</option>
+										<option value="2020">2020</option>
+										<option value="2019">2019</option>
+			                </select>
+			            </div>
+			        </header>
+			
+			        <nav>
+			            <div>
+			                <button id="matches-button" class="section-button" onclick="changeSection(currentSeason, 'matches')">Terminliste</button>
+			                <button id="results-button" class="section-button" onclick="changeSection(currentSeason, 'results')">Resultater</button>
+			        	
+			                	<button id="table-button" class="section-button" onclick="changeSection(currentSeason, 'table')">Tabell</button>
+						</div>
+			        </nav>
+	
+			        <div id="content"></div>
+			
+			        <script>
+			            let currentSeason = document.getElementById("season").value;
+			
+			            const tableButton = document.getElementById("table-button");
+			            let currentSection = typeof(tableButton) != 'undefined' && tableButton != null ? "table" : "results"
+			            changeSection(currentSeason, currentSection);
+			
+			            function changeSeason() {
+			                currentSeason = document.getElementById("season").value;
+			                changeSection(currentSeason, currentSection);
+			            }
+			
+			            function changeSection(season, section) {
+			                currentSection = section;
+			
+			                // Remove emphasize on section buttons
+			                let sectionButtons = document.getElementsByClassName("section-button");
+			
+			                for (i = 0; i < sectionButtons.length; i++) {
+			                    sectionButtons[i].className = sectionButtons[i].className.replace(" active", "");
+			                }
+			
+			                // Emphasize current section button
+			                document.getElementById(section + "-button").className += " active";
+			
+			                // Fetch content
+			                let content = document.getElementById("content");
+			
+			                const page = "eliteserien" + "/" + season.replaceAll('/', '-') + "/" + section + ".html";
+			
+			                var xhttp = new XMLHttpRequest();
+			                xhttp.onreadystatechange = function() {
+			                    if (this.readyState == 4) {
+			                        if (this.status == 200) {
+			                        content.innerHTML = xhttp.responseText;
+			                        } else if (this.status == 404) {
+			                            content.innerHTML = "<b>ERROR</b>: 404 (Not Found)<br><i>" + page + "</i>";
+			                        }
+			                    }
+			                };
+			
+			                xhttp.open("GET", page, true);
+			                xhttp.send();
+			            }
+			        </script>
+				</body>
+			</html>

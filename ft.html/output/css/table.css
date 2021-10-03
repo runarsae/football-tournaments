@@ -1,0 +1,64 @@
+table {
+    table-layout: auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr:hover {
+    background-color: rgb(239, 239, 239);
+}
+
+th {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+td {
+    font-size: 0.9rem;
+}
+
+th:not(.small-padding), td:not(.small-padding) {
+    padding: 12px 34px;
+}
+
+.small-padding {
+    padding: 12px 12px;
+}
+
+.expand {
+    width: 100%;
+}
+
+.border-left {
+    border-left: 1px solid rgb(239, 239, 239);
+}
+
+.border-right {
+    border-right: 1px solid rgb(239, 239, 239);
+}
+
+.form {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 10px;
+    gap: 2px;
+}
+
+.result-dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.result-dot.green {
+    background-color: rgb(35, 195, 107);
+}            
+
+.result-dot.gray {
+    background-color: rgb(210, 210, 210);
+}
+
+.result-dot.red {
+    background-color: rgb(235, 93, 64);
+}

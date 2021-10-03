@@ -1,0 +1,48 @@
+.matches {
+    margin: 0;
+    padding: 0 0 20px;
+    list-style-type: none;
+}
+
+.match {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-areas: "home final away" "additional additional additional";
+    align-items: center;
+    row-gap: 6px;
+    padding: 20px;
+    border-bottom: 1px solid rgb(249, 249, 249);
+}
+
+.home {
+    grid-area: home;
+}
+
+.away {
+    grid-area: away;
+}
+
+.result-final-container {
+    grid-area: final;
+}
+
+.result-final {
+    background-color: rgb(21, 21, 21);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 5px 10px;
+    min-width: 40px;
+    min-height: 28px;
+    width: fit-content;
+    margin: auto;
+}
+
+.sub-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.result-additional {
+    grid-area: additional;
+}
