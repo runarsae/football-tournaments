@@ -6,33 +6,33 @@ import java.util.List;
 
 import ft.FtFactory;
 import ft.Match;
-import ft.html.GeneratorHelper;
+import ft.html.GenerateHelper;
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
-public class GeneratorHelperTest extends TestCase {
+public class GenerateHelperTest extends TestCase {
 	
-	protected GeneratorHelper fixture = null;
+	protected GenerateHelper fixture = null;
 
 	public static void main(String[] args) {
-		TestRunner.run(GeneratorHelperTest.class);
+		TestRunner.run(GenerateHelperTest.class);
 	}
 
-	public GeneratorHelperTest(String name) {
+	public GenerateHelperTest(String name) {
 		super(name);
 	}
 
-	protected void setFixture(GeneratorHelper fixture) {
+	protected void setFixture(GenerateHelper fixture) {
 		this.fixture = fixture;
 	}
 
-	protected GeneratorHelper getFixture() {
+	protected GenerateHelper getFixture() {
 		return fixture;
 	}
 
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(new GeneratorHelper());
+		setFixture(new GenerateHelper());
 	}
 
 	@Override
@@ -41,8 +41,7 @@ public class GeneratorHelperTest extends TestCase {
 	}
 
 	public void testSortMatchesOnDate() {
-		
-		GeneratorHelper generatorHelper = getFixture();
+		GenerateHelper generateHelper = getFixture();
 		
 		Match match1 = FtFactory.eINSTANCE.createMatch();
 		match1.setDate(LocalDateTime.of(2021, 10, 03, 10, 00));
@@ -53,16 +52,16 @@ public class GeneratorHelperTest extends TestCase {
 		List<Match> matches = new ArrayList<Match>(List.of(match1, match2));
 		
 		// Test sorting from oldest to newest
-		matches = generatorHelper.sortMatchesOnDate(matches, false);
+		matches = generateHelper.sortMatchesOnDate(matches, false);
 		assertEquals(match1, matches.get(0));
 		
 		// Test reverse order
-		matches = generatorHelper.sortMatchesOnDate(matches, true);
+		matches = generateHelper.sortMatchesOnDate(matches, true);
 		assertEquals(match2, matches.get(0));
 	}
 
 	public void testGroupOnMatchDays() {
-		GeneratorHelper generatorHelper = getFixture();
+		GenerateHelper generateHelper = getFixture();
 		
 		Match match1 = FtFactory.eINSTANCE.createMatch();
 		match1.setDate(LocalDateTime.of(2021, 10, 03, 10, 00));
@@ -73,14 +72,14 @@ public class GeneratorHelperTest extends TestCase {
 		List<Match> matches = new ArrayList<Match>(List.of(match1, match2));
 		
 		// Test grouping, sorted from oldest to newest
-		List<List<Match>> matchDays1 = generatorHelper.groupOnMatchDays(matches, false);
+		List<List<Match>> matchDays1 = generateHelper.groupOnMatchDays(matches, false);
 		
 		assertEquals(2, matchDays1.size());
 		assertEquals(match1, matchDays1.get(0).get(0));
 		assertEquals(match2, matchDays1.get(1).get(0));
 		
 		// Test grouping, sorted from newest to oldest
-		List<List<Match>> matchDays2 = generatorHelper.groupOnMatchDays(matches, true);
+		List<List<Match>> matchDays2 = generateHelper.groupOnMatchDays(matches, true);
 		
 		assertEquals(2, matchDays2.size());
 		assertEquals(match2, matchDays2.get(0).get(0));
@@ -88,30 +87,30 @@ public class GeneratorHelperTest extends TestCase {
 	}
 
 	public void testGetMatchDay() {
-		GeneratorHelper generatorHelper = getFixture();
+		GenerateHelper generateHelper = getFixture();
 
 		Match match = FtFactory.eINSTANCE.createMatch();	
 		match.setDate(LocalDateTime.of(2021, 10, 03, 10, 00));
 		
-		assertEquals("søndag, 03. oktober 2021", generatorHelper.getMatchDay(match));
+		assertEquals("søndag, 03. oktober 2021", generateHelper.getMatchDay(match));
 	}
 
 	public void testGetMatchTime() {
-		GeneratorHelper generatorHelper = getFixture();
+		GenerateHelper generateHelper = getFixture();
 
 		Match match = FtFactory.eINSTANCE.createMatch();	
 		match.setDate(LocalDateTime.of(2021, 10, 03, 10, 00));
 		
-		assertEquals("10:00", generatorHelper.getMatchTime(match));
+		assertEquals("10:00", generateHelper.getMatchTime(match));
 	}
 
 	public void testCapitalizeFirstCharacter() {
-		GeneratorHelper generatorHelper = getFixture();
+		GenerateHelper generateHelper = getFixture();
 
 		Match match = FtFactory.eINSTANCE.createMatch();	
 		match.setDate(LocalDateTime.of(2021, 10, 03, 10, 00));
 		
-		assertEquals("Søndag, 03. oktober 2021", generatorHelper.capitalizeFirstCharacter("søndag, 03. oktober 2021"));
+		assertEquals("Søndag, 03. oktober 2021", generateHelper.capitalizeFirstCharacter("søndag, 03. oktober 2021"));
 	}
 
 }

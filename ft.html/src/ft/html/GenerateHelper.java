@@ -13,14 +13,14 @@ import com.google.common.collect.Lists;
 import ft.Match;
 
 /**
- * Helper methods for the generator.
+ * Helper methods for the transformation.
  */
-public class GeneratorHelper {
+public class GenerateHelper {
 	
 	private static DateTimeFormatter matchDayFormatter = DateTimeFormatter.ofPattern("EEEE, dd. MMMM yyyy");
 	private static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 	
-	public GeneratorHelper() {}
+	public GenerateHelper() {}
 	
 	/**
 	 * Sort a list of matches according to their date. Optionally reverse the order.
