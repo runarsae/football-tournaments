@@ -19,6 +19,7 @@ import com.sun.net.httpserver.HttpServer;
 public class Server {
 	
 	private static final int PORT = 9000;
+	private static final String OUTPUT_FOLDER = "output/";
 	
 	/**
 	 * Run server.
@@ -51,7 +52,7 @@ public class Server {
             URI uri = t.getRequestURI();
             String path = uri.getPath();
             
-            File file = new File("output/" + path);
+            File file = new File(OUTPUT_FOLDER + path);
             t.sendResponseHeaders(200, file.length());
             try (OutputStream os = t.getResponseBody()) {
             	Files.copy(file, os);
