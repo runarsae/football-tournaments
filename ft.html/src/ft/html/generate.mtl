@@ -264,7 +264,7 @@
  *	Generate URL to a tournament file
  */]
 [template public generateTournamentFilePath(tournament : Tournament) post (trim())]
-	[urlify(getHostName(tournament.host).concat('/').concat(tournament.name).concat('.html'))/]
+	[urlify(getHostName(tournament.host)).concat('/').concat(urlify(tournament.name)).concat('.html')/]
 [/template]
 
 [**
@@ -278,7 +278,7 @@
  *	Generate URL to a specific season file (either table, matches or results)
  */]
 [template public generateSeasonFilePath(season : Season, fileString : String) post (trim())]
-	[urlify(getHostName(season.tournament.host).concat('/').concat(season.tournament.name).concat('/').concat(season.yearIdentifier).concat('/').concat(fileString).concat('.html'))/]
+	[urlify(getHostName(season.tournament.host)).concat('/').concat(urlify(season.tournament.name)).concat('/').concat(urlify(season.yearIdentifier)).concat('/').concat(fileString).concat('.html')/]
 [/template]
 
 [**
