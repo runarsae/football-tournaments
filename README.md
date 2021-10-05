@@ -10,6 +10,7 @@ An Ecore project for modeling the domain of football tournaments, based on [NRK'
   - [Model Instances, Webpages and Screenshots](#model-instances-webpages-and-screenshots)
   - [Model Implementation](#model-implementation)
   - [Tests](#tests)
+  - [M2T Transformation (HTML)](#m2t-transformation-html)
 
 ## Prerequisites
 To be able to use the model in a development or test environment, the following is required:
@@ -41,13 +42,13 @@ To be able to use the model in a development or test environment, the following 
     git clone https://gitlab.stud.idi.ntnu.no/TDT4250/h2021-ecore-assignments/runarsae.git
     ```
 
-* Import the projects `ft`, `ft.edit`, `ft.editor`, `ft.instances` and `ft.tests` from the repository location to your Eclipse workspace using _File_ -> _Import..._ in the top navigation, and then choosing _Projects from Folder or Archive_ under _General_. 
+* Import the projects `ft`, `ft.edit`, `ft.editor`, `ft.html`, `ft.html.tests`, `ft.instances` and `ft.tests` from the repository location to your Eclipse workspace using _File_ -> _Import..._ in the top navigation, and then choosing _Projects from Folder or Archive_ under _General_. 
 
 ## Usage
 To create, view and edit instances of the model, the recommended way is to create a testing environment where the model is loaded: 
 1. Go to _Run_ -> _Run Configurations..._ in the top navigation in Eclipse.
 2. Right-click _Eclipse Application_ in the left list, and choose _New Configuration_. Give the configuration a name. 
-3. In the _Plug-ins_ tab, make sure `ft`, `ft.edit` and `ft.editor` are all selected (`ft.tests` and `ft.instances` are not needed). Apply the changes and run the environment. A new Eclipse will open where the model is loaded. 
+3. In the _Plug-ins_ tab, make sure `ft`, `ft.edit` and `ft.editor` are all selected (the other ones are not needed). Apply the changes and run the environment. A new Eclipse will open where the model is loaded. 
 4. Import projects (for example `ft.instances` and `ft.tests`) or create a new one (Plug-in Project) in order to create, view and edit files with an _.ft_ extension (intances of the model).
 5. To create a new _.ft_ file/instance of the model, right-clik the desired location in the project/package explorer and choose _New_ -> _Others.._. Under _Example EMF Model Creation Wizards_, choose _Ft Model_ and follow the wizard.
 
@@ -104,6 +105,11 @@ Instance file: `ft.instances/instances/EnglishTournaments.ft`
 |Premier League|2020/2021|[Table](https://resultater.nrk.no/fotball/1/turneringer/7/2021/tabell) - [Results](https://resultater.nrk.no/fotball/1/turneringer/7/2021/resultater)|[Table](documentation/screenshots/premier_league_2020_2021_table.png) - [Results](documentation/screenshots/premier_league_2020_2021_results.png)|
 
 The derived table of the Premier League season 2020/2021 can be printed by running the `ft.instances/src/ft.util/PrintTable.java` file.
+
+### All Tournaments
+Instance file: `ft.instances/instances/Tournaments.ft`
+
+This instance contains both Norwegian and English football tournaments listed above.
 
 ## Model Implementation
 The Ecore model is located in the `/ft/model/ft.ecore` file along with a `ft.genmodel` file for generating code based on the model. Below is a generated UML diagram for the model.
@@ -198,7 +204,7 @@ All implemented derived features are listed in the table below. They are impleme
 |AbstractResult|awayGoalsFinal: Score|EAttribute|Calculates away goals scored at full time + away goals scored at extended time (if present)|        |
 
 ## Tests
-Tests have been made for all manually written code. This includes data types, constraints (also OCL and ExtendedMetaData) and derived features. The tests can be found in the `ft.tests` project.
+Tests have been made for all manually written code related to the model. This includes data types, constraints (also OCL and ExtendedMetaData) and derived features. The tests can be found in the `ft.tests` project.
 
 All tests are located in `ft.tests/src/ft.tests/`:
 * **Derived feature tests** can be found in the test file for the class that the feature is in (e.g. the test for a derived feature in _Season_ is found in `SeasonTest.java`)
@@ -208,3 +214,77 @@ All tests are located in `ft.tests/src/ft.tests/`:
 To run all the tests, right-click on the `FtAllTests.java` file in `ft.tests/src/ft.tests/`, then choose _Run As_ -> _JUnit Test_.
 
 Some tests are executed on ad-hoc instances made programmatically, while others use pre-made instances loaded from files. Loading is done by using the implemented `TestResourceLoader` found in `ft.tests/src/ft.util/`. Resources used in tests are located in the `ft.tests/resources/` folder.
+
+## M2T Transformation (HTML)
+A model-to-text transformation (M2T) has been made using Acceleo, located in the `ft.html` project.
+
+### Running the Transformation
+A transformation of the `ft.instances/instances/Tournaments.ft` instance is already made and is located in the `ft.html/output/` folder.
+
+Follow these steps to run a transformation:
+1. Go to _Run -> Run Configurations..._ in the top navigation of Eclipse.
+2. Right-click _Acceleo Application_ in the left list, and choose _New Configuration_. Give the configuration a name.
+3. Fill in the following fields:
+    * Project: `ft.html`
+    * Main class: `ft.html.Generate`
+    * Model: `/ft.instances/instances/Tournaments.ft` (the path to the model you want to run the transformation on)
+    * Target: `/ft.html/output` (the path to the folder where the generated HTML files will be placed)
+4. Apply and run the configuration. The generated files should now be in the set output folder. See the [viewing the generated HTML](#viewing-the-generated-html) section for important information on how to view the generated HTML.
+5. If your target folder is **not** `/ft.html/output`, you have to move the `ft.html/output/css/` folder into your target folder to make the generated files use the correct styling.
+
+### Viewing the Generated HTML
+**NOTE**: A web server must be used to view the generated HTML files. This is due to the use of AJAX (XMLHttpRequest). 
+
+A simple HTTP server has been set up at `ft.html/src/ft.html.util/Server.java`. Run this and open [http://localhost:9000/football-tournaments.html](http://localhost:9000/football-tournaments.html) in a browser to view the generated HTML files properly. Note that the server only serves files in the `ft.html/output/` folder.
+
+For the best experience, use up-to-date modern browsers, like Chrome, Safari or Firefox.
+
+### Screenshots of Transformation Results
+The table below lists screenshots of the transformation webpage (from the `Tournaments.ft` instance) compared to the actual web page, showing Eliteserien 2021 and the tournaments page (listing all hosts and their tournaments).
+
+|**Webpage**|**Transformation Webpage Screenshot**|**Actual Webpage Screenshot**|
+|:--|:------------------------------------|:----------------------------|
+|[Eliteserien 2021](https://resultater.nrk.no/fotball/1/turneringer/5/2021/tabell)|[Table](documentation/screenshots/transformation/eliteserien_2021_table.png) - [Results](documentation/screenshots/transformation/eliteserien_2021_results.png) - [Matches](documentation/screenshots/transformation/eliteserien_2021_matches.png)|[Table](documentation/screenshots/eliteserien_2021_table.png) - [Results](documentation/screenshots/eliteserien_2021_results.png) - [Matches](documentation/screenshots/eliteserien_2021_matches.png)|
+|[Tournaments](https://resultater.nrk.no/fotball/1/turneringer)|[Tournaments](documentation/screenshots/transformation/tournaments.png)|[Tournaments](documentation/screenshots/tournaments.png)
+
+**NOTE**: The styling of some elements on the actual web pages have changed during the making of this project, but the transformation matches the screenshots, so use them as a reference.
+
+### Transformation Implementation
+All files needed for the transformation are located in `ft.html/src/ft.html/`:
+* `generate.mtl` - an Acceleo module with templates and queries to generate the HTML files.
+* `GenerateHelper.java` - a helper class for the transformation, with helper methods (java services invoked by queries in the Acceleo module). The test for this class is located in the `ft.html.tests` project.
+* `Generate.java` - the entry point for the generation. The ft model package and factory are registered here.
+
+The transformation generates five different types of HTML files:
+* `football-tournaments.html` - displays all hosts with links to their tournaments. This is the entry point.
+* `[host]/[tournament].html` - displays a tournament, one season at a time, and either the matches, results or table for that season.
+* `[host]/[tournament]/[season]/matches.html` - a sub-HTML file used by the tournament HTML file displaying coming matches for a season.
+* `[host]/[tournament]/[season]/results.html` - a sub-HTML file used by the tournament HTML file displaying results for a season.
+* `[host]/[tournament]/[season]/table.html` - a sub-HTML file used by the tournament HTML file displaying the table for a season.
+
+#### Templates
+Templates are used to generate the actual HTML text. 
+
+The main template is `generateElement`. It takes a football tournaments instance and generates the `football-tournaments.html` file, and calls sub-templates to generate the other four types of HTML files listed above. The sub-templates are `generateTournamentFile`, `generateSeasonMatchesFile`, `generateSeasonResultsFile` and `generateSeasonTableFile`. 
+
+The content of the templates are futher broken down in to smaller sub-templates. These are for generating host sections, tournament buttons, file URLs, season options for a dropdown, match day sections with matches, results and club names, table rows and result dots for displaying the form of a club. There is also a group of templates to get the name of a host, based on its type (regional or association), and a template for URLifying a string (convert to lower case and replace spaces with dashes).
+
+#### Queries
+Queries are used to extract information and perform operations on the model instance. Both OCL and Java Services are used to implement the queries. The table below lists the all queries made.
+
+|**Name**|**Description**|**Type**|
+|:-------|:--------------|:-------|
+|sortSeasons|Sorts a list of seasons based on year, from newest to oldest|OCL|
+|getUnplayedMatches|Filters a list of matches to get the ones without a result, i.e. not played|OCL|
+|getPlayedMatches|Filters a list of matches to get the ones with a result, i.e. played|OCL|
+|sortMatchesOnDate|Sorts a list matches according to date and time, and optionally reversing the order|Java Service|
+|matchDays|Groups a list of matches according to the day the matches are played, and optionally revering the order of the match days|Java Service|
+|getMatchDay|Creates a string representing the date of the match day, given a match|Java Service|
+|getMatchTime|Gets a string representation of the time a match is played|Java Service|
+|capitalizeFirstCharacter|Capitalizes the first character of a string|Java Service|
+
+The implemented Java Services are located in `ft.html/src/ft.html/GenerateHelper.java`. Tests for the Java Services can be found in `ft.html.tests/src/ft.html.tests/GenerateHelperTest.java`.
+
+### Changes on Model and Instances From Assignment 1
+* The `form` attribute of the `Statistic` class is changed to be not unique. This makes it possible for a team to have multiple wins, losses or draws during the last six matches.
+* A new model instance `Tournaments.ft` has been made in `ft.instances/instances/`. It combines the two previously made instances (`NorwegianTournaments.ft` and `EnglishTournaments.ft`). The new instance can be used to run the transformation.
