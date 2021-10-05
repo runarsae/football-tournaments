@@ -59,6 +59,10 @@
 	[/for]
 [/template]
 
+[comment
+	##### SUB-TEMPLATES #####
+/]
+
 [**
  *	Generate a HTML file for a tournament
  *	Corresponding web page: https://resultater.nrk.no/fotball/1/turneringer/5/2020/tabell
@@ -231,10 +235,6 @@
 	[/file]
 [/template]
 
-[comment
-	##### SUB-TEMPLATES #####
-/]
-
 [**
  * 	Generate a section for a host, with tournament button-links for tournaments that are arranged by the host
  */]
@@ -264,7 +264,7 @@
  *	Generate URL to a tournament file
  */]
 [template public generateTournamentFilePath(tournament : Tournament) post (trim())]
-	[urlify(getHostName(tournament.host)) + '/' + urlify(tournament.name) + '.html'/]
+	[urlify(getHostName(tournament.host).concat('/').concat(tournament.name).concat('.html'))/]
 [/template]
 
 [**
@@ -278,7 +278,7 @@
  *	Generate URL to a specific season file (either table, matches or results)
  */]
 [template public generateSeasonFilePath(season : Season, fileString : String) post (trim())]
-	[urlify(getHostName(season.tournament.host)) + '/' + urlify(season.tournament.name) + '/' + urlify(season.yearIdentifier) + '/' + fileString + '.html'/]
+	[urlify(getHostName(season.tournament.host).concat('/').concat(season.tournament.name).concat('/').concat(season.yearIdentifier).concat('/').concat(fileString).concat('.html'))/]
 [/template]
 
 [**
@@ -460,7 +460,7 @@
 /]
 
 [**
- *	Capitalizes all words of a string
+ *	Capitalizes the first character of a string
  */]
 [query public capitalizeFirstCharacter(str : String) : String =
 	invoke('ft.html.GenerateHelper', 'capitalizeFirstCharacter(java.lang.String)', Sequence{str})
