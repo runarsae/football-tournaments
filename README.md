@@ -39,7 +39,7 @@ To be able to use the model in a development or test environment, the following 
 * Clone the repository with:
 
     ```
-    git clone https://gitlab.stud.idi.ntnu.no/TDT4250/h2021-ecore-assignments/runarsae.git
+    git clone https://github.com/runarsae/football-tournaments.git
     ```
 
 * Import the projects `ft`, `ft.edit`, `ft.editor`, `ft.html`, `ft.html.tests`, `ft.instances` and `ft.tests` from the repository location to your Eclipse workspace using _File_ -> _Import..._ in the top navigation, and then choosing _Projects from Folder or Archive_ under _General_. 
