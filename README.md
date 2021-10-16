@@ -278,7 +278,7 @@ Queries are used to extract information and perform operations on the model inst
 |getUnplayedMatches|Filters a list of matches to get the ones without a result, i.e. not played|OCL|
 |getPlayedMatches|Filters a list of matches to get the ones with a result, i.e. played|OCL|
 |sortMatchesOnDate|Sorts a list matches according to date and time, and optionally reversing the order|Java Service|
-|matchDays|Groups a list of matches according to the day the matches are played, and optionally revering the order of the match days|Java Service|
+|matchDays|Groups a list of matches according to the day the matches are played, and optionally reversing the order of the match days|Java Service|
 |getMatchDay|Creates a string representing the date of the match day, given a match|Java Service|
 |getMatchTime|Gets a string representation of the time a match is played|Java Service|
 |capitalizeFirstCharacter|Capitalizes the first character of a string|Java Service|
