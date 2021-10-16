@@ -610,14 +610,14 @@ public class FtValidatorTest extends TestCase {
 		Round round = factory.createRound();
 		round.setStage(factory.createStage());
 		round.setRoundNumber(1);
-		
+				
 		// Validate round where round number is equal to the minimum value (valid)
 		Diagnostic diagnostics = Diagnostician.INSTANCE.validate(round);
 		assertTrue(diagnostics.getSeverity() == Diagnostic.OK);
 		
 		round.setRoundNumber(3);
 		
-		// Validate round where round number is above the minimum value (invalid)
+		// Validate round where round number is above the minimum value (valid)
 		diagnostics = Diagnostician.INSTANCE.validate(round);
 		assertTrue(diagnostics.getSeverity() == Diagnostic.OK);
 		
