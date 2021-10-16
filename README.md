@@ -284,7 +284,3 @@ Queries are used to extract information and perform operations on the model inst
 |capitalizeFirstCharacter|Capitalizes the first character of a string|Java Service|
 
 The implemented Java Services are located in `ft.html/src/ft.html/GenerateHelper.java`. Tests for the Java Services can be found in `ft.html.tests/src/ft.html.tests/GenerateHelperTest.java`.
-
-### Changes on Model and Instances From Assignment 1
-* The `form` attribute of the `Statistic` class is changed to be not unique. This makes it possible for a team to have multiple wins, losses or draws during the last six matches.
-* A new model instance `Tournaments.ft` has been made in `ft.instances/instances/`. It combines the two previously made instances (`NorwegianTournaments.ft` and `EnglishTournaments.ft`). The new instance can be used to run the transformation.
