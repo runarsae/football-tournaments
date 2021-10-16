@@ -53,9 +53,9 @@
 		Assumption: Each season has only one stage
 	/]
 	[for (stage : Stage | footballTournaments.hosts.tournaments.seasons.stages)]
-		[let doubleRoundRobinStage : DoubleRoundRobin = stage]
-			[generateSeasonTableFile(doubleRoundRobinStage)/]
-		[/let]
+		[if (stage.oclIsTypeOf(DoubleRoundRobin))]
+			[generateSeasonTableFile(stage.oclAsType(DoubleRoundRobin))/]
+		[/if]
 	[/for]
 [/template]
 
@@ -318,14 +318,18 @@
 	    </div>					
 	    [generateAwayClub(match)/]
 		
-		[let extendedTimeResult : ExtendedTimeResult = match.result]
-	        <div class="result-additional sub-text text-center">
-	            <div>Full tid: [extendedTimeResult.homeGoalsFullTime/] - [extendedTimeResult.awayGoalsFullTime/]</div>
-	            [let penaltyShootoutResult : PenaltyShootoutResult = extendedTimeResult]
-	            	<div>STR: [penaltyShootoutResult.homeGoalsPenaltyShootout/] - [penaltyShootoutResult.awayGoalsPenaltyShootout/]</div>
-	            [/let]
-	        </div>
-		[/let]
+		[if (match.result.oclIsKindOf(ExtendedTimeResult))]
+			[let extendedTimeResult : ExtendedTimeResult = match.result.oclAsType(ExtendedTimeResult)]
+		        <div class="result-additional sub-text text-center">
+		            <div>Full tid: [extendedTimeResult.homeGoalsFullTime/] - [extendedTimeResult.awayGoalsFullTime/]</div>
+					[if (extendedTimeResult.oclIsKindOf(PenaltyShootoutResult))]
+			            [let penaltyShootoutResult : PenaltyShootoutResult = extendedTimeResult.oclAsType(PenaltyShootoutResult)]
+			            	<div>STR: [penaltyShootoutResult.homeGoalsPenaltyShootout/] - [penaltyShootoutResult.awayGoalsPenaltyShootout/]</div>
+			            [/let]
+					[/if]
+		        </div>
+			[/let]
+		[/if]
 	</li>
 [/template]
 
